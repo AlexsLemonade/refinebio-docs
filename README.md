@@ -12,3 +12,6 @@
     cd docs/
     ./autobuild.sh
 
+## To edit:
+
+    cd docs
