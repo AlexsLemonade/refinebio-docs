@@ -2,5 +2,6 @@ Welcome to refine.bio's documentation!
 ======================================
 
 ## Contents
-* [Getting Started](getting_started.md)
 
+* [refine.bio Data Processing](main_text.md)
+* [Example Workflows](getting_started.md)
