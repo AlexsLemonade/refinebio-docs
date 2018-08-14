@@ -1,4 +1,4 @@
-#### What is the difference between refine.bio/CCDL processed and Submitter Processed datasets?
+#### What is the difference between refine.bio-processed and submitter-processed datasets?
 
 #### How do you process the data?
 
