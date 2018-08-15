@@ -112,7 +112,7 @@ TODO: If we make the gene to tx mapping available (see above under **Transcripto
 ## Submitter processed
 
 Sometimes raw data for a sample is either unavailable at the source repository or in a form that we can not process.
-For microarray platforms that we support, we obtain the submitter processed expression data and use these values in refine.bio with some modifications (e.g., log2-transformation where we detect it has not been performed).
+For microarray platforms that we support, we obtain the submitter processed expression data and use these values in refine.bio with some modification (e.g., log2-transformation where we detect it has not been performed).
 
 As noted above, we use Ensembl gene identifiers throughout refine.bio. 
 Submitter processed data may use other gene (or probe) identifiers that we must convert to Ensembl gene identifiers. 
@@ -133,6 +133,11 @@ If you would prefer to report issues via e-mail, you can also email [ccdl@alexsl
 
 ### Illumina
 
+We support conversion from Illumina BeadArray probe IDs to Ensembl gene IDs using 
+[Bioconductor Illumina Beadarray expression packages](https://www.bioconductor.org/packages/release/BiocViews.html#___IlluminaChip), 
+allowing for one-to-many mappings.
+
+TODO: Filtering for probe quality?
 
 ## Aggregations
 
