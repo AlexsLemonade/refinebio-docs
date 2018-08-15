@@ -114,7 +114,7 @@ TODO: If we make the gene to tx mapping available (see above under **Transcripto
  
 ## Submitter processed
 
-Sometimes raw data for a sample is either unavailable at the source repository or in a form that we can not process.
+Sometimes raw data for a sample is either unavailable at the source repository or exists in a form that we can not process.
 For microarray platforms that we support, we obtain the submitter processed expression data and use these values in refine.bio with some modification (e.g., log2-transformation where we detect it has not been performed).
 
 As noted above, we use Ensembl gene identifiers throughout refine.bio. 
@@ -144,7 +144,19 @@ TODO: Filtering for probe quality?
 
 ## Aggregations
 
-In the case of duplicate gene identifiers, we aggregate to the mean expression value.
+refine.bio allows users to aggregate their selected samples in two ways: by experiment or by species.
+We use the term aggregate or aggregation to refer to the process of combining _individual samples_ to form a _multi-sample_ gene expression matrix (see also: [Downloadable Files](#downloadable-files)).
+
+* **By experiment:** Samples that belong to the same experiment will become a single gene expression matrix. 
+If you have selected all samples from two experiments with 10 and 15 samples, respectively, and have chosen the `by experiment` option, you will receive two gene expression matrices with 10 and 15 samples, respectively.
+
+* **By species:** All samples assaying the same species will be aggregated into a single gene expression matrix.
+If you have selected three experiments each from human and mouse and the `by species` option, you receive two gene expression matrices that contain all human and all mouse samples, respectively.
+
+For either aggregation method, we summarize duplicate Ensembl gene IDs to the mean expression value and only include genes (rows) that are represented in all samples being aggregated.
+Note that some early generation microarrays measure fewer genes than their more recent counterparts, so their inclusion when aggregating `by species` may result in a small number of genes being returned.
+
+TODO: screenshots? illustrations?
 
 ## Transformations
 
