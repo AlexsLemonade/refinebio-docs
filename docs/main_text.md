@@ -60,6 +60,9 @@ If you would prefer to report issues via e-mail, you can also email [ccdl@alexsl
 
 ## refine.bio processed
 
+Because refine.bio is designed to be consistently updated, we use processing and normalization methods that work on a single sample wherever possible.
+Processing and normalization methods that require multiple samples generally have outputs that are influenced by whatever samples are included and rerunning these methods whenever a new sample is added to the system would be impractical.
+
 ### Microarray pipelines
 
 #### Affymetrix
