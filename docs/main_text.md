@@ -145,13 +145,6 @@ In the case of duplicate gene identifiers, we aggregate to the mean expression v
 ### Gene transformations
 
 
-# CCDL Developed Packages
-
-## Illumina SCAN
-
-## Identifier Refinery
-
-
 # Species compendia
 
 
