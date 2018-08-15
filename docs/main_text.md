@@ -61,7 +61,7 @@ If you would prefer to report issues via e-mail, you can also email [ccdl@alexsl
 ## refine.bio processed
 
 Because refine.bio is designed to be consistently updated, we use processing and normalization methods that operate on a single sample wherever possible.
-Processing and normalization methods that require multiple samples generally have outputs that are influenced by whatever samples are included and rerunning these methods whenever a new sample is added to the system would be impractical.
+Processing and normalization methods that require multiple samples (e.g., Robust Multi-array Average or RMA) generally have outputs that are influenced by whatever samples are included and rerunning these methods whenever a new sample is added to the system would be impractical.
 
 ### Microarray pipelines
 
@@ -118,7 +118,7 @@ This means we're obtaining abundance estimates for coding as well as non-coding 
 Building a transcriptome index with `salmon index` requires us to specify a value for the parameter `-k` that determines the size of the k-mers used for the index.
 The length of a read determines what k-mer size is appropriate. 
 Consistent with the recommendations of the authors of Salmon, we use an index build with _k_ = 31 when quantifying samples with reads with length > 75bp.
-We use _k_ = 23 for all other read lengths.
+We use _k_ = 23 for shorter read lengths.
 
 TODO: Note about how to obtain Salmon indices. Do we also make gene to transcript mapping passed to `rsem-prepare-reference` available?
 
@@ -138,7 +138,8 @@ Note that tximport is applied at the _experiment-level_ rather than to single sa
 For additional information, see the [tximport Bioconductor page](http://bioconductor.org/packages/release/bioc/html/tximport.html), the [tximport tutorial _Importing transcript abundance datasets with tximport_](http://bioconductor.org/packages/release/bioc/vignettes/tximport/inst/doc/tximport.html), and [Soneson, Love, and Robinson. _F1000Research._ 2015.](http://dx.doi.org/10.12688/f1000research.7563.1).
 
 TODO: If we make the gene to tx mapping available (see above under **Transcriptome index**), we might put more information about that here in this section. 
- 
+TODO: Caveats for samples that are part of multiple experiments?
+
 ## Submitter processed
 
 Sometimes raw data for a sample is either unavailable at the source repository or exists in a form that we can not process.
@@ -180,10 +181,11 @@ If you have selected all samples from two experiments with 10 and 15 samples, re
 * **By species:** All samples assaying the same species will be aggregated into a single gene expression matrix.
 If you have selected three experiments each from human and mouse and the `by species` option, you receive two gene expression matrices that contain all human and all mouse samples, respectively.
 
-For either aggregation method, we summarize duplicate Ensembl gene IDs to the mean expression value and only include genes (rows) that are represented in all samples being aggregated.
-Note that some early generation microarrays measure fewer genes than their more recent counterparts, so their inclusion when aggregating `by species` may result in a small number of genes being returned.
+For either aggregation method, we summarize duplicate Ensembl gene IDs to the mean expression value and only include genes (rows) that are represented in **all** samples being aggregated.
+Note that some early generation microarrays measure fewer genes than their more recent counterparts, so their inclusion when aggregating `by species` may result in a small number of genes being returned. 
+The aggregation methodology for species compendia is different; see [Species compendia](#species-compendia) for more information.
 
-TODO: screenshots? illustrations?
+TODO: screenshots? illustrations? at least one of the inner join
 
 ## Transformations
 
