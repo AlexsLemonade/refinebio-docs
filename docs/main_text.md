@@ -164,6 +164,15 @@ TODO: screenshots? illustrations?
 
 ### Gene transformations
 
+In some cases, it may be useful to row-normalize or transform the gene expression values in a matrix (e.g., following aggregation and quantile normalization). 
+We offer the following options for transformations:
+
+* **None:** No row-wise transformation is performed.
+* **Z-score:** Row values are [z-scored](https://en.wikipedia.org/wiki/Standard_score) using the [`StandardScaler`](http://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html) from [`scikit-learn`](http://scikit-learn.org/stable/index.html).
+* **Zero to one:** Rows are scaled to values `[0,1]` using the [`MinMaxScaler`](http://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.MinMaxScaler.html) from [`scikit-learn`](http://scikit-learn.org/stable/index.html).
+We expect this transformation to be most useful for certain machine learning applications (e.g., those using cross-entropy as a loss function).
+
+TODO: screenshots? plots that show effect of different scaling options?
 
 # Species compendia
 
