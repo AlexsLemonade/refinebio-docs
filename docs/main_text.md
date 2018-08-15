@@ -60,14 +60,41 @@ If you would prefer to report issues via e-mail, you can also email [ccdl@alexsl
 
 ## refine.bio processed
 
-Because refine.bio is designed to be consistently updated, we use processing and normalization methods that work on a single sample wherever possible.
+Because refine.bio is designed to be consistently updated, we use processing and normalization methods that operate on a single sample wherever possible.
 Processing and normalization methods that require multiple samples generally have outputs that are influenced by whatever samples are included and rerunning these methods whenever a new sample is added to the system would be impractical.
 
 ### Microarray pipelines
 
 #### Affymetrix
 
+SCAN (Single Channel Array Normalization) is a normalization method for develop for single channel Affymetrix microarrays that allows us to process individual samples. 
+SCAN models and corrects for the effect of technical bias, such as GC content, using a mixture-modeling approach. 
+For more information about this approach, see the primary publication ([Piccolo, et al. _Genomics._ 2012.](http://dx.doi.org/10.1016/j.ygeno.2012.08.003)) and the [SCAN.UPC Bioconductor package](https://www.bioconductor.org/packages/release/bioc/html/SCAN.UPC.html) documentation. 
+We specifically use the `SCANfast` implementation of SCAN and the Brainarray packages as probe-summary packages when available.
+
+##### Platform detection
+
+We have encountered instances where the platform label from the source repository and the metadata included in the sample's raw data file (`.CEL` file) itself do not match.
+In these cases, we take the platform information included in the raw data (`.CEL`) file header to be the true platform label.
+
 #### Illumina BeadArrays
+
+Dr. Stephen Piccolo, the developer of SCAN, has adapted the algorithm for use with Illumina BeadArrays for refine.bio. 
+Because this Illumina SCAN methodology is not yet incorporated into the SCAN.UPC package, we briefly summarize the methods below.
+
+We require that non-normalized or raw expression values and detection p-values to be present in Illumina non-normalized data.
+If we infer that background correction has not occurred in the non-normalized data (e.g., there are no negative expression values), the data are background corrected using the [`limma::nec`](http://web.mit.edu/%7Er/current/arch/i386_linux26/lib/R/library/limma/html/nec.html) function ([Shi, Oshlack, and Smyth. _Nucleic Acids Research._ 2010.](https://doi.org/10.1093/nar/gkq871)). 
+Following background correction -- either upstream presumably in the Illumina BeadStudio software or in our processor, arrays are normalized with SCAN.
+SCAN requires probe sequence information obtained from the [Illumina BeadArray Bioconductor annotation packages](https://www.bioconductor.org/packages/release/BiocViews.html#___IlluminaChip) (e.g., [`illuminaHumanv1.db`](https://www.bioconductor.org/packages/release/data/annotation/html/illuminaHumanv1.db.html)).
+We only retain probes that have a "Good" or "Perfect" rating in these packages; this quality rating is in reference to how well a probe is likely to measure its target transcript.
+
+##### Platform detection
+
+We infer the Illumina BeadArray platform that a sample is likely to be run on by comparing the probe identifiers in the unprocessed file to probes for each of the Illumina expression arrays for a given organism. 
+We again use the Illumina Bioconductor annotation packages for this step.
+For instance, the overlap between the probe identifiers in a human sample and the probe identifiers in each human platform ([`v1`](https://www.bioconductor.org/packages/release/data/annotation/html/illuminaHumanv1.db.html), [`v2`]((https://www.bioconductor.org/packages/release/data/annotation/html/illuminaHumanv2.db.html)), [`v3`](https://www.bioconductor.org/packages/release/data/annotation/html/illuminaHumanv3.db.html), and [`v4`](https://www.bioconductor.org/packages/release/data/annotation/html/illuminaHumanv4.db.html)) is calculated.
+The platform with the highest overlap (provided it is >75%) is inferred to be the true platform.
+Some analyses around this platform detection procedure can be found in [this repository](https://github.com/jaclyn-taroni/beadarray-platform-detection).
 
 ### RNA-seq pipelines
 
