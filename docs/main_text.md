@@ -189,6 +189,8 @@ TODO: screenshots? illustrations?
 
 ### Quantile normalization
 
+TODO: Linking to QN [issue](https://github.com/AlexsLemonade/refinebio/issues/488) and [PR](https://github.com/AlexsLemonade/refinebio/pull/519) for now.
+
 ### Gene transformations
 
 In some cases, it may be useful to row-normalize or transform the gene expression values in a matrix (e.g., following aggregation and quantile normalization). 
