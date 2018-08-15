@@ -107,7 +107,7 @@ If you would prefer to report issues via e-mail, you can also email [ccdl@alexsl
 
 #### Salmon 
 
-Salmon is an alignment-free method for estimating transcript abundances from RNA-seq data. 
+Salmon is an alignment-free method for estimating transcript abundances from RNA-seq data ([Patro, et al. _Nature Methods_. 2017.](http://dx.doi.org/10.1038/nmeth.4197)). 
 We use it in [quasi-mapping mode](http://salmon.readthedocs.io/en/latest/salmon.html#preparing-transcriptome-indices-quasi-index-and-fmd-index-based-modes), which is significantly faster than alignment-based approaches and requires us to build a Salmon transcriptome index. 
 
 ##### Transcriptome index
