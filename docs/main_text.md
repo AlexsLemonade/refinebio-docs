@@ -98,6 +98,8 @@ Some analyses around this platform detection procedure can be found in [this rep
 
 ### RNA-seq pipelines
 
+TODO: add pipeline illustrations from processing information modals?
+
 We use [Salmon](https://combine-lab.github.io/salmon/) and [tximport](https://bioconductor.org/packages/release/bioc/html/tximport.html) to process all RNA-seq data in refine.bio.
 We obtain fastq files run on our [supported short-read platforms](https://github.com/AlexsLemonade/refinebio/blob/dev/config/supported_rnaseq_platforms.txt) from Sequence Read Archive. 
 We use the library strategy and library source metadata fields to identify RNA-seq experiments.
@@ -185,7 +187,7 @@ For either aggregation method, we summarize duplicate Ensembl gene IDs to the me
 Note that some early generation microarrays measure fewer genes than their more recent counterparts, so their inclusion when aggregating `by species` may result in a small number of genes being returned. 
 The aggregation methodology for species compendia is different; see [Species compendia](#species-compendia) for more information.
 
-TODO: screenshots? illustrations? at least one of the inner join
+TODO: screenshots? illustrations? at least one of the inner join, one of structure of download zip file
 
 ## Transformations
 
@@ -199,7 +201,12 @@ In some cases, it may be useful to row-normalize or transform the gene expressio
 We offer the following options for transformations:
 
 * **None:** No row-wise transformation is performed.
-* **Z-score:** Row values are [z-scored](https://en.wikipedia.org/wiki/Standard_score) using the [`StandardScaler`](http://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html) from [`scikit-learn`](http://scikit-learn.org/stable/index.html).
+
+* **Z-score:** Row values are [z-scored](https://en.wikipedia.org/wiki/Standard_score) using the [`StandardScaler`](http://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html) from [`scikit-learn`](http://scikit-learn.org/stable/index.html). 
+This transformation is useful for examining samples' gene expression values relative to the rest of the samples in the  expression matrix (either all selected samples from that _species_ when aggregating by species or all selected samples in an _experiment_ when aggregating by experiment). 
+If a sample has a positive value for a gene, that gene is more highly expressed in that sample compared to the mean of all samples; if that value is negative, that gene is less expressed compared to the population.
+It assumes that the data are normally distributed.
+
 * **Zero to one:** Rows are scaled to values `[0,1]` using the [`MinMaxScaler`](http://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.MinMaxScaler.html) from [`scikit-learn`](http://scikit-learn.org/stable/index.html).
 We expect this transformation to be most useful for certain machine learning applications (e.g., those using cross-entropy as a loss function).
 
