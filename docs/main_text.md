@@ -49,7 +49,18 @@ If you would prefer to report issues via e-mail, you can also email [ccdl@alexsl
 
 # Downloadable Files
 
+Users can download gene expression data and associated sample and experiment metadata from refine.bio.
+Below we describe the files included in the delivered zip file.
+
 ## Gene Expression Matrix
+
+Gene expression matrices are delived in [tab-separated value](https://en.wikipedia.org/wiki/Tab-separated_values) (TSV) format.
+In these matrices, rows are _genes_ or _features_ and columns are _samples_.
+Note that this format is consistent with the input expected by many programs specifically designed for working with gene expression matrices, but some machine learning libraries will expect this to be transposed.
+The column names or header will contain values corresponding to sample titles. 
+You can use these values in the header to map between a sample's gene expression data and its metadata (e.g., disease label or age). See also [Use Cases for Downstream Analysis](#use-cases-for-downstream-analysis).
+
+TODO: I would like to write the metadata sections after working with some data once https://github.com/AlexsLemonade/refinebio/pull/526 lands.
 
 ## Sample Metadata
 
