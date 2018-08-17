@@ -221,7 +221,7 @@ We refer to these as **species compendia**.
 We process these compendia in a manner that is different from the options that are available via the web user interface. 
 Instead of selecting only genes available in all samples, we take the union of all genes, filling in any missing values with `NA` (e.g., perform a full outer join).
 We drop any genes that have missing values in greater than 30% of samples.
-We impute the remaing missing values with KNN impute.
+We impute the remaining missing values with KNN impute.
 We then quantile normalize all samples as described above.
 
 TODO: More information about QN, Illustration for full outer join, since we'll likely have one about the inner join above
