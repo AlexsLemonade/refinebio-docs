@@ -216,13 +216,13 @@ TODO: screenshots? plots that show effect of different scaling options?
 
 TODO: Note about release schedule and/or presence on Zenodo
 
-refine.bio periodically releases compendia comprised of all samples from a species that were run on one of the [platforms we support](.#types-of-data).
+refine.bio periodically releases compendia comprised of all samples from a species that were run on one of the platforms we support.
 We refer to these as **species compendia**. 
 We process these compendia in a manner that is different from the options that are available via the web user interface. 
 Instead of selecting only genes available in all samples, we take the union of all genes, filling in any missing values with `NA` (e.g., perform a full outer join).
 We drop any genes that have missing values in greater that 30% of samples.
 We impute the remaing missing values with KNN impute.
-We then quantile normalize all samples as described [above](.#gene-transformations).
+We then quantile normalize all samples as described above.
 
 TODO: More information about QN, Illustration for full outer join, since we'll likely have one about the inner join above
 
