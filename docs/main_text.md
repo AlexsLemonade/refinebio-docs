@@ -58,7 +58,9 @@ Values are stripped of white space and forced to lowercase.
 | `development stage` | `developmental stage`,  `development stage`, `development stages` |
 | `compound` | `compound`, `compound1`, `compound2`, `compound name`, `drug`, `drugs`, `immunosuppressive drugs` |
 | `time` | `initial time point`, `start time`, `stop time`, `time point`, `sampling time point`, `sampling time`, `time post infection` |
+| `age` | `age`, `patient age`, `age of patient`, `age (years)`, `age at diagnosis`, `age at diagnosis years`, `characteristic [age]`, `characteristics [age]` |
 
+We type-cast age values to doubles.
 Sex is a special case; we map to `female` and `male` values if the values are one of the following:
 
 | Harmonized `sex` value | Values |
