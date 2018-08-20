@@ -11,3 +11,5 @@
 #### Why do I get a limited number of genes back when I aggregate samples from different platforms?
 
 #### Why can't I add certain samples to my dataset?
+
+#### How can I find out what versions of software/packages were used to process the data?
