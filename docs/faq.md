@@ -12,6 +12,7 @@ Please see the **Processing Information** section for more details.
 #### What type of data does refine.bio support?
 
 refine.bio currently supports gene expression data, specifically genome-scale microarray and RNA-seq data.
+See our supported [microarray](https://github.com/AlexsLemonade/refinebio/blob/dev/config/supported_microarray_platforms.csv) and [RNA-seq](https://github.com/AlexsLemonade/refinebio/blob/dev/config/supported_rnaseq_platforms.txt) platforms.
 
 #### What does "corrected" metadata mean?
 
