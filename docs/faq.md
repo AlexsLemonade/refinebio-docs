@@ -33,7 +33,6 @@ Different platforms will often measure different sets of genes.
 These differences can be particularly pronounced when comparing older microarray platforms to more recent platforms.
 When aggregating samples, we retain _only_ the genes present in _every sample_.
 If the dataset delivered to you has fewer genes than you were expecting for that organism, it could be the result of combining multiple platforms or it may be from an older microarray platform.
- 
 
 #### Why can't I add certain samples to my dataset?
 
