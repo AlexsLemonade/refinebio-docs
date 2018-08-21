@@ -6,7 +6,7 @@ See the **Source Data** section for more information.
 
 #### How do you process the data?
 
-We process samples run on supported microarray platforms with Single-Channel Array Normalization (SCAN) and transcriptomic samples run on supported sequencing platforms with Salmon and tximport.
+We process samples run on [supported microarray platforms](https://github.com/AlexsLemonade/refinebio/blob/dev/config/supported_microarray_platforms.csv) with Single-Channel Array Normalization (SCAN) and transcriptomic samples run on [supported sequencing platforms](https://github.com/AlexsLemonade/refinebio/blob/dev/config/supported_rnaseq_platforms.txt) with Salmon and tximport.
 Please see the **Processing Information** section for more details.
 
 #### What type of data does refine.bio support?
