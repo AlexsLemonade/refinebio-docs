@@ -227,7 +227,7 @@ We expect this transformation to be most useful for certain machine learning app
 
 In the plot below, we demonstrate the effect of different scaling options on gene expression values (using a randomly selected human dataset, microarray platform, and gene):
 
-![transform_fill_plot](https://user-images.githubusercontent.com/19534205/44432215-1a89ee00-a56f-11e8-9327-9b5cca438e39.png)
+<img src="https://user-images.githubusercontent.com/19534205/44432215-1a89ee00-a56f-11e8-9327-9b5cca438e39.png" width="480">
 
 Note that the distributions retain the same general _shape_, but the range of values and the density are altered by the transformations.
 
