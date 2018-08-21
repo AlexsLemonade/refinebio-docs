@@ -225,9 +225,9 @@ It assumes that the data are normally distributed.
 * **Zero to one:** Rows are scaled to values `[0,1]` using the [`MinMaxScaler`](http://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.MinMaxScaler.html) from [`scikit-learn`](http://scikit-learn.org/stable/index.html).
 We expect this transformation to be most useful for certain machine learning applications (e.g., those using cross-entropy as a loss function).
 
-In the plot below, we demonstrate the effect of different scaling options on gene expression values (using a random selected human dataset, microarray platform, and gene):
+In the plot below, we demonstrate the effect of different scaling options on gene expression values (using a randomly selected human dataset, microarray platform, and gene):
 
-![transform_fill_plot](https://user-images.githubusercontent.com/19534205/44422432-28307b00-a551-11e8-889e-5058980a52f6.png)
+![transform_fill_plot](https://user-images.githubusercontent.com/19534205/44431318-781c3b80-a56b-11e8-986e-859013992fd8.png)
 
 Note that the distributions retain the same general _shape_, but the range of values and the density are altered by the transformations.
 
