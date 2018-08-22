@@ -225,8 +225,11 @@ It assumes that the data are normally distributed.
 * **Zero to one:** Rows are scaled to values `[0,1]` using the [`MinMaxScaler`](http://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.MinMaxScaler.html) from [`scikit-learn`](http://scikit-learn.org/stable/index.html).
 We expect this transformation to be most useful for certain machine learning applications (e.g., those using cross-entropy as a loss function).
 
-TODO: screenshots? plots that show effect of different scaling options?
+In the plot below, we demonstrate the effect of different scaling options on gene expression values (using a randomly selected human dataset, microarray platform, and gene):
 
+<img src="https://user-images.githubusercontent.com/19534205/44432215-1a89ee00-a56f-11e8-9327-9b5cca438e39.png" width="480">
+
+Note that the distributions retain the same general _shape_, but the range of values and the density are altered by the transformations.
 
 # Downloadable Files
 
