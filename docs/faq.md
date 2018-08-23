@@ -44,6 +44,10 @@ We do not allow you to add these samples to your dataset because we can not deli
 
 Version information for the packages we think are _most important_ for data processing is available on the pop-up displayed when you click a sample's processing information link.
 
-If you require more granular package information, TODO: how to best access the info in the YAML files?
+Additional package information is in the processor list available via our API:
+
+```
+https://api.staging.refine.bio/processors/
+```
 
 In addition, you may wish to obtain [our Docker images](https://hub.docker.com/u/ccdl/) (prefixed with `dr_`) which will allow you to access version information for every dependency.
