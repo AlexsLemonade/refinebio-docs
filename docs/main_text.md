@@ -110,7 +110,7 @@ We only retain probes that have a "Good" or "Perfect" rating in these packages; 
 
 We infer the Illumina BeadArray platform that a sample is likely to be run on by comparing the probe identifiers in the unprocessed file to probes for each of the Illumina expression arrays for a given organism. 
 We again use the Illumina Bioconductor annotation packages for this step.
-For instance, the overlap between the probe identifiers in a human sample and the probe identifiers in each human platform ([`v1`](https://www.bioconductor.org/packages/release/data/annotation/html/illuminaHumanv1.db.html), [`v2`]((https://www.bioconductor.org/packages/release/data/annotation/html/illuminaHumanv2.db.html)), [`v3`](https://www.bioconductor.org/packages/release/data/annotation/html/illuminaHumanv3.db.html), and [`v4`](https://www.bioconductor.org/packages/release/data/annotation/html/illuminaHumanv4.db.html)) is calculated.
+For instance, the overlap between the probe identifiers in a human sample and the probe identifiers in each human platform ([`v1`](https://www.bioconductor.org/packages/release/data/annotation/html/illuminaHumanv1.db.html), [`v2`](https://www.bioconductor.org/packages/release/data/annotation/html/illuminaHumanv2.db.html), [`v3`](https://www.bioconductor.org/packages/release/data/annotation/html/illuminaHumanv3.db.html), and [`v4`](https://www.bioconductor.org/packages/release/data/annotation/html/illuminaHumanv4.db.html)) is calculated.
 The platform with the highest overlap (provided it is >75%) is inferred to be the true platform.
 Some analyses around this platform detection procedure can be found in [this repository](https://github.com/jaclyn-taroni/beadarray-platform-detection).
 
