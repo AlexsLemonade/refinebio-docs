@@ -44,6 +44,8 @@ We do not allow you to add these samples to your dataset because we can not deli
 
 Version information for the packages we think are _most important_ for data processing is available on the pop-up displayed when you click a sample's processing information link.
 
+<img src="https://user-images.githubusercontent.com/15315514/44542395-ab310d00-a6da-11e8-98b0-2a8e0a91c3b2.gif" width="560">
+
 Additional package information is in the processor list available via our API:
 
 ```
