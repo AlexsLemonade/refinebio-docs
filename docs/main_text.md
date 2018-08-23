@@ -44,12 +44,10 @@ We have put some processes in place to smooth out some of these issues.
 
 ![harmonized-metadata](https://user-images.githubusercontent.com/15315514/44549202-5eefc800-a6ee-11e8-8a7b-57826f0153f2.png)
 
-
 To produce lightly harmonized metadata, we combine certain fields based on similar keys.
 We do this for convenience and to aid in searches.
 For example, `treatment`, `treatment group`, `treatment protocol`, `drug treatment`, and `clinical treatment` fields get collapsed down to `treatment`.
 The fields that we currently collapse to includes `specimen part`, `genetic information`, `disease`, `disease stage`, `treatment`, `race`, `subject`, `development stage`, `compound`, and `time`.
-
 
 See the table below for a complete set of mappings between the keys from source data and the harmonized keys.
 Values are stripped of white space and forced to lowercase.
@@ -126,7 +124,6 @@ Some analyses around this platform detection procedure can be found in [this rep
 ### RNA-seq pipelines
 
 ![rna-seq-pipeline](https://user-images.githubusercontent.com/15315514/44549339-c86fd680-a6ee-11e8-8d62-419ae7f10a94.png)
-
 
 We use [Salmon](https://combine-lab.github.io/salmon/) and [tximport](https://bioconductor.org/packages/release/bioc/html/tximport.html) to process all RNA-seq data in refine.bio.
 We obtain fastq files run on our [supported short-read platforms](https://github.com/AlexsLemonade/refinebio/blob/dev/config/supported_rnaseq_platforms.txt) from Sequence Read Archive. 
