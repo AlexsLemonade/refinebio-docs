@@ -42,10 +42,15 @@ Scientists who upload results don't always use the same names for related values
 This makes it challenging to search across datasets.
 We have put some processes in place to smooth out some of these issues.
 
+![harmonized-metadata](https://user-images.githubusercontent.com/15315514/44549202-5eefc800-a6ee-11e8-8a7b-57826f0153f2.png)
+
+
 To produce lightly harmonized metadata, we combine certain fields based on similar keys.
 We do this for convenience and to aid in searches.
 For example, `treatment`, `treatment group`, `treatment protocol`, `drug treatment`, and `clinical treatment` fields get collapsed down to `treatment`.
 The fields that we currently collapse to includes `specimen part`, `genetic information`, `disease`, `disease stage`, `treatment`, `race`, `subject`, `development stage`, `compound`, and `time`.
+
+
 See the table below for a complete set of mappings between the keys from source data and the harmonized keys.
 Values are stripped of white space and forced to lowercase.
 
@@ -78,10 +83,14 @@ If you would prefer to report issues via e-mail, you can also email [ccdl@alexsl
 
 ## refine.bio processed
 
+![refinebio-processedibadge](https://user-images.githubusercontent.com/15315514/44549308-b2621600-a6ee-11e8-897b-5cdcb5d1ed9d.png)
+
 Because refine.bio is designed to be consistently updated, we use processing and normalization methods that operate on a single sample wherever possible.
 Processing and normalization methods that require multiple samples (e.g., Robust Multi-array Average or RMA) generally have outputs that are influenced by whatever samples are included and rerunning these methods whenever a new sample is added to the system would be impractical.
 
 ### Microarray pipelines
+
+![microarray-pipeline](https://user-images.githubusercontent.com/15315514/44549355-d3c30200-a6ee-11e8-9e1a-d5140df1f7d6.png)
 
 #### Affymetrix
 
@@ -116,7 +125,8 @@ Some analyses around this platform detection procedure can be found in [this rep
 
 ### RNA-seq pipelines
 
-TODO: add pipeline illustrations from processing information modals?
+![rna-seq-pipeline](https://user-images.githubusercontent.com/15315514/44549339-c86fd680-a6ee-11e8-8d62-419ae7f10a94.png)
+
 
 We use [Salmon](https://combine-lab.github.io/salmon/) and [tximport](https://bioconductor.org/packages/release/bioc/html/tximport.html) to process all RNA-seq data in refine.bio.
 We obtain fastq files run on our [supported short-read platforms](https://github.com/AlexsLemonade/refinebio/blob/dev/config/supported_rnaseq_platforms.txt) from Sequence Read Archive. 
@@ -174,6 +184,8 @@ For additional information, see the [tximport Bioconductor page](http://biocondu
 TODO: Caveats for samples that are part of multiple experiments?
 
 ## Submitter processed
+
+![submitter-processed-badge](https://user-images.githubusercontent.com/15315514/44549307-b2621600-a6ee-11e8-9ef4-17b81d7728fd.png)
 
 Sometimes raw data for a sample is either unavailable at the source repository or exists in a form that we can not process.
 For microarray platforms that we support, we obtain the submitter processed expression data and use these values in refine.bio with some modification (e.g., log2-transformation where we detect it has not been performed).
