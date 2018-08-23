@@ -20,6 +20,8 @@ If you would prefer to report issues via e-mail, you can also email [ccdl@alexsl
 We download gene expression information and metadata from [EBI's ArrayExpress](https://www.ebi.ac.uk/arrayexpress/), [NCBI's Gene Expression Omnibus (GEO)](https://www.ncbi.nlm.nih.gov/geo/), and [NCBI's Sequence Read Archive (SRA)](https://www.ncbi.nlm.nih.gov/sra).
 NCBI's SRA also contains experiments from EBI's ENA ([example](https://www.ncbi.nlm.nih.gov/sra/?term=ERP000447)) and the DDBJ ([example](https://www.ncbi.nlm.nih.gov/sra/?term=DRP000017)).
 
+![sources](https://user-images.githubusercontent.com/15315514/44533218-08b95f80-a6c3-11e8-9eb8-827086fd2d99.png)
+
 ## Metadata
 
 We provide metadata that we obtain from the source repositories.
@@ -213,10 +215,14 @@ If you have selected all samples from two experiments with 10 and 15 samples, re
 If you have selected three experiments each from human and mouse and the `by species` option, you receive two gene expression matrices that contain all human and all mouse samples, respectively.
 
 For either aggregation method, we summarize duplicate Ensembl gene IDs to the mean expression value and only include genes (rows) that are represented in **all** samples being aggregated.
+This is also known as an inner join and is illustrated below.
+![inner join](https://user-images.githubusercontent.com/15315514/44534751-7a46dd00-a6c6-11e8-9760-e8daa91a500f.png)
 Note that some early generation microarrays measure fewer genes than their more recent counterparts, so their inclusion when aggregating `by species` may result in a small number of genes being returned. 
+
+
 The aggregation methodology for species compendia is different; see [Species compendia](#species-compendia) for more information.
 
-TODO: screenshots? illustrations? at least one of the inner join, one of structure of download zip file
+TODO: illustration of structure of download zip file
 
 ## Transformations
 
@@ -272,12 +278,16 @@ TODO: Note about release schedule and/or presence on Zenodo
 refine.bio periodically releases compendia comprised of all the samples from a species that we were able to process.
 We refer to these as **species compendia**. 
 We process these compendia in a manner that is different from the options that are available via the web user interface. 
-Instead of selecting only genes available in all samples, we take the union of all genes, filling in any missing values with `NA` (e.g., perform a full outer join).
+Instead of selecting only genes available in all samples, we take the union of all genes, filling in any missing values with `NA` (e.g., perform a full outer join as illustrated below).
+
+![outer join](https://user-images.githubusercontent.com/15315514/44534241-4dde9100-a6c5-11e8-8a9c-aa147e294e81.png)
+
+
 We drop any genes that have missing values in greater than 30% of samples.
 We impute the remaining missing values with KNN impute.
 We then quantile normalize all samples as described above.
 
-TODO: More information about QN, Illustration for full outer join, since we'll likely have one about the inner join above
+TODO: More information about QN
 
 
 # Use Cases for Downstream Analysis
