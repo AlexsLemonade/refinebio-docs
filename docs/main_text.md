@@ -198,7 +198,7 @@ If you would prefer to report issues via e-mail, you can also email [ccdl@alexsl
 ### Illumina
 
 We support conversion from Illumina BeadArray probe IDs to Ensembl gene IDs using 
-[Bioconductor Illumina Beadarray expression packages](https://www.bioconductor.org/packages/release/BiocViews.html#___IlluminaChip), 
+[Bioconductor Illumina BeadArray expression packages](https://www.bioconductor.org/packages/release/BiocViews.html#___IlluminaChip), 
 allowing for one-to-many mappings.
 
 TODO: Filtering for probe quality?
