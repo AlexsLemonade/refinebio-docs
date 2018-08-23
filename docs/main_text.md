@@ -24,6 +24,7 @@ NCBI's SRA also contains experiments from EBI's ENA ([example](https://www.ncbi.
 
 We provide metadata that we obtain from the source repositories.
 We also attempt to, where possible, perform some harmonization of metadata to improve the discoverability of useful data.
+Note that we do not yet obtain sample metadata from the [BioSample](https://www.ncbi.nlm.nih.gov/biosample/) database, so the metadata available for RNA-seq samples is limited.
 
 ### Submitter Supplied Metadata
 
