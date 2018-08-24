@@ -79,9 +79,7 @@ If you would prefer to report issues via e-mail, you can also email [ccdl@alexsl
 
 # Processing Information
 
-## refine.bio processed
-
-![refinebio-processedibadge](https://user-images.githubusercontent.com/15315514/44549308-b2621600-a6ee-11e8-897b-5cdcb5d1ed9d.png)
+## refine.bio processed  ![refinebio-processedibadge](https://user-images.githubusercontent.com/15315514/44549308-b2621600-a6ee-11e8-897b-5cdcb5d1ed9d.png)
 
 Because refine.bio is designed to be consistently updated, we use processing and normalization methods that operate on a single sample wherever possible.
 Processing and normalization methods that require multiple samples (e.g., Robust Multi-array Average or RMA) generally have outputs that are influenced by whatever samples are included and rerunning these methods whenever a new sample is added to the system would be impractical.
@@ -180,9 +178,7 @@ For additional information, see the [tximport Bioconductor page](http://biocondu
  
 TODO: Caveats for samples that are part of multiple experiments?
 
-## Submitter processed
-
-![submitter-processed-badge](https://user-images.githubusercontent.com/15315514/44549307-b2621600-a6ee-11e8-9ef4-17b81d7728fd.png)
+## Submitter processed  ![submitter-processed-badge](https://user-images.githubusercontent.com/15315514/44549307-b2621600-a6ee-11e8-9ef4-17b81d7728fd.png)
 
 Sometimes raw data for a sample is either unavailable at the source repository or exists in a form that we can not process.
 For microarray platforms that we support, we obtain the submitter processed expression data and use these values in refine.bio with some modification (e.g., log2-transformation where we detect it has not been performed).
