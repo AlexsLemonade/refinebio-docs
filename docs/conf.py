@@ -44,6 +44,7 @@ extensions = [
     'sphinx.ext.todo',
     'sphinx.ext.mathjax',
     'sphinx.ext.ifconfig',
+    'sphinx_markdown_tables',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -54,7 +55,7 @@ templates_path = ['_templates']
 #
 # source_suffix = ['.rst', '.md']
 source_parsers = {
-    '.md': CommonMarkParser,
+    '.md': 'recommonmark.parser.CommonMarkParser',
 }
 
 source_suffix = ['.rst', '.md']
