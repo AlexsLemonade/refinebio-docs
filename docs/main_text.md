@@ -278,7 +278,8 @@ TODO: I would like to write the metadata sections after working with some data o
 
 # Species compendia
 
-In the future, refine.bio will periodically release compendia comprised of all the samples from a species that we were able to process.
+refine.bio is currently in beta. 
+Once refine.bio reaches production, we will periodically release compendia comprised of all the samples from a species that we were able to process.
 We refer to these as **species compendia**. 
 We'll process these compendia in a manner that is different from the options that are available via the web user interface. 
 We describe our intended processing pipeline below.
