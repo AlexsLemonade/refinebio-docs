@@ -278,11 +278,10 @@ TODO: I would like to write the metadata sections after working with some data o
 
 # Species compendia
 
-TODO: Note about release schedule and/or presence on Zenodo
-
-refine.bio periodically releases compendia comprised of all the samples from a species that we were able to process.
+In the future, refine.bio will periodically release compendia comprised of all the samples from a species that we were able to process.
 We refer to these as **species compendia**. 
-We process these compendia in a manner that is different from the options that are available via the web user interface. 
+We'll process these compendia in a manner that is different from the options that are available via the web user interface. 
+We describe our intended processing pipeline below.
 Instead of selecting only genes available in all samples, we take the union of all genes, filling in any missing values with `NA` (e.g., perform a full outer join as illustrated below).
 
 ![outer join](https://user-images.githubusercontent.com/15315514/44534241-4dde9100-a6c5-11e8-8a9c-aa147e294e81.png)
@@ -291,9 +290,6 @@ Instead of selecting only genes available in all samples, we take the union of a
 We drop any genes that have missing values in greater than 30% of samples.
 We impute the remaining missing values with KNN impute.
 We then quantile normalize all samples as described above.
-
-TODO: More information about QN
-
 
 # Use Cases for Downstream Analysis
 
