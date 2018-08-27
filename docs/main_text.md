@@ -296,3 +296,7 @@ TODO: More information about QN
 
 
 # Use Cases for Downstream Analysis
+
+# License
+
+This documentation is released under a [Creative Commons Attribution (CC-BY) license](https://github.com/AlexsLemonade/refinebio-docs/blob/master/LICENSE.md).  
