@@ -176,8 +176,6 @@ Our tximport implementation generates ["lengthScaledTPM"](https://www.rdocumenta
 Note that tximport is applied at the _experiment-level_ rather than to single samples. 
 For additional information, see the [tximport Bioconductor page](http://bioconductor.org/packages/release/bioc/html/tximport.html), the [tximport tutorial _Importing transcript abundance datasets with tximport_](http://bioconductor.org/packages/release/bioc/vignettes/tximport/inst/doc/tximport.html), and [Soneson, Love, and Robinson. _F1000Research._ 2015.](http://dx.doi.org/10.12688/f1000research.7563.1).
  
-TODO: Caveats for samples that are part of multiple experiments?
-
 ## Submitter processed  ![submitter-processed-badge](https://user-images.githubusercontent.com/15315514/44549307-b2621600-a6ee-11e8-9ef4-17b81d7728fd.png)
 
 Sometimes raw data for a sample is either unavailable at the source repository or exists in a form that we can not process.
@@ -206,8 +204,6 @@ We support conversion from Illumina BeadArray probe IDs to Ensembl gene IDs usin
 [Bioconductor Illumina BeadArray expression packages](https://www.bioconductor.org/packages/release/BiocViews.html#___IlluminaChip), 
 allowing for one-to-many mappings.
 
-TODO: Filtering for probe quality?
-
 ## Aggregations
 
 refine.bio allows users to aggregate their selected samples in two ways: by experiment or by species.
@@ -224,10 +220,7 @@ This is also known as an inner join and is illustrated below.
 ![inner join](https://user-images.githubusercontent.com/15315514/44534751-7a46dd00-a6c6-11e8-9760-e8daa91a500f.png)
 Note that some early generation microarrays measure fewer genes than their more recent counterparts, so their inclusion when aggregating `by species` may result in a small number of genes being returned. 
 
-
-The aggregation methodology for species compendia is different; see [Species compendia](#species-compendia) for more information.
-
-TODO: illustration of structure of download zip file
+The aggregation methodology for future releases of species compendia will be different; see [Species compendia](#species-compendia) for more information.
 
 ## Transformations
 
@@ -259,6 +252,24 @@ Note that the distributions retain the same general _shape_, but the range of va
 # Downloadable Files
 
 Users can download gene expression data and associated sample and experiment metadata from refine.bio.
+These files are delivered as a zip file.
+The folder structure within the zip file is determined by whether a user selected to aggregate by **experiment** or by **species**.
+
+### The download folder structure for data aggregated by experiment: 
+
+![docs-downloads-experiment-agg](https://user-images.githubusercontent.com/15315514/45906716-2f9eaa80-bdc3-11e8-9855-2aaeb74e588d.png)
+
+In this example, two experiments were selected. 
+There will be as many folders as there are selected experiments.
+
+### The download folder structure for data aggregated by species: 
+
+![docs-downloads-species-agg](https://user-images.githubusercontent.com/15315514/45906715-2f9eaa80-bdc3-11e8-8ab3-90ccc40cfa11.png)
+
+In this example, samples from two species were selected. 
+There will be as many folders as there are selected experiments and this will be the case regardless of how many individual experiments were included.
+
+In both cases, `aggregated_metadata.json` contains metadata, including both _experiment_ metadata (e.g., experiment description and title) and _sample_ metadata for everything included in the download.
 Below we describe the files included in the delivered zip file.
 
 ## Gene Expression Matrix
@@ -266,14 +277,37 @@ Below we describe the files included in the delivered zip file.
 Gene expression matrices are delived in [tab-separated value](https://en.wikipedia.org/wiki/Tab-separated_values) (TSV) format.
 In these matrices, rows are _genes_ or _features_ and columns are _samples_.
 Note that this format is consistent with the input expected by many programs specifically designed for working with gene expression matrices, but some machine learning libraries will expect this to be transposed.
-The column names or header will contain values corresponding to sample titles. 
+The column names or header will contain values corresponding to sample titles (denoted `refinebio_title` in metadata files). 
 You can use these values in the header to map between a sample's gene expression data and its metadata (e.g., disease label or age). See also [Use Cases for Downstream Analysis](#use-cases-for-downstream-analysis).
-
-TODO: I would like to write the metadata sections after working with some data once https://github.com/AlexsLemonade/refinebio/pull/526 lands.
 
 ## Sample Metadata
 
+Sample metadata is delivered in the `metadata_<experiment-accession-id>.tsv`, `metadata_<species>.json`, `metadata_<species>.tsv`, and `aggregated_metadata.json` files.
+
+The primary way we identify samples is by using the sample title, denoted by `refinebio_title`. 
+Harmonized metadata fields (see the [section on harmonized metadata](#refine.bio-harmonized-metadata)) are noted with a `refinebio_` prefix. 
+If there are no keys from the source data associated with a harmonized key, the harmonized metadata field will be empty. We also deliver submitter-supplied data; see below for more details.
+
+### TSV files 
+
+In metadata TSV files, samples are represented as rows. 
+The first column contains the `refinebio_title` fields, which match the header/column names in the gene expression matrix, followed by refine.bio-harmonized fields (e.g., `refinebio_`), and finally submitter-supplied values.
+Some information from source repositories comes in the form of nested values, which we attempt to "flatten" where possible.
+Note that some information from source repositories is redundant--ArrayExpress samples often have the same information in "characteristic" and "variable" fields--and we _assume_ that if a field appears in both, the values are identical.
+For samples run on Illumina BeadArray platforms, information about what platform we detected and the metrics used to make that determination will also be included.
+
+Columns in these files will often have missing values, as not all fields will be available for every sample included in a file.
+This will be particularly evident when aggregating by experiments that have different submitter-supplied information associated with them (e.g., one experiment contains a `imatinib` key and all others do not). 
+
+### JSON files
+
+
+
+**We recommend that users confirm metadata fields that are particularly important via the submitter-supplied metadata at the source repository.**
+
 ## Experiment Metadata
+
+Experiment metadata is delivered in the `metadata_<species>.json` and `aggregated_metadata.json` files.
 
 
 # Species compendia
