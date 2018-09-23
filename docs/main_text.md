@@ -28,14 +28,6 @@ We provide metadata that we obtain from the source repositories.
 We also attempt to, where possible, perform some harmonization of metadata to improve the discoverability of useful data.
 Note that we do not yet obtain sample metadata from the [BioSample](https://www.ncbi.nlm.nih.gov/biosample/) database, so the metadata available for RNA-seq samples is limited.
 
-### Submitter Supplied Metadata
-
-TODO: How this will be done & delivered is up in the air. I notice that it's on the whiteboard to tackle before release. Thus I'm just tagging this with a TODO and [linking the issue](https://github.com/AlexsLemonade/refinebio/issues/515) in question.
-
-Protocol information, which generally contains the type of sample preparation, is handled differently by different databases.
-We push this information down to the sample level and provide it that way.
-In the case of data imported from ArrayExpress, the protocol _may_ be the information from the full experiment and not just the sample in question.
-
 ### refine.bio-harmonized Metadata
 
 Scientists who upload results don't always use the same names for related values.
@@ -47,7 +39,7 @@ We have put some processes in place to smooth out some of these issues.
 To produce lightly harmonized metadata, we combine certain fields based on similar keys.
 We do this for convenience and to aid in searches.
 For example, `treatment`, `treatment group`, `treatment protocol`, `drug treatment`, and `clinical treatment` fields get collapsed down to `treatment`.
-The fields that we currently collapse to includes `specimen part`, `genetic information`, `disease`, `disease stage`, `treatment`, `race`, `subject`, `development stage`, `compound`, and `time`.
+The fields that we currently collapse to includes `specimen part`, `genetic information`, `disease`, `disease stage`, `treatment`, `race`, `subject`, `development stage`, `compound`, `cell_line`, and `time`.
 
 See the table below for a complete set of mappings between the keys from source data and the harmonized keys.
 Values are stripped of white space and forced to lowercase.
@@ -65,6 +57,7 @@ Values are stripped of white space and forced to lowercase.
 | `compound` | `compound`, `compound1`, `compound2`, `compound name`, `drug`, `drugs`, `immunosuppressive drugs` |
 | `time` | `initial time point`, `start time`, `stop time`, `time point`, `sampling time point`, `sampling time`, `time post infection` |
 | `age` | `age`, `patient age`, `age of patient`, `age (years)`, `age at diagnosis`, `age at diagnosis years`, `characteristic [age]`, `characteristics [age]` |
+| `cell_line` | `cell line`, `sample strain` |
 
 We type-cast age values to doubles.
 Sex is a special case; we map to `female` and `male` values if the values are one of the following:
@@ -74,8 +67,20 @@ Sex is a special case; we map to `female` and `male` values if the values are on
 | `female` | `f`, `female`, `woman`|
 | `male` | `m`, `male`, `man` |
 
+Only harmonized values are displayed in the sample table on the web interface.
+When downloading refine.bio data, these harmonized metadata are denoted with the `refinebio_` prefix.
+
 We recommend that users confirm metadata fields that are particularly important via the submitter-supplied metadata. If you find that the harmonized metadata does not accurately reflect the metadata supplied by the submitter, please [file an issue on GitHub](https://github.com/AlexsLemonade/refinebio/issues) so that we can resolve it.
 If you would prefer to report issues via e-mail, you can also email [ccdl@alexslemonade.org](mailto:ccdl@alexslemonade.org).
+
+### Submitter Supplied Metadata
+
+We also capture the metadata as submitted to the source repositories. 
+This includes experiment titles and descriptions or abstracts.
+Protocol information, which generally contains the type of sample preparation, is handled differently by different databases.
+We push this information down to the sample level and provide it that way.
+In the case of data imported from ArrayExpress, the protocol _may_ be the information from the full experiment and not just the sample in question.
+Sample metadata in their original, unharmonized form are available as part of [refine.bio downloads](#downloadable-files).
 
 # Processing Information
 
@@ -286,14 +291,19 @@ Sample metadata is delivered in the `metadata_<experiment-accession-id>.tsv`, `m
 
 The primary way we identify samples is by using the sample title, denoted by `refinebio_title`. 
 Harmonized metadata fields (see the [section on harmonized metadata](#refine.bio-harmonized-metadata)) are noted with a `refinebio_` prefix. 
-If there are no keys from the source data associated with a harmonized key, the harmonized metadata field will be empty. We also deliver submitter-supplied data; see below for more details.
+The `refinebio_source_archive_url` and `refinebio_source_database` fields indicate where the sample was obtained from.
+If there are no keys from the source data associated with a harmonized key, the harmonized metadata field will be empty. 
+We also deliver submitter-supplied data; see below for more details.
+**We recommend that users confirm metadata fields that are particularly important via the submitter-supplied metadata.**
+If you find that refine.bio metadata does not accurately reflect the metadata supplied by the submitter, please [file an issue on GitHub](https://github.com/AlexsLemonade/refinebio/issues) so that we can resolve it.
+If you would prefer to report issues via e-mail, you can also email [ccdl@alexslemonade.org](mailto:ccdl@alexslemonade.org).
 
 ### TSV files 
 
 In metadata TSV files, samples are represented as rows. 
 The first column contains the `refinebio_title` fields, which match the header/column names in the gene expression matrix, followed by refine.bio-harmonized fields (e.g., `refinebio_`), and finally submitter-supplied values.
 Some information from source repositories comes in the form of nested values, which we attempt to "flatten" where possible.
-Note that some information from source repositories is redundant--ArrayExpress samples often have the same information in "characteristic" and "variable" fields--and we _assume_ that if a field appears in both, the values are identical.
+Note that some information from source repositories is redundant--ArrayExpress samples often have the same information in `characteristic` and `variable` fields--and we _assume_ that if a field appears in both, the values are identical.
 For samples run on Illumina BeadArray platforms, information about what platform we detected and the metrics used to make that determination will also be included.
 
 Columns in these files will often have missing values, as not all fields will be available for every sample included in a file.
@@ -301,13 +311,12 @@ This will be particularly evident when aggregating by experiments that have diff
 
 ### JSON files
 
-
-
-**We recommend that users confirm metadata fields that are particularly important via the submitter-supplied metadata at the source repository.**
+Submitter supplied metadata and source urls are delivered in `refinebio_annotations`.
+As described above, harmonized values are noted with a `refinebio_` prefix.
 
 ## Experiment Metadata
 
-Experiment metadata is delivered in the `metadata_<species>.json` and `aggregated_metadata.json` files.
+Experiment metadata (e.g., experiment description and title) is delivered in the `metadata_<species>.json` and `aggregated_metadata.json` files.
 
 
 # Species compendia
