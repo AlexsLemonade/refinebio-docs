@@ -225,8 +225,6 @@ This is also known as an inner join and is illustrated below.
 ![inner join](https://user-images.githubusercontent.com/15315514/44534751-7a46dd00-a6c6-11e8-9760-e8daa91a500f.png)
 Note that some early generation microarrays measure fewer genes than their more recent counterparts, so their inclusion when aggregating `by species` may result in a small number of genes being returned. 
 
-The aggregation methodology for future releases of species compendia will be different; see [Species compendia](#species-compendia) for more information.
-
 ## Transformations
 
 ### Quantile normalization
