@@ -32,3 +32,4 @@ tornado==5.1
 typing==3.6.4
 urllib3==1.23
 watchdog==0.8.3
+sphinx-rtd-theme==0.4.1
