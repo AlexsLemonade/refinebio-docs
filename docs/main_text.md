@@ -253,7 +253,7 @@ To that end, we use the Affymetrix microarray platform with the largest number o
 Once we have a reference/target distribution for a given organism, we use it to quantile normalize any samples that a user has selected for download.
 This quantile normalization step takes place _after_ the summarization and inner join steps described above and illustrated below.
 
-![docs-normalization](https://user-images.githubusercontent.com/15315514/45969127-cefcb100-c000-11e8-930c-66aa4177f79e.png)
+![docs-normalization](https://user-images.githubusercontent.com/15315514/46034575-f9b53b00-c0ce-11e8-893d-868a2aa98520.png)
 
 As a result of the quantile normalization shown above, Sample 1 now has the same underlying distribution as the reference for that organism.
 
