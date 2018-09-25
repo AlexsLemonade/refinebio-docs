@@ -363,6 +363,14 @@ We then quantile normalize all samples as described above.
 
 # Use Cases for Downstream Analysis
 
+Our [`refinebio-examples`](https://github.com/AlexsLemonade/refinebio-examples) repo includes a number of different analyses you can perform with data from refine.bio. We include examples in the R programming language, and where applicable, [GenePattern Notebooks](http://genepattern-notebook.org/example-notebooks/) and scripts to prepare refine.bio data for use with GenePattern. The following examples are included:
+
+* Differential expression analysis [[README](https://github.com/AlexsLemonade/refinebio-examples/tree/master/differential-expression), [notebook](https://alexslemonade.github.io/refinebio-examples/differential-expression/gene_DE.html)]
+* Converting between different gene identifiers [[README](https://github.com/AlexsLemonade/refinebio-examples/tree/master/ensembl-id-convert), [notebook](https://alexslemonade.github.io/refinebio-examples/ensembl-id-convert/ensembl_id_convert.html)]
+* Ortholog mapping [[README](https://github.com/AlexsLemonade/refinebio-examples/tree/master/ortholog-mapping), [notebook](https://alexslemonade.github.io/refinebio-examples/ortholog-mapping/ortholog_mapping_example.html)]
+* Clustering/heatmap generation [[README](https://github.com/AlexsLemonade/refinebio-examples/tree/master/clustering), [notebook](https://alexslemonade.github.io/refinebio-examples/clustering/clustering_example.html)]
+
+
 # License
 
 This documentation is released under a [Creative Commons Attribution (CC-BY) license](https://github.com/AlexsLemonade/refinebio-docs/blob/master/LICENSE.md).  
