@@ -231,7 +231,10 @@ Note that some early generation microarrays measure fewer genes than their more 
 
 ### Quantile normalization
 
-TODO: Linking to QN [issue](https://github.com/AlexsLemonade/refinebio/issues/488) and [PR](https://github.com/AlexsLemonade/refinebio/pull/519) for now.
+![docs-ref-dist](https://user-images.githubusercontent.com/15315514/45969124-cb692a00-c000-11e8-9cfc-6317c92202c8.png)
+
+
+![docs-normalization](https://user-images.githubusercontent.com/15315514/45969127-cefcb100-c000-11e8-930c-66aa4177f79e.png)
 
 ### Gene transformations
 
