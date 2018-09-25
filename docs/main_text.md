@@ -231,7 +231,33 @@ Note that some early generation microarrays measure fewer genes than their more 
 
 ### Quantile normalization
 
-TODO: Linking to QN [issue](https://github.com/AlexsLemonade/refinebio/issues/488) and [PR](https://github.com/AlexsLemonade/refinebio/pull/519) for now.
+refine.bio is designed to allow for the aggregation of multiple platforms and even multiple technologies. 
+With that in mind, we would like the distributions of samples from different platforms/technologies to be as similar as possible.
+We use [quantile normalization](https://en.wikipedia.org/wiki/Quantile_normalization) to accomplish this.
+Specifically, we generate a reference distribution for each organism from a large body of data with the `normalize.quantiles.determine.target` function from the [`preprocessCore`](http://www.bioconductor.org/packages/release/bioc/html/preprocessCore.html) R package and quantile normalize samples that a user selects for download with this target (using the `normalize.quantiles.use.target` function of `preprocessCore`).
+We go into more detail below.
+
+#### Reference distribution
+
+By performing quantile normalization, we assume that the differences in expression values between samples arise solely from technical differences. 
+This is not always the case; for instance, samples included in refine.bio are from multiple tissues.
+We'll use as many samples as possible to generate the reference or target distribution. 
+By including as diverse biological conditions as we have available to us to inform the reference distribution, we attempt to generate a tissue-agnostic consensus.
+To that end, we use the Affymetrix microarray platform with the largest number of samples for a given organism (e.g., `hgu133plus2` in humans) and only samples we have processed from raw as shown below.
+
+
+![docs-ref-dist](https://user-images.githubusercontent.com/15315514/45969124-cb692a00-c000-11e8-9cfc-6317c92202c8.png)
+
+#### Quantile normalizing samples for delivery
+
+Once we have a reference/target distribution for a given organism, we use it to quantile normalize any samples that a user has selected for download.
+This quantile normalization step takes place _after_ the summarization and inner join steps described above and illustrated below.
+
+![docs-normalization](https://user-images.githubusercontent.com/15315514/46034575-f9b53b00-c0ce-11e8-893d-868a2aa98520.png)
+
+As a result of the quantile normalization shown above, Sample 1 now has the same underlying distribution as the reference for that organism.
+
+Note that only gene expression matrices that we are able to successfully quantile normalize will be available for download.
 
 ### Gene transformations
 
