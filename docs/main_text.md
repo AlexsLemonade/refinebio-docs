@@ -242,7 +242,7 @@ We go into more detail below.
 By performing quantile normalization, we assume that the differences in expression values between samples arise solely from technical differences. 
 This is not always the case; for instance, samples included in refine.bio are from multiple tissues.
 We'll use as many samples as possible to generate the reference or target distribution. 
-By including as diverse biological conditions as we have available to us to inform the reference distribution, we take an approach intended to mitigate the effect of the "dampening" of biological signal that is likely to occur.
+By including as diverse biological conditions as we have available to us to inform the reference distribution, we attempt to generate a tissue-agnostic consensus.
 To that end, we use the Affymetrix microarray platform with the largest number of samples for a given organism (e.g., `hgu133plus2` in humans) and only samples we have processed from raw as shown below.
 
 
