@@ -308,7 +308,7 @@ Below we describe the files included in the delivered zip file.
 Gene expression matrices are delived in [tab-separated value](https://en.wikipedia.org/wiki/Tab-separated_values) (TSV) format.
 In these matrices, rows are _genes_ or _features_ and columns are _samples_.
 Note that this format is consistent with the input expected by many programs specifically designed for working with gene expression matrices, but some machine learning libraries will expect this to be transposed.
-The column names or header will contain values corresponding to sample accessions (denoted `refinebio_accession_code` in metadata files). 
+The column names or header will contain values corresponding to sample accessions (denoted `refinebio_accession_code` in metadata files).
 You can use these values in the header to map between a sample's gene expression data and its metadata (e.g., disease label or age). See also [Use Cases for Downstream Analysis](#use-cases-for-downstream-analysis).
 
 ## Sample Metadata
@@ -316,7 +316,7 @@ You can use these values in the header to map between a sample's gene expression
 Sample metadata is delivered in the `metadata_<experiment-accession-id>.tsv`, `metadata_<species>.json`, `metadata_<species>.tsv`, and `aggregated_metadata.json` files.
 
 The primary way we identify samples is by using the sample accession, denoted by `refinebio_accession_code`. 
-Harmonized metadata fields (see the [section on harmonized metadata](#refine.bio-harmonized-metadata)) are noted with a `refinebio_` prefix. 
+Harmonized metadata fields (see the [section on harmonized metadata](#refine.bio-harmonized-metadata)) are noted with a `refinebio_` prefix.
 The `refinebio_source_archive_url` and `refinebio_source_database` fields indicate where the sample was obtained from.
 If there are no keys from the source data associated with a harmonized key, the harmonized metadata field will be empty.
 We also deliver submitter-supplied data; see below for more details.
@@ -326,7 +326,7 @@ If you would prefer to report issues via e-mail, you can also email [ccdl@alexsl
 
 ### TSV files
 
-In metadata TSV files, samples are represented as rows. 
+In metadata TSV files, samples are represented as rows.
 The first column contains the `refinebio_accession_code` field, which match the header/column names in the gene expression matrix, followed by refine.bio-harmonized fields (e.g., `refinebio_`), and finally submitter-supplied values.
 Some information from source repositories comes in the form of nested values, which we attempt to "flatten" where possible.
 Note that some information from source repositories is redundant--ArrayExpress samples often have the same information in `characteristic` and `variable` fields--and we _assume_ that if a field appears in both, the values are identical.
