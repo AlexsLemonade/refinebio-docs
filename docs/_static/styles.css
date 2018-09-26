@@ -3,4 +3,113 @@
 */
 
 body {
+  line-height: 1.5;
+}
+.wy-nav-content{
+ background: #fdfdfd;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Rubik",sans-serif;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+
+h1 {
+  margin-bottom: 16px;
+}
+p {
+  margin-bottom: 32px;
+}
+
+.wy-side-nav-search {
+  background-color: #386DB0;
+  padding: 56px 24px 24px 24px;
+}
+
+.icon-home {
+  width: 154px;
+  height: 59px;
+  padding: 32px;
+  background-image: url("/_static/Logo-beta.svg");
+  background-repeat: no-repeat;
+  filter: brightness(0) invert(1);
+  color: transparent !important;
+}
+.wy-side-nav-search>a, .wy-side-nav-search>a:hover, .wy-side-nav-search .wy-dropdown>a:hover{
+  background: transparent;
+  width: 154px;
+  height: 59px;
+  padding: 32px;
+  background-image: url("/_static/Logo-beta.svg");
+  background-repeat: no-repeat;
+  filter: brightness(0) invert(1);
+  color: transparent !important;
+}
+
+.wy-side-nav-search input[type=text] {
+  border-radius: 3px;
+  padding: 8px 16px;
+  font-size: 100%;
+}
+
+.wy-nav-side {
+  background: #e9f0f8;
+  color: #000000;
+}
+.wy-menu-vertical a {
+  color: #000000;
+}
+
+.btn {
+  border-radius: 3px;
+  line-height: 1.5px;
+  padding: 4px 24px;
+  box-shadow: None;
+}
+
+.btn-neutral:hover {
+  background-color: #386DB0 !important;
+  color: #fdfdfd !important;
+  border-color: #386DB0;
+}
+
+.btn-neutral, .btn-neutral:visited {
+  background-color: #fdfdfd !important;
+  color: #386DB0 !important;
+  border-color: #386DB0;
+}
+
+.wy-menu-vertical a {
+  line-height: 24px;
+  font-size: 110%;
+}
+
+.wy-menu-vertical li.current a:hover {
+  background-color: #d4e1f1;
+}
+
+.wy-menu-vertical li.on a, .wy-menu-vertical li.current>a {
+  font-weight: black;
+}
+
+.wy-menu-vertical li.toctree-l1.current>a, .wy-menu-vertical li.toctree-l2.current>a,.wy-menu-vertical li.toctree-l3.current>a {
+  background: #fdfdfd;
+}
+
+.wy-menu-vertical li.toctree-l2.current li.toctree-l3>a, .wy-menu-vertical li.toctree-l3.current li.toctree-l4>a {
+  background: #fdfdfd;
+}
+
+
+.wy-menu-vertical li.toctree-l1>a, .wy-menu-vertical li.toctree-l2>a,.wy-menu-vertical li.toctree-l3>a,li.toctree-4>a {
+  background: #e9f0f8;
+}
+
+.wy-menu-vertical li.toctree-l1>a:hover, .wy-menu-vertical li.toctree-l2>a:hover,.wy-menu-vertical li.toctree-l3>a:hover,.wy-menu-vertical li.toctree-l4>a:hover {
+  background: #d4e1f1;
+}
+
+.wy-table-responsive table td,.wy-table-responsive table th {
+    white-space: normal;
 }
