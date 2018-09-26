@@ -41,7 +41,7 @@ p {
   width: 154px;
   height: 59px;
   padding: 32px;
-  background-image: url("/_static/Logo-beta.svg");
+  background-image: url("/en/latest/_static/Logo-beta.svg");
   background-repeat: no-repeat;
   filter: brightness(0) invert(1);
   color: transparent !important;
