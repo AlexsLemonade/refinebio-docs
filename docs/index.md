@@ -1,4 +1,4 @@
-Welcome to refine.bio's documentation!
+refine.bio Documentation
 ======================================
 
 ## Contents

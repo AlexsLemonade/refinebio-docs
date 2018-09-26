@@ -1,6 +1,8 @@
+# Frequently Asked Questions
+
 #### What is the difference between refine.bio-processed and submitter-processed datasets?
 
-Samples and the datasets they comprise are designated as refine.bio-processed if we were able to obtain raw data in a suitable format for one of our processing pipelines. 
+Samples and the datasets they comprise are designated as refine.bio-processed if we were able to obtain raw data in a suitable format for one of our processing pipelines.
 If no suitable raw data is available for a sample on a supported platform, we obtain the _processed_ data available from the source repository and modify it to be more consistent with refine.bio-processed data; these samples are termed submitter-processed.
 See the **Source Data** section for more information.
 
@@ -17,7 +19,7 @@ See our supported [microarray](https://github.com/AlexsLemonade/refinebio/blob/d
 #### What does "corrected" metadata mean?
 
 Scientists will often use different terminology to refer to a similar sample metadata field or _key_.
-For example, `treatment` and `treatment protocol` may make reference to the same kinds of information. 
+For example, `treatment` and `treatment protocol` may make reference to the same kinds of information.
 We attempt to perform some mapping between keys to aid in searches.
 See the **refine.bio-harmonized Metadata** section for more information, including a full list of the mappings we perform.
 
@@ -30,14 +32,14 @@ TODO: revisit when we have the QN section of transformations more fully fleshed 
 
 #### Why do I get a limited number of genes back when I aggregate samples from different platforms?
 
-Different platforms will often measure different sets of genes. 
+Different platforms will often measure different sets of genes.
 These differences can be particularly pronounced when comparing older microarray platforms to more recent platforms.
 When aggregating samples, we retain _only_ the genes present in _every sample_.
 If the dataset delivered to you has fewer genes than you were expecting for that organism, it could be the result of combining multiple platforms or it may be from an older microarray platform.
 
 #### Why can't I add certain samples to my dataset?
 
-refine.bio will sometimes obtain the metadata (e.g., sample title or experimental protocol) associated with a sample but the raw or submitter processed expression data files are in a format that we can not process. 
+refine.bio will sometimes obtain the metadata (e.g., sample title or experimental protocol) associated with a sample but the raw or submitter processed expression data files are in a format that we can not process.
 We do not allow you to add these samples to your dataset because we can not deliver expression values.
 
 #### How can I find out what versions of software/packages were used to process the data?
