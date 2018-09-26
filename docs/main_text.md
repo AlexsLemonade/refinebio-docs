@@ -259,6 +259,14 @@ As a result of the quantile normalization shown above, Sample 1 now has the same
 
 Note that only gene expression matrices that we are able to successfully quantile normalize will be available for download.
 
+#### Limitations of quantile normalization across platforms with many zeroes
+
+Quantile normalization is a strategy that can address many technical effects, generally at the cost of retaining certain sources of biological variability.
+However, in cases where there are many ties that are different between samples, the transformation can produce outputs with different distributions.
+This arises in data processed by refine.bio when RNA-seq and microarray data are combined.
+To confirm that we have quantile normalized data correctly before returning results to the user, we evaluate the top half of expression values and confirm that a KS test produces a non-significant p-value.
+Users who seek to analyze RNA-seq and microarray data together should be aware that the low-expressing genes may not be comparable across the sets.
+
 ### Gene transformations
 
 In some cases, it may be useful to row-normalize or transform the gene expression values in a matrix (e.g., following aggregation and quantile normalization).
