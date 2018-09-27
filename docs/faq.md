@@ -51,7 +51,7 @@ Version information for the packages we think are _most important_ for data proc
 Additional package information is in the processor list available via our API:
 
 ```
-https://api.staging.refine.bio/processors/
+https://api.refine.bio/processors/
 ```
 
 In addition, you may wish to obtain [our Docker images](https://hub.docker.com/u/ccdl/) (prefixed with `dr_`) which will allow you to access version information for every dependency.
