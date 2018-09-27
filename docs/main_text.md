@@ -158,7 +158,7 @@ You can make use of our API like so:
 ```
 https://api.refine.bio/transcriptome_indices/?organism=<ORGANISM>&length=<LENGTH>
 ```
-Where `ORGANISM` is the scientific name of the species in all caps separated by underscores and `LENGTH` is either `SHORT` or `LONG`.
+Where `<ORGANISM>` is the scientific name of the species in all caps separated by underscores and `<LENGTH>` is either `SHORT` or `LONG`.
 
 To obtain the zebrafish (_Danio rerio_) index used for >75bp reads, use:
 
