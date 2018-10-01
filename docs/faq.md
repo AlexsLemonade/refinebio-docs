@@ -27,7 +27,7 @@ See the **refine.bio-harmonized Metadata** section for more information, includi
 
 We've prioritized keeping expression values consistent _within_ a dataset based on the samples it contains.
 Specifically, we remove any genes that are not measured in every sample in a dataset and we do that prior to performing quantile normalization.
-When using quantile normalization, the expression value a gene is assigned in a particular sample depends on the _rank_ of that gene. 
+When using quantile normalization, the expression value a gene is assigned in a particular sample depends on the _rank_ of that gene.
 If a user download different datasets, which may have different numbers of genes, it's possible then that the same gene in the same sample would have a different expression value between them.
 
 #### Why do I get a limited number of genes back when I aggregate samples from different platforms?
@@ -46,7 +46,7 @@ We do not allow you to add these samples to your dataset because we can not deli
 
 Version information for the packages we think are _most important_ for data processing is available on the pop-up displayed when you click a sample's processing information link.
 
-<img src="https://user-images.githubusercontent.com/15315514/44542395-ab310d00-a6da-11e8-98b0-2a8e0a91c3b2.gif" width="560">
+<img src="https://user-images.githubusercontent.com/15315514/46314376-5c5b7a80-c598-11e8-9bf3-c63a6a1a9696.gif" width="560">
 
 Additional package information is in the processor list available via our API:
 
