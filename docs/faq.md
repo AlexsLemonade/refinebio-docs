@@ -48,7 +48,7 @@ Version information for the packages we think are _most important_ for data proc
 
 <img src="https://user-images.githubusercontent.com/15315514/46314376-5c5b7a80-c598-11e8-9bf3-c63a6a1a9696.gif" width="560">
 
-Additional package information is in the processor list available via our API:
+The same package information is in the processor list available via our API:
 
 ```
 https://api.refine.bio/processors/
