@@ -231,7 +231,7 @@ Note that some early generation microarrays measure fewer genes than their more 
 
 ### Quantile normalization
 
-refine.bio is designed to allow for the aggregation of multiple platforms and even multiple technologies. 
+refine.bio is designed to allow for the aggregation of multiple platforms and even multiple technologies.
 With that in mind, we would like the distributions of samples from different platforms/technologies to be as similar as possible.
 We use [quantile normalization](https://en.wikipedia.org/wiki/Quantile_normalization) to accomplish this.
 Specifically, we generate a reference distribution for each organism from a large body of data with the `normalize.quantiles.determine.target` function from the [`preprocessCore`](http://www.bioconductor.org/packages/release/bioc/html/preprocessCore.html) R package and quantile normalize samples that a user selects for download with this target (using the `normalize.quantiles.use.target` function of `preprocessCore`).
@@ -239,9 +239,9 @@ We go into more detail below.
 
 #### Reference distribution
 
-By performing quantile normalization, we assume that the differences in expression values between samples arise solely from technical differences. 
+By performing quantile normalization, we assume that the differences in expression values between samples arise solely from technical differences.
 This is not always the case; for instance, samples included in refine.bio are from multiple tissues.
-We'll use as many samples as possible to generate the reference or target distribution. 
+We'll use as many samples as possible to generate the reference or target distribution.
 By including as diverse biological conditions as we have available to us to inform the reference distribution, we attempt to generate a tissue-agnostic consensus.
 To that end, we use the Affymetrix microarray platform with the largest number of samples for a given organism (e.g., `hgu133plus2` in humans) and only samples we have processed from raw as shown below.
 
@@ -323,7 +323,7 @@ You can use these values in the header to map between a sample's gene expression
 
 Sample metadata is delivered in the `metadata_<experiment-accession-id>.tsv`, `metadata_<species>.json`, `metadata_<species>.tsv`, and `aggregated_metadata.json` files.
 
-The primary way we identify samples is by using the sample accession, denoted by `refinebio_accession_code`. 
+The primary way we identify samples is by using the sample accession, denoted by `refinebio_accession_code`.
 Harmonized metadata fields (see the [section on harmonized metadata](#refine.bio-harmonized-metadata)) are noted with a `refinebio_` prefix.
 The `refinebio_source_archive_url` and `refinebio_source_database` fields indicate where the sample was obtained from.
 If there are no keys from the source data associated with a harmonized key, the harmonized metadata field will be empty.
