@@ -1,8 +1,8 @@
 refine.bio Documentation
 ======================================
-	
 
-refine.bio is a multi-organism collection of genome-wide transcriptome or gene expression data that has been obtained from publicly available repositories and uniformly processed and normalized. 
+
+refine.bio is a multi-organism collection of genome-wide transcriptome or gene expression data that has been obtained from publicly available repositories and uniformly processed and normalized.
 refine.bio allows biologists, clinicians, and machine learning researchers to search for experiments from different source repositories all in one place and build custom data sets for their questions of interest.
 
 refine.bio is well-suited for quickly assessing if signals are present in particular datasets, for identifying and obtaining data sets for accelerated validation of findings, and for building large compendia for training machine learning models that can adequately handle the technical noise associated with integrating multiple experiments and platforms.

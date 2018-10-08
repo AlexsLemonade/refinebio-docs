@@ -23,7 +23,7 @@ p {
 }
 
 .wy-side-nav-search {
-  background-color: #386DB0;
+  background-image: linear-gradient(179.93deg, rgba(12, 52, 131, 0.94) 15%, rgba(25, 64, 142, 0.95) 30.45%, rgb(107, 140, 206) 70.03%, rgb(162, 182, 223) 90.1%, rgb(162, 182, 223));
   padding: 56px 24px 24px 24px;
 }
 
