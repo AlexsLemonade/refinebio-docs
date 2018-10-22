@@ -8,13 +8,13 @@ See the **Source Data** section for more information.
 
 #### How do you process the data?
 
-We process samples run on [supported microarray platforms](https://github.com/AlexsLemonade/refinebio/blob/dev/config/supported_microarray_platforms.csv) with Single-Channel Array Normalization (SCAN) and transcriptomic samples run on [supported sequencing platforms](https://github.com/AlexsLemonade/refinebio/blob/dev/config/supported_rnaseq_platforms.txt) with Salmon and tximport.
+We process samples run on <a href ="https://github.com/AlexsLemonade/refinebio/blob/dev/config/supported_microarray_platforms.csv" target = "blank">supported microarray platforms</a> with Single-Channel Array Normalization (SCAN) and transcriptomic samples run on <a href ="https://github.com/AlexsLemonade/refinebio/blob/dev/config/supported_rnaseq_platforms.txt" target = "blank">supported sequencing platforms</a> with Salmon and tximport.
 Please see the **Processing Information** section for more details.
 
 #### What type of data does refine.bio support?
 
 refine.bio currently supports gene expression data, specifically genome-scale microarray and RNA-seq data.
-See our supported [microarray](https://github.com/AlexsLemonade/refinebio/blob/dev/config/supported_microarray_platforms.csv) and [RNA-seq](https://github.com/AlexsLemonade/refinebio/blob/dev/config/supported_rnaseq_platforms.txt) platforms.
+See our supported <a href ="https://github.com/AlexsLemonade/refinebio/blob/dev/config/supported_microarray_platforms.csv" target = "blank">microarray</a> and <a href ="https://github.com/AlexsLemonade/refinebio/blob/dev/config/supported_rnaseq_platforms.txt" target = "blank">RNA-seq</a> platforms.
 
 #### What does "corrected" metadata mean?
 
@@ -43,7 +43,6 @@ refine.bio will sometimes obtain the metadata (e.g., sample title or experimenta
 We do not allow you to add these samples to your dataset because we can not deliver expression values.
 
 #### How can I find out what versions of software/packages were used to process the data?
-
 Version information for the packages we think are _most important_ for data processing is available on the pop-up displayed when you click a sample's processing information link.
 
 <img src="https://user-images.githubusercontent.com/15315514/46314376-5c5b7a80-c598-11e8-9bf3-c63a6a1a9696.gif" width="560">
@@ -54,4 +53,4 @@ The same package information is in the processor list available via our API:
 https://api.refine.bio/processors/
 ```
 
-In addition, you may wish to obtain [our Docker images](https://hub.docker.com/u/ccdl/) (prefixed with `dr_`) which will allow you to access version information for every dependency.
+In addition, you may wish to obtain <a href ="https://hub.docker.com/u/ccdl/" target = "blank">our Docker images</a> (prefixed with `dr_`) which will allow you to access version information for every dependency.
