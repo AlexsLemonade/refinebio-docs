@@ -234,7 +234,7 @@ Note that some early generation microarrays measure fewer genes than their more 
 refine.bio is designed to allow for the aggregation of multiple platforms and even multiple technologies.
 With that in mind, we would like the distributions of samples from different platforms/technologies to be as similar as possible.
 We use <a href ="https://en.wikipedia.org/wiki/Quantile_normalization" target = "blank"> quantile normalization</a> to accomplish this.
-Specifically, we generate a reference distribution for each organism from a large body of data with the `normalize.quantiles.determine.target` function from the <a href = "http://www.bioconductor.org/packages/release/bioc/html/preprocessCore.html" target =-"blank">preprocessCore</a> R package and quantile normalize samples that a user selects for download with this target (using the `normalize.quantiles.use.target` function of `preprocessCore`).
+Specifically, we generate a reference distribution for each organism from a large body of data with the `normalize.quantiles.determine.target` function from the <a href = "http://www.bioconductor.org/packages/release/bioc/html/preprocessCore.html" target ="blank">preprocessCore</a> R package and quantile normalize samples that a user selects for download with this target (using the `normalize.quantiles.use.target` function of `preprocessCore`).
 We go into more detail below.
 
 #### Reference distribution
