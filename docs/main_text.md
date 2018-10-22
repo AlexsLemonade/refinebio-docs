@@ -2,23 +2,23 @@
 
 ## Types of Data
 
-The current version of [refine.bio](https://refine.bio) is designed to process gene expression data.
+The current version of <a href ="https://www.refine.bio" target = "blank">refine.bio </a>is designed to process gene expression data.
 This includes both microarray data and RNA-seq data.
 We normalize data to Ensembl gene identifiers and provide abundance estimates.
 
 More precisely, we support microarray platforms based on their GEO or ArrayExpress accessions.
 We currently support Affymetrix microarrays and Illumina BeadArrays, and we are continuing to evaluate and add support for more platforms.
-This [table](https://github.com/AlexsLemonade/refinebio/blob/dev/config/supported_microarray_platforms.csv) contains the microarray platforms that we support.
-We process a subset of platforms using the [BrainArray Custom CDFs](http://brainarray.mbni.med.umich.edu/Brainarray/Database/CustomCDF/CDF_download.asp), which are denoted by a `y` in the `is_brainarray` column.
-We also support RNA-seq experiments performed on [these](https://github.com/AlexsLemonade/refinebio/blob/dev/config/supported_rnaseq_platforms.txt) short-read platforms.
+This <a href ="https://github.com/AlexsLemonade/refinebio/blob/dev/config/supported_microarray_platforms.csv" target = "blank">table </a> contains the microarray platforms that we support.
+We process a subset of platforms using the <a href = "http://brainarray.mbni.med.umich.edu/Brainarray/Database/CustomCDF/CDF_download.asp" target = "blank">BrainArray Custom CDFs</a>, which are denoted by a `y` in the `is_brainarray` column.
+We also support RNA-seq experiments performed on <a href ="https://github.com/AlexsLemonade/refinebio/blob/dev/config/supported_rnaseq_platforms.txt" target = "blank">these</a>  short-read platforms.
 For more information on how data are processed, see the [Processing Information](#processing-information) section of this document.
-If there is a platform that you would like to see processed, please [file an issue on GitHub](https://github.com/AlexsLemonade/refinebio/issues).
+If there is a platform that you would like to see processed, please <a href ="https://github.com/AlexsLemonade/refinebio/issues" target = "blank">file an issue on GitHub</a>.
 If you would prefer to report issues via e-mail, you can also email [ccdl@alexslemonade.org](mailto:ccdl@alexslemonade.org).
 
 ## Sources
 
-We download gene expression information and metadata from [EBI's ArrayExpress](https://www.ebi.ac.uk/arrayexpress/), [NCBI's Gene Expression Omnibus (GEO)](https://www.ncbi.nlm.nih.gov/geo/), and [NCBI's Sequence Read Archive (SRA)](https://www.ncbi.nlm.nih.gov/sra).
-NCBI's SRA also contains experiments from EBI's ENA ([example](https://www.ncbi.nlm.nih.gov/sra/?term=ERP000447)) and the DDBJ ([example](https://www.ncbi.nlm.nih.gov/sra/?term=DRP000017)).
+We download gene expression information and metadata from <a href = "https://www.ebi.ac.uk/arrayexpress/" target = "blank">EBI's ArrayExpress</a>, <a href = "https://www.ncbi.nlm.nih.gov/geo/" target = "blank">NCBI's Gene Expression Omnibus (GEO)</a>, and <a href = "https://www.ncbi.nlm.nih.gov/sra" target = "blank">NCBI's Sequence Read Archive (SRA)</a>.
+NCBI's SRA also contains experiments from EBI's ENA (<a href = "https://www.ncbi.nlm.nih.gov/sra/?term=ERP000447" target = "blank">example</a>) and the DDBJ (<a href = "https://www.ncbi.nlm.nih.gov/sra/?term=DRP000017" target = "blank">example</a>).
 
 ![sources](https://user-images.githubusercontent.com/15315514/44533218-08b95f80-a6c3-11e8-9eb8-827086fd2d99.png)
 
@@ -26,7 +26,7 @@ NCBI's SRA also contains experiments from EBI's ENA ([example](https://www.ncbi.
 
 We provide metadata that we obtain from the source repositories.
 We also attempt to, where possible, perform some harmonization of metadata to improve the discoverability of useful data.
-Note that we do not yet obtain sample metadata from the [BioSample](https://www.ncbi.nlm.nih.gov/biosample/) database, so the metadata available for RNA-seq samples is limited.
+Note that we do not yet obtain sample metadata from the <a href = "https://www.ncbi.nlm.nih.gov/biosample/" target = "blank">BioSample</a> database, so the metadata available for RNA-seq samples is limited.
 
 ### refine.bio-harmonized Metadata
 
@@ -70,7 +70,7 @@ Sex is a special case; we map to `female` and `male` values if the values are on
 Only harmonized values are displayed in the sample table on the web interface.
 When downloading refine.bio data, these harmonized metadata are denoted with the `refinebio_` prefix.
 
-We recommend that users confirm metadata fields that are particularly important via the submitter-supplied metadata. If you find that the harmonized metadata does not accurately reflect the metadata supplied by the submitter, please [file an issue on GitHub](https://github.com/AlexsLemonade/refinebio/issues) so that we can resolve it.
+We recommend that users confirm metadata fields that are particularly important via the submitter-supplied metadata. If you find that the harmonized metadata does not accurately reflect the metadata supplied by the submitter, please <a href ="https://github.com/AlexsLemonade/refinebio/issues" target = "blank">file an issue on GitHub</a> so that we can resolve it.
 If you would prefer to report issues via e-mail, you can also email [ccdl@alexslemonade.org](mailto:ccdl@alexslemonade.org).
 
 ### Submitter Supplied Metadata
@@ -97,7 +97,7 @@ Processing and normalization methods that require multiple samples (e.g., Robust
 
 SCAN (Single Channel Array Normalization) is a normalization method for develop for single channel Affymetrix microarrays that allows us to process individual samples.
 SCAN models and corrects for the effect of technical bias, such as GC content, using a mixture-modeling approach.
-For more information about this approach, see the primary publication ([Piccolo, et al. _Genomics._ 2012.](http://dx.doi.org/10.1016/j.ygeno.2012.08.003)) and the [SCAN.UPC Bioconductor package](https://www.bioconductor.org/packages/release/bioc/html/SCAN.UPC.html) documentation.
+For more information about this approach, see the primary publication (<a href = "http://dx.doi.org/10.1016/j.ygeno.2012.08.003" target = "blank">Piccolo, et al. _Genomics._ 2012.</a>) and the <a href = "https://www.bioconductor.org/packages/release/bioc/html/SCAN.UPC.html" target = "blank">SCAN.UPC Bioconductor package</a> documentation.
 We specifically use the `SCANfast` implementation of SCAN and the Brainarray packages as probe-summary packages when available.
 
 ##### Platform detection
@@ -111,40 +111,40 @@ Dr. Stephen Piccolo, the developer of SCAN, has adapted the algorithm for use wi
 Because this Illumina SCAN methodology is not yet incorporated into the SCAN.UPC package, we briefly summarize the methods below.
 
 We require that non-normalized or raw expression values and detection p-values to be present in Illumina non-normalized data.
-If we infer that background correction has not occurred in the non-normalized data (e.g., there are no negative expression values), the data are background corrected using the [`limma::nec`](http://web.mit.edu/%7Er/current/arch/i386_linux26/lib/R/library/limma/html/nec.html) function ([Shi, Oshlack, and Smyth. _Nucleic Acids Research._ 2010.](https://doi.org/10.1093/nar/gkq871)).
+If we infer that background correction has not occurred in the non-normalized data (e.g., there are no negative expression values), the data are background corrected using the <a href = "http://web.mit.edu/%7Er/current/arch/i386_linux26/lib/R/library/limma/html/nec.html" target = "blank">`limma::nec`</a>  function (<a href = "https://doi.org/10.1093/nar/gkq871" target = "blank">Shi, Oshlack, and Smyth. _Nucleic Acids Research._ 2010.</a>).
 Following background correction -- either upstream presumably in the Illumina BeadStudio software or in our processor, arrays are normalized with SCAN.
-SCAN requires probe sequence information obtained from the [Illumina BeadArray Bioconductor annotation packages](https://www.bioconductor.org/packages/release/BiocViews.html#___IlluminaChip) (e.g., [`illuminaHumanv1.db`](https://www.bioconductor.org/packages/release/data/annotation/html/illuminaHumanv1.db.html)).
+SCAN requires probe sequence information obtained from the <a href = "https://www.bioconductor.org/packages/release/BiocViews.html#___IlluminaChip" target = "blank">Illumina BeadArray Bioconductor annotation packages</a> (e.g., <a href = "https://www.bioconductor.org/packages/release/data/annotation/html/illuminaHumanv1.db.html" target = "blank">`illuminaHumanv1.db`</a>).
 We only retain probes that have a "Good" or "Perfect" rating in these packages; this quality rating is in reference to how well a probe is likely to measure its target transcript.
 
 ##### Platform detection
 
 We infer the Illumina BeadArray platform that a sample is likely to be run on by comparing the probe identifiers in the unprocessed file to probes for each of the Illumina expression arrays for a given organism.
 We again use the Illumina Bioconductor annotation packages for this step.
-For instance, the overlap between the probe identifiers in a human sample and the probe identifiers in each human platform ([`v1`](https://www.bioconductor.org/packages/release/data/annotation/html/illuminaHumanv1.db.html), [`v2`](https://www.bioconductor.org/packages/release/data/annotation/html/illuminaHumanv2.db.html), [`v3`](https://www.bioconductor.org/packages/release/data/annotation/html/illuminaHumanv3.db.html), and [`v4`](https://www.bioconductor.org/packages/release/data/annotation/html/illuminaHumanv4.db.html)) is calculated.
+For instance, the overlap between the probe identifiers in a human sample and the probe identifiers in each human platform (<a href = "https://www.bioconductor.org/packages/release/data/annotation/html/illuminaHumanv1.db.html" target = "blank">`v1`</a>, <a href = "https://www.bioconductor.org/packages/release/data/annotation/html/illuminaHumanv2.db.html" target = "blank">`v2`</a>, <a href = "https://www.bioconductor.org/packages/release/data/annotation/html/illuminaHumanv3.db.html" target = "blank">`v3`</a>[](https://www.bioconductor.org/packages/release/data/annotation/html/illuminaHumanv3.db.html), and <a href = "https://www.bioconductor.org/packages/release/data/annotation/html/illuminaHumanv4.db.html" target = "blank">`v4`</a>) is calculated.
 The platform with the highest overlap (provided it is >75%) is inferred to be the true platform.
-Some analyses around this platform detection procedure can be found in [this repository](https://github.com/jaclyn-taroni/beadarray-platform-detection).
+Some analyses around this platform detection procedure can be found in <a href = "https://github.com/jaclyn-taroni/beadarray-platform-detection" target = "blank">this repository</a>.
 
 ### RNA-seq pipelines
 
 ![rna-seq-pipeline](https://user-images.githubusercontent.com/15315514/44549339-c86fd680-a6ee-11e8-8d62-419ae7f10a94.png)
 
-We use [Salmon](https://combine-lab.github.io/salmon/) and [tximport](https://bioconductor.org/packages/release/bioc/html/tximport.html) to process all RNA-seq data in refine.bio.
-We obtain sra files run on our [supported short-read platforms](https://github.com/AlexsLemonade/refinebio/blob/dev/config/supported_rnaseq_platforms.txt) from NCBI Sequence Read Archive and use [`fasterq-dump`](https://github.com/ncbi/sra-tools/wiki/HowTo:-fasterq-dump) (with default behavior) to obtain fastq files for use with Salmon.
+We use <a href = "https://combine-lab.github.io/salmon/" target = "blank">Salmon</a> and <a href = "https://bioconductor.org/packages/release/bioc/html/tximport.html" target = "blank">tximport</a> to process all RNA-seq data in refine.bio.
+We obtain sra files run on our <a href = "https://github.com/AlexsLemonade/refinebio/blob/dev/config/supported_rnaseq_platforms.txt" target = "blank">supported short-read platforms</a> from NCBI Sequence Read Archive and use <a href = "https://github.com/ncbi/sra-tools/wiki/HowTo:-fasterq-dump" target = "blank">`fasterq-dump`</a> (with default behavior) to obtain fastq files for use with Salmon.
 Note that any unmated reads from paired experiments are discarded.
 
 We use the library strategy and library source metadata fields to identify RNA-seq experiments.
 It's possible that experiments that are inappropriate for use with Salmon will still appear in refine.bio (e.g., long-read platforms that are labeled incorrectly in the source repository).
-If you find an experiment that you believe is inappropriate for use with Salmon, please [file an issue on GitHub](https://github.com/AlexsLemonade/refinebio/issues) so that we can resolve it.
+If you find an experiment that you believe is inappropriate for use with Salmon, please <a href ="https://github.com/AlexsLemonade/refinebio/issues" target = "blank">file an issue on GitHub</a> so that we can resolve it.
 If you would prefer to report issues via e-mail, you can also email [ccdl@alexslemonade.org](mailto:ccdl@alexslemonade.org).
 
 #### Salmon
 
-Salmon is an alignment-free method for estimating transcript abundances from RNA-seq data ([Patro, et al. _Nature Methods_. 2017.](http://dx.doi.org/10.1038/nmeth.4197)).
-We use it in [quasi-mapping mode](http://salmon.readthedocs.io/en/latest/salmon.html#preparing-transcriptome-indices-quasi-index-and-fmd-index-based-modes), which is significantly faster than alignment-based approaches and requires us to build a Salmon transcriptome index.
+Salmon is an alignment-free method for estimating transcript abundances from RNA-seq data (<a href = "http://dx.doi.org/10.1038/nmeth.4197" target = "blank">Patro, et al. _Nature Methods_. 2017.</a>).
+We use it in <a href = "http://salmon.readthedocs.io/en/latest/salmon.html#preparing-transcriptome-indices-quasi-index-and-fmd-index-based-modes" target = "blank">quasi-mapping mode</a>, which is significantly faster than alignment-based approaches and requires us to build a Salmon transcriptome index.
 
 ##### Transcriptome index
 
-We build a custom reference transcriptome (using [RSEM](https://github.com/deweylab/RSEM) `rsem-prepare-reference`) by filtering the Ensembl genomic DNA assembly to remove _pseudogenes_, which we expect could negatively impact the quantification of protein-coding genes.
+We build a custom reference transcriptome (using <a href = "https://github.com/deweylab/RSEM" target = "blank">RSEM</a> `rsem-prepare-reference`) by filtering the Ensembl genomic DNA assembly to remove _pseudogenes_, which we expect could negatively impact the quantification of protein-coding genes.
 This means we're obtaining abundance estimates for coding as well as non-coding transcripts.
 
 Building a transcriptome index with `salmon index` requires us to specify a value for the parameter `-k` that determines the size of the k-mers used for the index.
@@ -172,16 +172,16 @@ The `s3_url` field will allow you to download the index.
 
 When quantifying transcripts with `salmon quant`, we take advantage of options that allow Salmon to learn and attempt to correct for certain biases in sequencing data.
 We include the flags `--seqBias` to correct for random hexamer priming and, if this is a **paired-end** experiment, `--gcBias` to correct for GC content when running salmon quant.
-We set the library type parameter such that Salmon will [infer the sequencing library type automatically](http://salmon.readthedocs.io/en/latest/salmon.html#what-s-this-libtype) for the reads it is quantifying (`-l A`).
+We set the library type parameter such that Salmon will <a href ="http://salmon.readthedocs.io/en/latest/salmon.html#what-s-this-libtype" target = "blank">infer the sequencing library type automatically </a> for the reads it is quantifying (`-l A`).
 
 #### tximport
 
 Salmon quantification is at the _transcript-level_.
-To better integrate with the microarray data contained in refine.bio, we summarize the transcript-level information to the _gene-level_ with `tximport` ([Soneson, Love, and Robinson. _F1000 Research._ 2015.](http://dx.doi.org/10.12688/f1000research.7563.1)).
+To better integrate with the microarray data contained in refine.bio, we summarize the transcript-level information to the _gene-level_ with `tximport` (<a href = "http://dx.doi.org/10.12688/f1000research.7563.1" target = "blank">Soneson, Love, and Robinson. _F1000 Research._ 2015.</a>).
 
-Our tximport implementation generates ["lengthScaledTPM"](https://www.rdocumentation.org/packages/tximport/versions/1.0.3/topics/tximport), which are gene-level count-scale values that are generated by scaling TPM using the average transcript length across samples and to the library size.
+Our tximport implementation generates <a href ="https://www.rdocumentation.org/packages/tximport/versions/1.0.3/topics/tximport" target = "blank"> "lengthScaledTPM"</a>, which are gene-level count-scale values that are generated by scaling TPM using the average transcript length across samples and to the library size.
 Note that tximport is applied at the _experiment-level_ rather than to single samples.
-For additional information, see the [tximport Bioconductor page](http://bioconductor.org/packages/release/bioc/html/tximport.html), the [tximport tutorial _Importing transcript abundance datasets with tximport_](http://bioconductor.org/packages/release/bioc/vignettes/tximport/inst/doc/tximport.html), and [Soneson, Love, and Robinson. _F1000Research._ 2015.](http://dx.doi.org/10.12688/f1000research.7563.1).
+For additional information, see the <a href= "http://bioconductor.org/packages/release/bioc/html/tximport.html" target = "blank"> tximport Bioconductor page </a>, the <a href="http://bioconductor.org/packages/release/bioc/vignettes/tximport/inst/doc/tximport.html" target ="blank">tximport tutorial _Importing transcript abundance datasets with tximport_</a>, and <a href ="http://dx.doi.org/10.12688/f1000research.7563.1" target = "blank"> Soneson, Love, and Robinson. _F1000Research._ 2015.</a>.
 
 ## Submitter processed  ![submitter-processed-badge](https://user-images.githubusercontent.com/15315514/44549307-b2621600-a6ee-11e8-9ef4-17b81d7728fd.png)
 
@@ -202,13 +202,13 @@ The rationale for only using probes or IDs that are accounted for in the Brainar
 We support identifier conversion for a limited number of platforms that either do not have a Brainarray or Bioconductory annotation packages.
 
 The code for deriving these mappings and more details are available at https://github.com/AlexsLemonade/identifier-refinery.
-If you find an issue with these mappings, please [file an issue on GitHub](https://github.com/AlexsLemonade/identifier-refinery/issues) so that we can resolve it.
+If you find an issue with these mappings, please <a href ="https://github.com/AlexsLemonade/refinebio/issues" target = "blank">file an issue on GitHub </a> so that we can resolve it.
 If you would prefer to report issues via e-mail, you can also email [ccdl@alexslemonade.org](mailto:ccdl@alexslemonade.org).
 
 ### Illumina
 
 We support conversion from Illumina BeadArray probe IDs to Ensembl gene IDs using
-[Bioconductor Illumina BeadArray expression packages](https://www.bioconductor.org/packages/release/BiocViews.html#___IlluminaChip),
+<a href = "https://www.bioconductor.org/packages/release/BiocViews.html#___IlluminaChip" target ="blank">Bioconductor Illumina BeadArray expression packages</a>,
 allowing for one-to-many mappings.
 
 ## Aggregations
@@ -233,8 +233,8 @@ Note that some early generation microarrays measure fewer genes than their more 
 
 refine.bio is designed to allow for the aggregation of multiple platforms and even multiple technologies.
 With that in mind, we would like the distributions of samples from different platforms/technologies to be as similar as possible.
-We use [quantile normalization](https://en.wikipedia.org/wiki/Quantile_normalization) to accomplish this.
-Specifically, we generate a reference distribution for each organism from a large body of data with the `normalize.quantiles.determine.target` function from the [`preprocessCore`](http://www.bioconductor.org/packages/release/bioc/html/preprocessCore.html) R package and quantile normalize samples that a user selects for download with this target (using the `normalize.quantiles.use.target` function of `preprocessCore`).
+We use <a href ="https://en.wikipedia.org/wiki/Quantile_normalization" target = "blank"> quantile normalization</a> to accomplish this.
+Specifically, we generate a reference distribution for each organism from a large body of data with the `normalize.quantiles.determine.target` function from the <a href = "http://www.bioconductor.org/packages/release/bioc/html/preprocessCore.html" target ="blank">preprocessCore</a> R package and quantile normalize samples that a user selects for download with this target (using the `normalize.quantiles.use.target` function of `preprocessCore`).
 We go into more detail below.
 
 #### Reference distribution
@@ -274,12 +274,12 @@ We offer the following options for transformations:
 
 * **None:** No row-wise transformation is performed.
 
-* **Z-score:** Row values are [z-scored](https://en.wikipedia.org/wiki/Standard_score) using the [`StandardScaler`](http://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html) from [`scikit-learn`](http://scikit-learn.org/stable/index.html).
+* **Z-score:** Row values are <a href = "https://en.wikipedia.org/wiki/Standard_score" target = "blank">z-scored</a> using the <a href = "http://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html" target = "blank">`StandardScaler`</a> from <a href = "http://scikit-learn.org/stable/index.html" target = "blank">`scikit-learn`</a>.
 This transformation is useful for examining samples' gene expression values relative to the rest of the samples in the  expression matrix (either all selected samples from that _species_ when aggregating by species or all selected samples in an _experiment_ when aggregating by experiment).
 If a sample has a positive value for a gene, that gene is more highly expressed in that sample compared to the mean of all samples; if that value is negative, that gene is less expressed compared to the population.
 It assumes that the data are normally distributed.
 
-* **Zero to one:** Rows are scaled to values `[0,1]` using the [`MinMaxScaler`](http://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.MinMaxScaler.html) from [`scikit-learn`](http://scikit-learn.org/stable/index.html).
+* **Zero to one:** Rows are scaled to values `[0,1]` using the <a href = "http://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.MinMaxScaler.html" target = "blank">`MinMaxScaler`</a> from <a href = "http://scikit-learn.org/stable/index.html" target = "blank">`scikit-learn`</a>.
 We expect this transformation to be most useful for certain machine learning applications (e.g., those using cross-entropy as a loss function).
 
 In the plot below, we demonstrate the effect of different scaling options on gene expression values (using a randomly selected human dataset, microarray platform, and gene):
@@ -313,7 +313,7 @@ Below we describe the files included in the delivered zip file.
 
 ## Gene Expression Matrix
 
-Gene expression matrices are delived in [tab-separated value](https://en.wikipedia.org/wiki/Tab-separated_values) (TSV) format.
+Gene expression matrices are delived in <a href = "https://en.wikipedia.org/wiki/Tab-separated_values" target = "blank">tab-separated value</a> (TSV) format.
 In these matrices, rows are _genes_ or _features_ and columns are _samples_.
 Note that this format is consistent with the input expected by many programs specifically designed for working with gene expression matrices, but some machine learning libraries will expect this to be transposed.
 The column names or header will contain values corresponding to sample accessions (denoted `refinebio_accession_code` in metadata files).
@@ -329,7 +329,7 @@ The `refinebio_source_archive_url` and `refinebio_source_database` fields indica
 If there are no keys from the source data associated with a harmonized key, the harmonized metadata field will be empty.
 We also deliver submitter-supplied data; see below for more details.
 **We recommend that users confirm metadata fields that are particularly important via the submitter-supplied metadata.**
-If you find that refine.bio metadata does not accurately reflect the metadata supplied by the submitter, please [file an issue on GitHub](https://github.com/AlexsLemonade/refinebio/issues) so that we can resolve it.
+If you find that refine.bio metadata does not accurately reflect the metadata supplied by the submitter, please <a href ="https://github.com/AlexsLemonade/refinebio/issues" target = "blank">file an issue on GitHub</a> so that we can resolve it.
 If you would prefer to report issues via e-mail, you can also email [ccdl@alexslemonade.org](mailto:ccdl@alexslemonade.org).
 
 ### TSV files
@@ -371,14 +371,14 @@ We then quantile normalize all samples as described above.
 
 # Use Cases for Downstream Analysis
 
-Our [`refinebio-examples`](https://github.com/AlexsLemonade/refinebio-examples) repo includes a number of different analyses you can perform with data from refine.bio. We include examples in the R programming language, and where applicable, [GenePattern Notebooks](http://genepattern-notebook.org/example-notebooks/) and scripts to prepare refine.bio data for use with GenePattern. The following examples are included:
+Our <a href = "https://github.com/AlexsLemonade/refinebio-examples" target = "blank">`refinebio-examples`</a> repo includes a number of different analyses you can perform with data from refine.bio. We include examples in the R programming language, and where applicable, <a href = "http://genepattern-notebook.org/example-notebooks/" target = "blank">GenePattern Notebooks</a> and scripts to prepare refine.bio data for use with GenePattern. The following examples are included:
 
-* Differential expression analysis [[README](https://github.com/AlexsLemonade/refinebio-examples/tree/master/differential-expression), [notebook](https://alexslemonade.github.io/refinebio-examples/differential-expression/gene_DE.html)]
-* Converting between different gene identifiers [[README](https://github.com/AlexsLemonade/refinebio-examples/tree/master/ensembl-id-convert), [notebook](https://alexslemonade.github.io/refinebio-examples/ensembl-id-convert/ensembl_id_convert.html)]
-* Ortholog mapping [[README](https://github.com/AlexsLemonade/refinebio-examples/tree/master/ortholog-mapping), [notebook](https://alexslemonade.github.io/refinebio-examples/ortholog-mapping/ortholog_mapping_example.html)]
-* Clustering/heatmap generation [[README](https://github.com/AlexsLemonade/refinebio-examples/tree/master/clustering), [notebook](https://alexslemonade.github.io/refinebio-examples/clustering/clustering_example.html)]
+* Differential expression analysis [<a href = "https://github.com/AlexsLemonade/refinebio-examples/tree/master/differential-expression" target = "blank">README</a>, <a href = "https://alexslemonade.github.io/refinebio-examples/differential-expression/gene_DE.html" target = "blank">notebook</a>]
+* Converting between different gene identifiers [<a href = "https://github.com/AlexsLemonade/refinebio-examples/tree/master/ensembl-id-convert" target = "blank">README</a>, <a href = "https://alexslemonade.github.io/refinebio-examples/ensembl-id-convert/ensembl_id_convert.html" target = "blank">notebook</a>]
+* Ortholog mapping [<a href = "https://github.com/AlexsLemonade/refinebio-examples/tree/master/ortholog-mapping" target = "blank">README</a>, <a href = "https://alexslemonade.github.io/refinebio-examples/ortholog-mapping/ortholog_mapping_example.html" target = "blank">notebook</a>]
+* Clustering/heatmap generation [<a href = "https://github.com/AlexsLemonade/refinebio-examples/tree/master/clustering" target = "blank">README</a>, <a href = "https://alexslemonade.github.io/refinebio-examples/clustering/clustering_example.html" target = "blank">notebook</a>]
 
 
 # License
 
-This documentation is released under a [Creative Commons Attribution (CC-BY) license](https://github.com/AlexsLemonade/refinebio-docs/blob/master/LICENSE.md).  
+This documentation is released under a <a href = "https://github.com/AlexsLemonade/refinebio-docs/blob/master/LICENSE.md" target = "blank">Creative Commons Attribution (CC-BY) license</a>.  

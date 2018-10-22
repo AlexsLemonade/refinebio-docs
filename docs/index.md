@@ -24,4 +24,4 @@ refine.bio is _not_ a substitute for experiments and processing pipelines tailor
 
 ## Questions/Feedback?
 
-If you have a question or comment, please [file an issue on GitHub](https://github.com/AlexsLemonade/refinebio/issues) or send us an email at [ccdl@alexslemonade.org](mailto:ccdl@alexslemonade.org).
+If you have a question or comment, please <a href ="https://github.com/AlexsLemonade/refinebio/issues" target = "blank">file an issue on GitHub </a> or send us an email at [ccdl@alexslemonade.org](mailto:ccdl@alexslemonade.org).
