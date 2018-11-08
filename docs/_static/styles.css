@@ -35,7 +35,7 @@ p {
   filter: brightness(0) invert(1);
   color: transparent !important;
 }
-.wy-side-nav-search>a, .wy-side-nav-search>a:hover, .wy-side-nav-search .wy-dropdown>a:hover{
+.wy-side-nav-search>a.icon, .wy-side-nav-search>a.icon:hover, .wy-side-nav-search .wy-dropdown>a.icon:hover{
   background: transparent;
   width: 154px;
   height: 59px;
