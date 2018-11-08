@@ -112,3 +112,23 @@ p {
 .wy-table-responsive table td,.wy-table-responsive table th {
     white-space: normal;
 }
+
+@media (min-width: 950px) {
+  .wy-grid-for-nav {
+    position: relative;
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+
+  }
+
+  .wy-nav-side {
+    position: absolute;
+  }
+
+  .wy-side-scroll {
+    overflow: visible;
+    width: auto;
+    height: auto;
+  }
+}
