@@ -55,7 +55,7 @@ p {
   width: 154px;
   height: 59px;
   padding: 32px;
-  background-image: url('/_static/logo-docs.svg');
+  background-image: url('/en/latest/_static/logo-docs.svg');
   background-repeat: no-repeat;
   filter: brightness(0) invert(1);
   color: transparent;
@@ -73,7 +73,7 @@ p {
   top: 5px;
   left: 5px;
   font-size: 14px !important;
-  background-image: url('/_static/icon-exit.svg') !important;
+  background-image: url('/en/latest/_static/icon-exit.svg') !important;
   background-position: 6px center !important;
   padding-left: 24px;
 
