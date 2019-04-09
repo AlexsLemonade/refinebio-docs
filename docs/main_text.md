@@ -377,7 +377,9 @@ We perform an outer join each time samples are combined in the process of buildi
 
 Samples from each technology—microarray and RNA-seq—are combined separately.
 In RNA-seq samples, we filter out genes with low total counts and then `log2(x + 1)` the data.
-We join samples from both technologies, drop genes that have missing values in greater than 30% of samples, and drop samples that have missing values in greater than 50% of genes.
+We join samples from both technologies.
+We then drop genes that have missing values in greater than 30% of samples.
+Finally, we drop samples that have missing values in greater than 50% of genes.
 We impute the remaining missing values with IterativeSVD from <a href = "https://pypi.org/project/fancyimpute/" target = "blank">fancyimpute</a>.
 We then quantile normalize all samples as described above.
 
