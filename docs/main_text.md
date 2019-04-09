@@ -392,10 +392,10 @@ We've made our analyses underlying processing choices and exploring test compend
 
 Our <a href = "https://github.com/AlexsLemonade/refinebio-examples" target = "blank">`refinebio-examples`</a> repo includes a number of different analyses you can perform with data from refine.bio. We include examples in the R programming language, and where applicable, <a href = "http://genepattern-notebook.org/example-notebooks/" target = "blank">GenePattern Notebooks</a> and scripts to prepare refine.bio data for use with GenePattern. The following examples are included:
 
-* Differential expression analysis [<a href = "https://github.com/AlexsLemonade/refinebio-examples/tree/master/differential-expression" target = "blank">README</a>, <a href = "https://alexslemonade.github.io/refinebio-examples/differential-expression/gene_DE.html" target = "blank">notebook</a>]
-* Converting between different gene identifiers [<a href = "https://github.com/AlexsLemonade/refinebio-examples/tree/master/ensembl-id-convert" target = "blank">README</a>, <a href = "https://alexslemonade.github.io/refinebio-examples/ensembl-id-convert/ensembl_id_convert.html" target = "blank">notebook</a>]
-* Ortholog mapping [<a href = "https://github.com/AlexsLemonade/refinebio-examples/tree/master/ortholog-mapping" target = "blank">README</a>, <a href = "https://alexslemonade.github.io/refinebio-examples/ortholog-mapping/ortholog_mapping_example.html" target = "blank">notebook</a>]
-* Clustering/heatmap generation [<a href = "https://github.com/AlexsLemonade/refinebio-examples/tree/master/clustering" target = "blank">README</a>, <a href = "https://alexslemonade.github.io/refinebio-examples/clustering/clustering_example.html" target = "blank">notebook</a>]
+* Differential expression analysis [<a href = "https://github.com/AlexsLemonade/refinebio-examples/tree/master/differential-expression" target = "blank">README</a>, <a href = "https://alexslemonade.github.io/refinebio-examples/differential-expression/gene_DE.nb.html" target = "blank">notebook</a>]
+* Converting between different gene identifiers [<a href = "https://github.com/AlexsLemonade/refinebio-examples/tree/master/ensembl-id-convert" target = "blank">README</a>, <a href = "https://alexslemonade.github.io/refinebio-examples/ensembl-id-convert/ensembl_id_convert.nb.html" target = "blank">notebook</a>]
+* Ortholog mapping [<a href = "https://github.com/AlexsLemonade/refinebio-examples/tree/master/ortholog-mapping" target = "blank">README</a>, <a href = "https://alexslemonade.github.io/refinebio-examples/ortholog-mapping/ortholog_mapping_example.nb.html" target = "blank">notebook</a>]
+* Clustering/heatmap generation [<a href = "https://github.com/AlexsLemonade/refinebio-examples/tree/master/clustering" target = "blank">README</a>, <a href = "https://alexslemonade.github.io/refinebio-examples/clustering/clustering_example.nb.html" target = "blank">notebook</a>]
 
 
 # License
