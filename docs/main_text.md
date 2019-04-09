@@ -129,7 +129,8 @@ Some analyses around this platform detection procedure can be found in <a href =
 ![rna-seq-pipeline](https://user-images.githubusercontent.com/15315514/44549339-c86fd680-a6ee-11e8-8d62-419ae7f10a94.png)
 
 We use <a href = "https://combine-lab.github.io/salmon/" target = "blank">Salmon</a> and <a href = "https://bioconductor.org/packages/release/bioc/html/tximport.html" target = "blank">tximport</a> to process all RNA-seq data in refine.bio.
-We obtain sra files run on our <a href = "https://github.com/AlexsLemonade/refinebio/blob/dev/config/supported_rnaseq_platforms.txt" target = "blank">supported short-read platforms</a> from NCBI Sequence Read Archive. We use <a href = "https://ncbi.github.io/sra-tools/fastq-dump.html" target = "blank">`fastq-dump`</a> to named pipes, which allows us to support paired-end experiments, and pass these to Salmon.
+We obtain sra files run on our <a href = "https://github.com/AlexsLemonade/refinebio/blob/dev/config/supported_rnaseq_platforms.txt" target = "blank">supported short-read platforms</a> from NCBI Sequence Read Archive. 
+We use <a href = "https://ncbi.github.io/sra-tools/fastq-dump.html" target = "blank">`fastq-dump`</a> to named pipes, which allows us to support paired-end experiments, and pass these to Salmon.
 Note that any unmated reads from paired experiments are discarded.
 
 We use the library strategy and library source metadata fields to identify RNA-seq experiments.
