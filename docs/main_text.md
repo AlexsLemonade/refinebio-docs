@@ -365,6 +365,7 @@ Experiment metadata (e.g., experiment description and title) is delivered in the
 We periodically release compendia comprised of all the samples from a species that we were able to process.
 We refer to these as **species compendia**.
 We process these compendia in a manner that is different from the options that are available via the web user interface.
+These species compendia provide a snapshot of the most complete collection of gene expression that refine.bio can produce for each supported organism.
 
 The refine.bio web interface does an inner join when datasets are combined, so only genes present in all datasets are included in the final matrix.
 For compendia, we take the union of all genes, filling in any missing values with `NA`. 
