@@ -366,7 +366,8 @@ We periodically release compendia comprised of all the samples from a species th
 We refer to these as **species compendia**.
 We process these compendia in a manner that is different from the options that are available via the web user interface.
 
-Instead of selecting only genes available in all samples, we take the union of all genes, filling in any missing values with `NA`. 
+The refine.bio web interface does an inner join when datasets are combined, so only genes present in all datasets are included in the final matrix.
+For compendia, we take the union of all genes, filling in any missing values with `NA`. 
 This is a "full outer join" as illustrated below. 
 
 ![outer join](https://user-images.githubusercontent.com/15315514/44534241-4dde9100-a6c5-11e8-8a9c-aa147e294e81.png)
