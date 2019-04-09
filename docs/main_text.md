@@ -362,19 +362,31 @@ Experiment metadata (e.g., experiment description and title) is delivered in the
 
 # Species compendia
 
-refine.bio is currently in beta.
-Once refine.bio reaches production, we will periodically release compendia comprised of all the samples from a species that we were able to process.
+We periodically release compendia comprised of all the samples from a species that we were able to process.
 We refer to these as **species compendia**.
-We'll process these compendia in a manner that is different from the options that are available via the web user interface.
-We describe our intended processing pipeline below.
-Instead of selecting only genes available in all samples, we take the union of all genes, filling in any missing values with `NA` (e.g., perform a full outer join as illustrated below).
+We process these compendia in a manner that is different from the options that are available via the web user interface.
+These species compendia provide a snapshot of the most complete collection of gene expression that refine.bio can produce for each supported organism.
+
+The refine.bio web interface does an inner join when datasets are combined, so only genes present in all datasets are included in the final matrix.
+For compendia, we take the union of all genes, filling in any missing values with `NA`. 
+This is a "full outer join" as illustrated below.
+We use a full outer join because it allows us to retain more genes in a compendium and we impute missing values during compendia creation.
 
 ![outer join](https://user-images.githubusercontent.com/15315514/44534241-4dde9100-a6c5-11e8-8a9c-aa147e294e81.png)
 
+We perform an outer join each time samples are combined in the process of building species compendia.
 
-We drop any genes that have missing values in greater than 30% of samples.
-We impute the remaining missing values with KNN impute.
+![docs-species-compendia](https://user-images.githubusercontent.com/15315514/48498088-72995f00-e803-11e8-8832-3a9024748431.png)
+
+Samples from each technology—microarray and RNA-seq—are combined separately.
+In RNA-seq samples, we filter out genes with low total counts and then `log2(x + 1)` the data.
+We join samples from both technologies.
+We then drop genes that have missing values in greater than 30% of samples.
+Finally, we drop samples that have missing values in greater than 50% of genes.
+We impute the remaining missing values with IterativeSVD from <a href = "https://pypi.org/project/fancyimpute/" target = "blank">fancyimpute</a>.
 We then quantile normalize all samples as described above.
+
+We've made our analyses underlying processing choices and exploring test compendia available at our <a href = "https://github.com/AlexsLemonade/compendium-processing" target = "blank">`compendium-processing`</a> repository.
 
 # Use Cases for Downstream Analysis
 
