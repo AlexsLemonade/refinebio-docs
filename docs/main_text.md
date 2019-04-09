@@ -362,7 +362,7 @@ Experiment metadata (e.g., experiment description and title) is delivered in the
 
 # Species compendia
 
-We plan to periodically release compendia comprised of all the samples from a species that we were able to process.
+We periodically release compendia comprised of all the samples from a species that we were able to process.
 We refer to these as **species compendia**.
 We process these compendia in a manner that is different from the options that are available via the web user interface.
 
