@@ -381,7 +381,7 @@ We join samples from both technologies, drop genes that have missing values in g
 We impute the remaining missing values with IterativeSVD from <a href = "https://pypi.org/project/fancyimpute/" target = "blank">fancyimpute</a>.
 We then quantile normalize all samples as described above.
 
-We've made our analyses underlying processing choices and exploring test compendia available at this GitHub repository: <a href = "https://github.com/AlexsLemonade/compendium-processing" target = "blank">https://github.com/AlexsLemonade/compendium-processing</a>
+We've made our analyses underlying processing choices and exploring test compendia available at our <a href = "https://github.com/AlexsLemonade/compendium-processing" target = "blank">`compendium-processing`</a> repository.
 
 # Use Cases for Downstream Analysis
 
