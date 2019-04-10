@@ -274,7 +274,7 @@ https://api.refine.bio/qn_targets/?organism=DANIO_RERIO
 ```
 
 The `s3_url` field will allow you to download the index.
-We provide a full example for obtaining and using a refine.bio reference distribution in R [here](https://github.com/AlexsLemonade/refinebio-examples/tree/master/normalize-own-data). 
+We provide a full example for obtaining and using a refine.bio reference distribution in R <a href="https://github.com/AlexsLemonade/refinebio-examples/tree/master/normalize-own-data" target = "blank">here</a>. 
 
 #### Quantile normalizing samples for delivery
 
