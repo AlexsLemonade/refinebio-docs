@@ -252,8 +252,29 @@ We'll use as many samples as possible to generate the reference or target distri
 By including as diverse biological conditions as we have available to us to inform the reference distribution, we attempt to generate a tissue-agnostic consensus.
 To that end, we use the Affymetrix microarray platform with the largest number of samples for a given organism (e.g., `hgu133plus2` in humans) and only samples we have processed from raw as shown below.
 
-
 ![docs-ref-dist](https://user-images.githubusercontent.com/15315514/45969124-cb692a00-c000-11e8-9cfc-6317c92202c8.png)
+
+##### Quantile normalizing your own data with refine.bio reference distribution
+
+refine.bio quantile normalization reference distribution or "targets" are available for download.
+You may wish to use these to normalize your own data to make it more comparable to data you obtain from refine.bio.
+
+Quantile normalization targets can be obtained by first querying the API like so:
+
+```
+https://api.refine.bio/qn_targets/?organism=<ORGANISM>
+```
+
+Where `<ORGANISM>` is the scientific name of the species in all caps separated by underscores.
+
+To obtain the zebrafish (_Danio rerio_) reference distribution, use:
+
+```
+https://api.refine.bio/qn_targets/?organism=DANIO_RERIO
+```
+
+The `s3_url` field will allow you to download the index.
+We provide a full example for obtaining and using a refine.bio reference distribution in R <a href="https://github.com/AlexsLemonade/refinebio-examples/tree/master/normalize-own-data" target = "blank">here</a>. 
 
 #### Quantile normalizing samples for delivery
 
