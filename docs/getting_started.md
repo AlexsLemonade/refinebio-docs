@@ -4,7 +4,7 @@ A refine.bio dataset includes gene expression matrices and experiment and sample
 
 ### Structure
 
-The structure of your download folder is slightly vary depending on whether you chose to aggregate by experiment or by species.  
+The structure of your download folder varies slightly depending on whether you chose to aggregate by experiment or by species.  
 
 **The download folder structure for data aggregated by experiment**
 
