@@ -34,7 +34,7 @@ The contents of a sample's `refinebio_annotations` field include the submitter-s
 
 * Experiment metadata (e.g., experiment title and description) are contained in JSON files with `metadata` in the filename.
 
-Please see the [Downloadable Files](http://docs.refine.bio/en/latest/main_text.html#downloadable-files) section for more details.
+Please see the [Downloadable Files](http://docs.refine.bio/en/latest/main_text.html#downloadable-files) of our documentation section for more details.
 
 ### Usage
 
