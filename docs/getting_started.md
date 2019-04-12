@@ -1,6 +1,6 @@
 ## Getting Started with refine.bio dataset
 
-refine.bio dataset includes gene expression matrices and experiment and sample metadata for the samples that you selected for download.
+A refine.bio dataset includes gene expression matrices and experiment and sample metadata for the samples that you selected for download.
 
 ### Structure
 
