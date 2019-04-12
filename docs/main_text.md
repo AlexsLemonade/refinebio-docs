@@ -129,7 +129,7 @@ Some analyses around this platform detection procedure can be found in <a href =
 ![rna-seq-pipeline](https://user-images.githubusercontent.com/15315514/44549339-c86fd680-a6ee-11e8-8d62-419ae7f10a94.png)
 
 We use <a href = "https://combine-lab.github.io/salmon/" target = "blank">Salmon</a> and <a href = "https://bioconductor.org/packages/release/bioc/html/tximport.html" target = "blank">tximport</a> to process all RNA-seq data in refine.bio.
-We obtain sra files run on our <a href = "https://github.com/AlexsLemonade/refinebio/blob/dev/config/supported_rnaseq_platforms.txt" target = "blank">supported short-read platforms</a> from NCBI Sequence Read Archive. 
+We obtain sra files run on our <a href = "https://github.com/AlexsLemonade/refinebio/blob/dev/config/supported_rnaseq_platforms.txt" target = "blank">supported short-read platforms</a> from NCBI Sequence Read Archive.
 We use <a href = "https://ncbi.github.io/sra-tools/fastq-dump.html" target = "blank">`fastq-dump`</a> to named pipes, which allows us to support paired-end experiments, and pass these to Salmon.
 Note that any unmated reads from paired experiments are discarded.
 
@@ -230,8 +230,8 @@ Note that some early generation microarrays measure fewer genes than their more 
 
 ####  Limitations of gene identifiers when combining across platforms
 
-We use Ensembl gene identifiers across refine.bio and, within platform, we use the same annotation to maintain consistency (e.g., all samples from the same Affymetrix platform use the same Brainarray package or identifier mapping derived from said package). 
-However, Brainarray packages or Bioconductor annotation packages may be assembled from different genome builds compared each other or compared to the genome build used to generate transcriptome indices. 
+We use Ensembl gene identifiers across refine.bio and, within platform, we use the same annotation to maintain consistency (e.g., all samples from the same Affymetrix platform use the same Brainarray package or identifier mapping derived from said package).
+However, Brainarray packages or Bioconductor annotation packages may be assembled from different genome builds compared each other or compared to the genome build used to generate transcriptome indices.
 If there tend to be considerable differences between (relatively) recent genome builds for your organism of interest or you are performing downstream analysis that would be sensitive to these differences, we do not recommend aggregating by species.
 
 ## Transformations
@@ -274,7 +274,7 @@ https://api.refine.bio/qn_targets/?organism=DANIO_RERIO
 ```
 
 The `s3_url` field will allow you to download the index.
-We provide a full example for obtaining and using a refine.bio reference distribution in R <a href="https://github.com/AlexsLemonade/refinebio-examples/tree/master/normalize-own-data" target = "blank">here</a>. 
+We provide a full example for obtaining and using a refine.bio reference distribution in R <a href="https://github.com/AlexsLemonade/refinebio-examples/tree/master/normalize-own-data" target = "blank">here</a>.
 
 #### Quantile normalizing samples for delivery
 
@@ -389,7 +389,7 @@ We process these compendia in a manner that is different from the options that a
 These species compendia provide a snapshot of the most complete collection of gene expression that refine.bio can produce for each supported organism.
 
 The refine.bio web interface does an inner join when datasets are combined, so only genes present in all datasets are included in the final matrix.
-For compendia, we take the union of all genes, filling in any missing values with `NA`. 
+For compendia, we take the union of all genes, filling in any missing values with `NA`.
 This is a "full outer join" as illustrated below.
 We use a full outer join because it allows us to retain more genes in a compendium and we impute missing values during compendia creation.
 
@@ -408,86 +408,6 @@ We impute the remaining missing values with IterativeSVD from <a href = "https:/
 We then quantile normalize all samples as described above.
 
 We've made our analyses underlying processing choices and exploring test compendia available at our <a href = "https://github.com/AlexsLemonade/compendium-processing" target = "blank">`compendium-processing`</a> repository.
-
-
-## Getting Started with refine.bio dataset
-
-refine.bio dataset includes gene expression matrices and experiment and sample metadata for the samples that you selected for download.
-
-### Structure
-
-The structure of your download folder is slightly vary depending on whether you chose to aggregate by experiment or by species.  
-
-**The download folder structure for data aggregated by experiment**
-
-![docs-downloads-experiment-agg](https://user-images.githubusercontent.com/15315514/45906716-2f9eaa80-bdc3-11e8-9855-2aaeb74e588d.png)
-
-In this example, two experiments were selected.
-There will be as many folders as there are selected experiments.
-
-**The download folder structure for data aggregated by species**
-
-![docs-downloads-species-agg](https://user-images.githubusercontent.com/15315514/45906715-2f9eaa80-bdc3-11e8-8ab3-90ccc40cfa11.png)
-
-### Contents
-
-* The `aggregated_metadata.json` file contains information about the options you selected for download.
-Specifically, the `aggregate_by` and `scale_by` fields note how the samples are grouped into gene expression matrices and how the gene expression data values were transformed, respectively.
-
-* Individual gene expression matrices and their corresponding sample metadata files are in their own directories.
-
-* Gene expression matrices are the tab-separated value (TSV) files named by the experiment accession number (if aggregated by experiment) or species name (if aggregated by species).
-Note that samples are _columns_ and rows are _genes_ or _features_.
-This pattern is consistent with the input for many programs specifically designed for working with high-throughput gene expression data but may be transposed from what other machine learning libraries are expecting.
-
-* Sample metadata (e.g. disease vs. control labels) are contained in TSV files with `metadata` in the filename as well as any JSON files.
-We apply light harmonization to some sample metadata fields, which are denoted by `refinebio_` (`refinebio_annotations` is an exception).
-The contents of a sample's `refinebio_annotations` field include the submitter-supplied sample metadata.
-
-* Experiment metadata (e.g., experiment title and description) are contained in JSON files with `metadata` in the filename.
-
-Please see the [Downloadable Files](http://docs.refine.bio/en/latest/main_text.html#downloadable-files) section for more details.
-
-### Usage
-
-The gene expression matrix TSV and JSON files can be read in, manipulated, or parsed with standard functions or libraries in the language of your choice. Below are some code snippets to help you import the data into R or Python and examine it.
-
-#### Reading TSV Files
-
-Here's an example reading a gene expression TSV (`GSE11111.tsv`) into R as a data.frame with base R:
-
-```
-expression_df <- read.delim("GSE11111.tsv", header = TRUE,
-							row.names = 1, stringsAsFactors = FALSE)
-```
-
-#### Reading JSON Files
-
-**R**
-
-The `rjson` R package allows us to read a metadata JSON file (`aggregated_metadata.json`) into R as a list:
-
-```
-library(rjson)
-metadata_list <- fromJSON(file = "aggregated_metadata.json")
-```
-
-**Python**
-
-In Python, we can read in the metadata JSON like so:
-
-```
-import json
-with open('aggregated_metadata.json', 'r') as jsonfile:
-    data = json.load(jsonfile)
-print(data)
-```
-
-For example R workflows, such as clustering of gene expression data, please see https://github.com/AlexsLemonade/refinebio-examples.
-
-If you identify issues with your download, please [file an issue on GitHub](https://github.com/AlexsLemonade/refinebio/issues). If you would prefer to report issues via e-mail, you can also email [ccdl@alexslemonade.org](mailto:ccdl@alexslemonade.org).
-
-## Getting Started with Species Compendia
 
 
 # Use Cases for Downstream Analysis
