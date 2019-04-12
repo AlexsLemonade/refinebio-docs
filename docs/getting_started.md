@@ -1,4 +1,4 @@
-## Getting Started with refine.bio dataset
+## Getting Started with a refine.bio dataset
 
 A refine.bio dataset includes gene expression matrices and experiment and sample metadata for the samples that you selected for download.
 
@@ -38,7 +38,8 @@ Please see the [Downloadable Files](http://docs.refine.bio/en/latest/main_text.h
 
 ### Usage
 
-The gene expression matrix TSV and JSON files can be read in, manipulated, or parsed with standard functions or libraries in the language of your choice. Below are some code snippets to help you import the data into R or Python and examine it.
+The gene expression matrix TSV and JSON files can be read in, manipulated, or parsed with standard functions or libraries in the language of your choice.
+Below are some code snippets to help you import the data into R or Python and examine it.
 
 #### Reading TSV Files
 
