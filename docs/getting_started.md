@@ -85,6 +85,8 @@ You can read more about how we process species compendia in [our documentation](
 
 ### Structure
 
+**The download folder structure for a species compendium**
+
 ![docs-downloads-species-compendia](https://user-images.githubusercontent.com/15315514/56142320-74ab4980-5f6c-11e9-8847-9f7d178cd080.png)
 
 ### Contents
