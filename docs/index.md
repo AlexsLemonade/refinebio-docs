@@ -20,6 +20,7 @@ refine.bio is _not_ a substitute for experiments and processing pipelines tailor
 ## Contents
 
 * [refine.bio Data Processing](main_text.md)
+* [Getting Started](getting_started.md)
 * [FAQ](faq.md)
 
 ## Questions/Feedback?

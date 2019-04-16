@@ -129,7 +129,7 @@ Some analyses around this platform detection procedure can be found in <a href =
 ![rna-seq-pipeline](https://user-images.githubusercontent.com/15315514/44549339-c86fd680-a6ee-11e8-8d62-419ae7f10a94.png)
 
 We use <a href = "https://combine-lab.github.io/salmon/" target = "blank">Salmon</a> and <a href = "https://bioconductor.org/packages/release/bioc/html/tximport.html" target = "blank">tximport</a> to process all RNA-seq data in refine.bio.
-We obtain sra files run on our <a href = "https://github.com/AlexsLemonade/refinebio/blob/dev/config/supported_rnaseq_platforms.txt" target = "blank">supported short-read platforms</a> from NCBI Sequence Read Archive. 
+We obtain sra files run on our <a href = "https://github.com/AlexsLemonade/refinebio/blob/dev/config/supported_rnaseq_platforms.txt" target = "blank">supported short-read platforms</a> from NCBI Sequence Read Archive.
 We use <a href = "https://ncbi.github.io/sra-tools/fastq-dump.html" target = "blank">`fastq-dump`</a> to named pipes, which allows us to support paired-end experiments, and pass these to Salmon.
 Note that any unmated reads from paired experiments are discarded.
 
@@ -230,8 +230,8 @@ Note that some early generation microarrays measure fewer genes than their more 
 
 ####  Limitations of gene identifiers when combining across platforms
 
-We use Ensembl gene identifiers across refine.bio and, within platform, we use the same annotation to maintain consistency (e.g., all samples from the same Affymetrix platform use the same Brainarray package or identifier mapping derived from said package). 
-However, Brainarray packages or Bioconductor annotation packages may be assembled from different genome builds compared each other or compared to the genome build used to generate transcriptome indices. 
+We use Ensembl gene identifiers across refine.bio and, within platform, we use the same annotation to maintain consistency (e.g., all samples from the same Affymetrix platform use the same Brainarray package or identifier mapping derived from said package).
+However, Brainarray packages or Bioconductor annotation packages may be assembled from different genome builds compared each other or compared to the genome build used to generate transcriptome indices.
 If there tend to be considerable differences between (relatively) recent genome builds for your organism of interest or you are performing downstream analysis that would be sensitive to these differences, we do not recommend aggregating by species.
 
 ## Transformations
@@ -274,7 +274,7 @@ https://api.refine.bio/qn_targets/?organism=DANIO_RERIO
 ```
 
 The `s3_url` field will allow you to download the index.
-We provide a full example for obtaining and using a refine.bio reference distribution in R <a href="https://github.com/AlexsLemonade/refinebio-examples/tree/master/normalize-own-data" target = "blank">here</a>. 
+We provide a full example for obtaining and using a refine.bio reference distribution in R <a href="https://github.com/AlexsLemonade/refinebio-examples/tree/master/normalize-own-data" target = "blank">here</a>.
 
 #### Quantile normalizing samples for delivery
 
@@ -389,7 +389,7 @@ We process these compendia in a manner that is different from the options that a
 These species compendia provide a snapshot of the most complete collection of gene expression that refine.bio can produce for each supported organism.
 
 The refine.bio web interface does an inner join when datasets are combined, so only genes present in all datasets are included in the final matrix.
-For compendia, we take the union of all genes, filling in any missing values with `NA`. 
+For compendia, we take the union of all genes, filling in any missing values with `NA`.
 This is a "full outer join" as illustrated below.
 We use a full outer join because it allows us to retain more genes in a compendium and we impute missing values during compendia creation.
 
@@ -408,6 +408,7 @@ We impute the remaining missing values with IterativeSVD from <a href = "https:/
 We then quantile normalize all samples as described above.
 
 We've made our analyses underlying processing choices and exploring test compendia available at our <a href = "https://github.com/AlexsLemonade/compendium-processing" target = "blank">`compendium-processing`</a> repository.
+
 
 # Use Cases for Downstream Analysis
 
