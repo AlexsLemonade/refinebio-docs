@@ -418,8 +418,3 @@ Our <a href = "https://github.com/AlexsLemonade/refinebio-examples" target = "bl
 * Converting between different gene identifiers [<a href = "https://github.com/AlexsLemonade/refinebio-examples/tree/master/ensembl-id-convert" target = "blank">README</a>, <a href = "https://alexslemonade.github.io/refinebio-examples/ensembl-id-convert/ensembl_id_convert.nb.html" target = "blank">notebook</a>]
 * Ortholog mapping [<a href = "https://github.com/AlexsLemonade/refinebio-examples/tree/master/ortholog-mapping" target = "blank">README</a>, <a href = "https://alexslemonade.github.io/refinebio-examples/ortholog-mapping/ortholog_mapping_example.nb.html" target = "blank">notebook</a>]
 * Clustering/heatmap generation [<a href = "https://github.com/AlexsLemonade/refinebio-examples/tree/master/clustering" target = "blank">README</a>, <a href = "https://alexslemonade.github.io/refinebio-examples/clustering/clustering_example.nb.html" target = "blank">notebook</a>]
-
-
-# License
-
-This documentation is released under a <a href = "https://github.com/AlexsLemonade/refinebio-docs/blob/master/LICENSE.md" target = "blank">Creative Commons Attribution (CC-BY) license</a>.  
