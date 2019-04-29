@@ -176,6 +176,8 @@ li.toctree-4 > a {
 
   .wy-nav-side {
     position: absolute;
+    overflow-x: visible;
+    overflow-y: visible;
   }
 
   .wy-side-scroll {

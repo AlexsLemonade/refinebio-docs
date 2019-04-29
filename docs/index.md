@@ -22,7 +22,7 @@ refine.bio is _not_ a substitute for experiments and processing pipelines tailor
 * [refine.bio Data Processing](main_text.md)
 * [Getting Started](getting_started.md)
 * [FAQ](faq.md)
-
+* [License](license.md)
 ## Questions/Feedback?
 
 If you have a question or comment, please <a href ="https://github.com/AlexsLemonade/refinebio/issues" target = "blank">file an issue on GitHub </a> or send us an email at [ccdl@alexslemonade.org](mailto:ccdl@alexslemonade.org).
