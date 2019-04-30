@@ -120,7 +120,7 @@ We only retain probes that have a "Good" or "Perfect" rating in these packages; 
 
 We infer the Illumina BeadArray platform that a sample is likely to be run on by comparing the probe identifiers in the unprocessed file to probes for each of the Illumina expression arrays for a given organism.
 We again use the Illumina Bioconductor annotation packages for this step.
-For instance, the overlap between the probe identifiers in a human sample and the probe identifiers in each human platform (<a href = "https://www.bioconductor.org/packages/release/data/annotation/html/illuminaHumanv1.db.html" target = "blank">`v1`</a>, <a href = "https://www.bioconductor.org/packages/release/data/annotation/html/illuminaHumanv2.db.html" target = "blank">`v2`</a>, <a href = "https://www.bioconductor.org/packages/release/data/annotation/html/illuminaHumanv3.db.html" target = "blank">`v3`</a>[](https://www.bioconductor.org/packages/release/data/annotation/html/illuminaHumanv3.db.html), and <a href = "https://www.bioconductor.org/packages/release/data/annotation/html/illuminaHumanv4.db.html" target = "blank">`v4`</a>) is calculated.
+For instance, the overlap between the probe identifiers in a human sample and the probe identifiers in each human platform (<a href = "https://www.bioconductor.org/packages/release/data/annotation/html/illuminaHumanv1.db.html" target = "blank">`v1`</a>, <a href = "https://www.bioconductor.org/packages/release/data/annotation/html/illuminaHumanv2.db.html" target = "blank">`v2`</a>, <a href = "https://www.bioconductor.org/packages/release/data/annotation/html/illuminaHumanv3.db.html" target = "blank">`v3`</a>, and <a href = "https://www.bioconductor.org/packages/release/data/annotation/html/illuminaHumanv4.db.html" target = "blank">`v4`</a>) is calculated.
 The platform with the highest overlap (provided it is >75%) is inferred to be the true platform.
 Some analyses around this platform detection procedure can be found in <a href = "https://github.com/jaclyn-taroni/beadarray-platform-detection" target = "blank">this repository</a>.
 
@@ -133,9 +133,11 @@ We obtain sra files run on our <a href = "https://github.com/AlexsLemonade/refin
 We use <a href = "https://ncbi.github.io/sra-tools/fastq-dump.html" target = "blank">`fastq-dump`</a> to named pipes, which allows us to support paired-end experiments, and pass these to Salmon.
 Note that any unmated reads from paired experiments are discarded.
 
-We use the library strategy and library source metadata fields to identify RNA-seq experiments.
+We use the **library strategy** and **library source** metadata fields to identify RNA-seq experiments.
 It's possible that experiments that are inappropriate for use with Salmon will still appear in refine.bio (e.g., long-read platforms that are labeled incorrectly in the source repository).
-If you find an experiment that you believe is inappropriate for use with Salmon, please <a href ="https://github.com/AlexsLemonade/refinebio/issues" target = "blank">file an issue on GitHub</a> so that we can resolve it.
+We also encounter trouble distinguishing single-cell and bulk RNA-seq data from these fields.
+We strongly recommend exercising caution when using single-cell data from refine.bio as the pipeline we use may be inappropriate (e.g., correcting for gene length in 3' tagged RNA-seq data induces bias [<a href = "https://bioconductor.org/packages/release/bioc/vignettes/tximport/inst/doc/tximport.html#tagged-rna-seq" target = "blank">ref</a>], Salmon TPM may overcorrect expression of long genes [<a href = "http://hemberg-lab.github.io/scRNA.seq.course/construction-of-expression-matrix.html#reads-alignment" target = "blank">ref</a>]).
+If you find an experiment that you believe is inappropriate for use with our pipeline, please <a href ="https://github.com/AlexsLemonade/refinebio/issues" target = "blank">file an issue on GitHub</a> so that we can resolve it.
 If you would prefer to report issues via e-mail, you can also email [ccdl@alexslemonade.org](mailto:ccdl@alexslemonade.org).
 
 #### Salmon
