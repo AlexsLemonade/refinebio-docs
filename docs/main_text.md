@@ -59,7 +59,11 @@ Values are stripped of white space and forced to lowercase.
 | `age` | `age`, `patient age`, `age of patient`, `age (years)`, `age at diagnosis`, `age at diagnosis years`, `characteristic [age]`, `characteristics [age]` |
 | `cell_line` | `cell line`, `sample strain` |
 
-We type-cast age values to doubles.
+We type-cast age values to doubles. 
+If the values can not be type-cast to doubles (e.g., "9yrs 2mos"), these are not added to the harmonized field.
+We do not attempt to normalize differences in units (e.g., months, years, days) for the harmonized age key.
+Users should consult the submitter-supplied information to determine what unit is used.
+
 Sex is a special case; we map to `female` and `male` values if the values are one of the following:
 
 | Harmonized `sex` value | Values |
