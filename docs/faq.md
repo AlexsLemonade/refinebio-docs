@@ -54,3 +54,10 @@ https://api.refine.bio/processors/
 ```
 
 In addition, you may wish to obtain <a href ="https://hub.docker.com/u/ccdl/" target = "blank">our Docker images</a> (prefixed with `dr_`) which will allow you to access version information for every dependency.
+
+#### Are refine.bio datasets I download batch corrected?
+
+refine.bio datasets are **not** processed with tools that perform batch correction by altering the gene expression values such as ComBat ([Johnson et al. _Biostatistics_. 2007.](https://doi.org/10.1093/biostatistics/kxj037)).
+We use quantile normalization to make samples more comparable to one another, but this is unlikely to account for all batch effects, dataset-specific, or platform-specific biases in all cases.
+We recommend visualizing refine.bio data with a technique such as Principal Components Analysis to get a better sense of the underlying data structure.
+You may wish to use a batch correction tool on or include batch, dataset, or platform as covariates in any downstream modeling using refine.bio depending on your question of interest.
