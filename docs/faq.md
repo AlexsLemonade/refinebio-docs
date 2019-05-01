@@ -54,3 +54,11 @@ https://api.refine.bio/processors/
 ```
 
 In addition, you may wish to obtain <a href ="https://hub.docker.com/u/ccdl/" target = "blank">our Docker images</a> (prefixed with `dr_`) which will allow you to access version information for every dependency.
+
+#### Are refine.bio datasets I download batch corrected?
+
+We apply quantile normalization to mitigate issues caused by differences in the underlying distributions of gene expression values in samples.
+This makes the gene expression values broadly comparable, but doesn't explicitly correct for batch, dataset, or platform.
+If the scientific question and analysis methods require datasets to be batch corrected, users should first investigate the existence of batch effects using methods such as Principal Components Analysis.
+If the source dataset is associated with major sources of variability in the data, users may wish to use a meta-analysis framework considering each dataset independently or to apply a batch correction tool.
+It may be sufficient to include batch, dataset, or platform as covariates for certain analyses.
