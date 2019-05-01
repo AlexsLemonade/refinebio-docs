@@ -57,7 +57,11 @@ In addition, you may wish to obtain <a href ="https://hub.docker.com/u/ccdl/" ta
 
 #### Are refine.bio datasets I download batch corrected?
 
-refine.bio datasets are **not** processed with tools that perform batch correction by altering the gene expression values such as ComBat ([Johnson et al. _Biostatistics_. 2007.](https://doi.org/10.1093/biostatistics/kxj037)).
+We apply quantile normalization to mitigate issues caused by differences in the underlying distributions of gene expression values in samples.
+This makes the gene expression values broadly comparable, but doesn't explicitly correct for batch, dataset, or platform.
+If the scientific question and analysis methods require datasets to be batch corrected, users should first investigate the existence of batch effects using methods such as Principal Components Analysis.
+If the source dataset is associated with major sources of variability in the data, users may wish to use a meta-analysis framework considering each dataset independently or to apply a batch correction tool.
+For certain analyses it may be sufficient to include batch, dataset, or platform as covariates.
 We use quantile normalization to make samples more comparable to one another, but this is unlikely to account for all batch effects, dataset-specific, or platform-specific biases in all cases.
 We recommend visualizing refine.bio data with a technique such as Principal Components Analysis to get a better sense of the underlying data structure.
 You may wish to use a batch correction tool on or include batch, dataset, or platform as covariates in any downstream modeling using refine.bio depending on your question of interest.
