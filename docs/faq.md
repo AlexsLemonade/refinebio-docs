@@ -63,4 +63,3 @@ If the scientific question and analysis methods require datasets to be batch cor
 If the source dataset is associated with major sources of variability in the data, users may wish to use a meta-analysis framework considering each dataset independently or to apply a batch correction tool.
 For certain analyses it may be sufficient to include batch, dataset, or platform as covariates.
 We use quantile normalization to make samples more comparable to one another, but this is unlikely to account for all batch effects, dataset-specific, or platform-specific biases in all cases.
-You may wish to use a batch correction tool on or include batch, dataset, or platform as covariates in any downstream modeling using refine.bio depending on your question of interest.
