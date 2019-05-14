@@ -43,6 +43,7 @@ refine.bio will sometimes obtain the metadata (e.g., sample title or experimenta
 We do not allow you to add these samples to your dataset because we can not deliver expression values.
 
 #### How can I find out what versions of software/packages were used to process the data?
+
 Version information for the packages we think are _most important_ for data processing is available on the pop-up displayed when you click a sample's processing information link.
 
 <img src="https://user-images.githubusercontent.com/15315514/46314376-5c5b7a80-c598-11e8-9bf3-c63a6a1a9696.gif" width="560">
@@ -62,3 +63,9 @@ This makes the gene expression values broadly comparable, but doesn't explicitly
 If the scientific question and analysis methods require datasets to be batch corrected, users should first investigate the existence of batch effects using methods such as Principal Components Analysis.
 If the source dataset is associated with major sources of variability in the data, users may wish to use a meta-analysis framework considering each dataset independently or to apply a batch correction tool.
 It may be sufficient to include batch, dataset, or platform as covariates for certain analyses.
+
+#### Why are the expression values different if I regenerate a dataset?
+
+The `Regenerate Files` button triggers the creation of a new dataset using the same options and including the same samples as the original, expired dataset.
+If there are any changes to the way we process or aggregate datasets (e.g., [target quantiles are updated](http://docs.refine.bio/en/latest/main_text.html#quantile-normalization)) between the initial dataset creation and regeneration, these will be reflected in the new, regenerated dataset and may result in different values.
+Users should take this into account when managing datasets obtained from refine.bio and take steps to appropriately archive datasets they use for analysis.
