@@ -67,5 +67,5 @@ It may be sufficient to include batch, dataset, or platform as covariates for ce
 #### Why are the expression values different if I regenerate a dataset?
 
 The `Regenerate Files` button triggers the creation of a new dataset using the same options and including the same samples as the original, expired dataset.
-If there are any changes to the way we process or aggregate datasets between the initial dataset creation and the regenerated dataset, these will be reflected in the new, regenerated dataset and may result in different values.
+If there are any changes to the way we process or aggregate datasets between the initial dataset creation and regeneration, these will be reflected in the new, regenerated dataset and may result in different values.
 Users should take this into account when managing datasets obtained from refine.bio.
