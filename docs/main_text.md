@@ -387,6 +387,12 @@ As described above, harmonized values are noted with a `refinebio_` prefix.
 Experiment metadata (e.g., experiment description and title) is delivered in the `metadata_<species>.json` and `aggregated_metadata.json` files.
 
 
+The `aggregated_metadata.json` file contains additional information regarding the processing of your dataset.
+Specifically, the `aggregate_by` and `scale_by` fields note how the samples are grouped into gene expression matrices and how the gene expression data values were transformed, respectively.
+The `quantile_normalized` fields notes whether or not quantile normalization was performed.
+Currently, we only support skipping quantile normalization for RNA-seq experiments when aggregating by experiment on the web interface. 
+
+
 # Species compendia
 
 We periodically release compendia comprised of all the samples from a species that we were able to process.
