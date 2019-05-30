@@ -303,7 +303,7 @@ Users who seek to analyze RNA-seq and microarray data together should be aware t
 
 #### Skipping quantile normalization for RNA-seq experiments
 
-When selecting RNA-seq samples for download and to aggregate by experiment, users have the option to skip quantile normalization.
+When selecting RNA-seq samples for download and to aggregate by experiment, users have the option to skip quantile normalization by first selecting Advanced Options and checking the "Skip quantile normalization for RNA-seq samples" box.
 In this case, the output of tximport will be delivered in TSV files (see [our section on RNA-seq data processing with tximport](#tximport)). 
 These data can be used for differential expression analysis as "bias corrected counts without an offset" as described in the <a href = "https://bioconductor.org/packages/release/bioc/vignettes/tximport/inst/doc/tximport.html#use-with-downstream-bioconductor-dge-packages" target = "blank">_Use with downstream Bioconductor DGE packages_ section of tximport vignette</a>. 
 Note that these data will be less comparable to other datasets from refine.bio because this step has been skipped.
