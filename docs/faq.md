@@ -69,3 +69,9 @@ It may be sufficient to include batch, dataset, or platform as covariates for ce
 The `Regenerate Files` button triggers the creation of a new dataset using the same options and including the same samples as the original, expired dataset.
 If there are any changes to the way we process or aggregate datasets (e.g., [target quantiles are updated](http://docs.refine.bio/en/latest/main_text.html#quantile-normalization)) between the initial dataset creation and regeneration, these will be reflected in the new, regenerated dataset and may result in different values.
 Users should take this into account when managing datasets obtained from refine.bio and take steps to appropriately archive datasets they use for analysis.
+
+#### What does it mean to skip quantile normalization for RNA-seq samples?
+
+If you would like to perform differential gene expression analysis with RNA-seq data obtained from refine.bio, you may want to choose to skip quantile normalization, as many methods designed for this problem expect unnormalized counts.
+refine.bio will not provide unnormalized counts when you skip quantile normalization, but it will provide output that can be used for testing differential gene expression (see [Skipping quantile normalization for RNA-seq experiments](http://docs.refine.bio/en/latest/main_text.html#skipping-quantile-normalization-for-rna-seq-experiments) for links to the relevant vignette).
+Note that skipping this step will make a dataset less comparable to other data obtained from refine.bio, as quantile normalization ensures that each sample's underlying distribution is the same (see [Quantile normalizing samples for delivery](http://docs.refine.bio/en/latest/main_text.html#quantile-normalizing-samples-for-delivery)).
