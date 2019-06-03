@@ -301,6 +301,13 @@ This arises in data processed by refine.bio when RNA-seq and microarray data are
 To confirm that we have quantile normalized data correctly before returning results to the user, we evaluate the top half of expression values and confirm that a KS test produces a non-significant p-value.
 Users who seek to analyze RNA-seq and microarray data together should be aware that the low-expressing genes may not be comparable across the sets.
 
+#### Skipping quantile normalization for RNA-seq experiments
+
+When selecting RNA-seq samples for download and to aggregate by experiment, users have the option to skip quantile normalization by first selecting Advanced Options and checking the "Skip quantile normalization for RNA-seq samples" box.
+In this case, the output of tximport will be delivered in TSV files (see [our section on RNA-seq data processing with tximport](#tximport)). 
+These data can be used for differential expression analysis as "bias corrected counts without an offset" as described in the <a href = "https://bioconductor.org/packages/release/bioc/vignettes/tximport/inst/doc/tximport.html#use-with-downstream-bioconductor-dge-packages" target = "blank">_Use with downstream Bioconductor DGE packages_ section of tximport vignette</a>. 
+Note that these data will be less comparable to other datasets from refine.bio because this step has been skipped.
+
 ### Gene transformations
 
 In some cases, it may be useful to row-normalize or transform the gene expression values in a matrix (e.g., following aggregation and quantile normalization).
@@ -385,6 +392,12 @@ As described above, harmonized values are noted with a `refinebio_` prefix.
 ## Experiment Metadata
 
 Experiment metadata (e.g., experiment description and title) is delivered in the `metadata_<species>.json` and `aggregated_metadata.json` files.
+
+
+The `aggregated_metadata.json` file contains additional information regarding the processing of your dataset.
+Specifically, the `aggregate_by` and `scale_by` fields note how the samples are grouped into gene expression matrices and how the gene expression data values were transformed, respectively.
+The `quantile_normalized` fields notes whether or not quantile normalization was performed.
+Currently, we only support skipping quantile normalization for RNA-seq experiments when aggregating by experiment on the web interface. 
 
 
 # Species compendia
