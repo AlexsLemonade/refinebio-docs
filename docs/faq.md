@@ -64,7 +64,7 @@ If the scientific question and analysis methods require datasets to be batch cor
 If the source dataset is associated with major sources of variability in the data, users may wish to use a meta-analysis framework considering each dataset independently or to apply a batch correction tool.
 It may be sufficient to include batch, dataset, or platform as covariates for certain analyses.
 
-#### Why are the expression values different if I regenerate a dataset?
+#### Why are the expression values different if I regenerate a dataset?
 
 The `Regenerate Files` button triggers the creation of a new dataset using the same options and including the same samples as the original, expired dataset.
 If there are any changes to the way we process or aggregate datasets (e.g., [target quantiles are updated](http://docs.refine.bio/en/latest/main_text.html#quantile-normalization)) between the initial dataset creation and regeneration, these will be reflected in the new, regenerated dataset and may result in different values.
