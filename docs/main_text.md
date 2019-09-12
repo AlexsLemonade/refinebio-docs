@@ -190,6 +190,11 @@ Our tximport implementation generates <a href ="https://www.rdocumentation.org/p
 Note that tximport is applied at the _experiment-level_ rather than to single samples.
 For additional information, see the <a href= "http://bioconductor.org/packages/release/bioc/html/tximport.html" target = "blank"> tximport Bioconductor page </a>, the <a href="http://bioconductor.org/packages/release/bioc/vignettes/tximport/inst/doc/tximport.html" target ="blank">tximport tutorial _Importing transcript abundance datasets with tximport_</a>, and <a href ="http://dx.doi.org/10.12688/f1000research.7563.1" target = "blank"> Soneson, Love, and Robinson. _F1000Research._ 2015.</a>.
 
+In some cases, all samples in an experiment can not be processing using Salmon (e.g., the file available for one sample is malformed).
+When experiments are >80% complete and contain more than 20 samples, we may run tximport on all available samples at the time.
+We've found the effect of running tximport "early" on the resulting values to be small under these conditions.
+As a result, the tximport may be run on the same example multiple times; the most recent values will be available from refine.bio.
+
 ## Submitter processed  ![submitter-processed-badge](https://user-images.githubusercontent.com/15315514/44549307-b2621600-a6ee-11e8-9ef4-17b81d7728fd.png)
 
 Sometimes raw data for a sample is either unavailable at the source repository or exists in a form that we can not process.
