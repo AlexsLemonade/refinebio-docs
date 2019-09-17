@@ -435,7 +435,7 @@ We've made our analyses underlying processing choices and exploring test compend
 # API
 
 You can use the refine.bio API to build your own applications. 
-Our quantile normalization targets and transcriptome indices are available via the API (see [_Quantile normalizing your own data with refine.bio reference distribution_](#quantile-normalizing-your-own-data-with-refine.bio-reference-distribution) and [_Transcriptome index_](#transcriptome-index), respectively).
+Our quantile normalization targets and transcriptome indices are available only via the API (see [_Quantile normalizing your own data with refine.bio reference distribution_](#quantile-normalizing-your-own-data-with-refine.bio-reference-distribution) and [_Transcriptome index_](#transcriptome-index), respectively).
 You can also select samples for aggregation and download via the API.
 
 **For more information see our API documentation at <a href = "https://api.refine.bio/" target = "blank">api.refine.bio</a>.**
