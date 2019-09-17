@@ -404,8 +404,7 @@ Specifically, the `aggregate_by` and `scale_by` fields note how the samples are 
 The `quantile_normalized` fields notes whether or not quantile normalization was performed.
 Currently, we only support skipping quantile normalization for RNA-seq experiments when aggregating by experiment on the web interface. 
 
-
-# Species compendia
+# Species Compendia
 
 We periodically release compendia comprised of all the samples from a species that we were able to process.
 We refer to these as **species compendia**.
@@ -433,6 +432,13 @@ We then quantile normalize all samples as described above.
 
 We've made our analyses underlying processing choices and exploring test compendia available at our <a href = "https://github.com/AlexsLemonade/compendium-processing" target = "blank">`compendium-processing`</a> repository.
 
+# API
+
+You can use the refine.bio API to build your own applications. 
+Our quantile normalization targets and transcriptome indices are available via the API (see [_Quantile normalizing your own data with refine.bio reference distribution_](#quantile-normalizing-your-own-data-with-refine.bio-reference-distribution) and [_Transcriptome index_](#transcriptome-index), respectively).
+You can also select samples for aggregation and download via the API.
+
+**For more information see our API documentation at <a href = "https://api.refine.bio/" target = "blank">api.refine.bio</a>.**
 
 # Use Cases for Downstream Analysis
 
