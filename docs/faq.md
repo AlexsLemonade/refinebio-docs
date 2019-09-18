@@ -75,3 +75,11 @@ Users should take this into account when managing datasets obtained from refine.
 If you would like to perform differential gene expression analysis with RNA-seq data obtained from refine.bio, you may want to choose to skip quantile normalization, as many methods designed for this problem expect unnormalized counts.
 refine.bio will not provide unnormalized counts when you skip quantile normalization, but it will provide output that can be used for testing differential gene expression (see [Skipping quantile normalization for RNA-seq experiments](http://docs.refine.bio/en/latest/main_text.html#skipping-quantile-normalization-for-rna-seq-experiments) for links to the relevant vignette).
 Note that skipping this step will make a dataset less comparable to other data obtained from refine.bio, as quantile normalization ensures that each sample's underlying distribution is the same (see [Quantile normalizing samples for delivery](http://docs.refine.bio/en/latest/main_text.html#quantile-normalizing-samples-for-delivery)).
+
+#### How do I cite refine.bio?
+
+Please use the following:
+
+Casey S. Greene, Dongbo Hu, Richard W. W. Jones, Stephanie Liu, David S. Mejia, Rob Patro, Stephen R. Piccolo, Ariel Rodriguez Romero, Hirak Sarkar, Candace L. Savonen, Jaclyn N. Taroni, William E. Vauclain, Deepashree Venkatesh Prasad, Kurt G. Wheeler. **refine.bio: a resource of uniformly processed publicly available gene expression datasets.** URL: https://www.refine.bio 
+
+_Note that the contributor list is in alphabetical order as we prepare a manuscript for submission._
