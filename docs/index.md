@@ -23,6 +23,15 @@ refine.bio is _not_ a substitute for experiments and processing pipelines tailor
 * [Getting Started](getting_started.md)
 * [FAQ](faq.md)
 * [License](license.md)
+
+## Citing refine.bio
+
+Please use the following:
+
+Casey S. Greene, Dongbo Hu, Richard W. W. Jones, Stephanie Liu, David S. Mejia, Rob Patro, Stephen R. Piccolo, Ariel Rodriguez Romero, Hirak Sarkar, Candace L. Savonen, Jaclyn N. Taroni, William E. Vauclain, Deepashree Venkatesh Prasad, Kurt G. Wheeler. **refine.bio: a resource of uniformly processed publicly available gene expression datasets.** URL: https://www.refine.bio 
+
+_Note that the contributor list is in alphabetical order as we prepare a manuscript for submission._
+
 ## Questions/Feedback?
 
 If you have a question or comment, please <a href ="https://github.com/AlexsLemonade/refinebio/issues" target = "blank">file an issue on GitHub </a> or send us an email at [ccdl@alexslemonade.org](mailto:ccdl@alexslemonade.org).
