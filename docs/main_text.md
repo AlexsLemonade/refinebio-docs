@@ -59,7 +59,7 @@ Values are stripped of white space and forced to lowercase.
 | `age` | `age`, `patient age`, `age of patient`, `age (years)`, `age at diagnosis`, `age at diagnosis years`, `characteristic [age]`, `characteristics [age]` |
 | `cell_line` | `cell line`, `sample strain` |
 
-We type-cast age values to doubles. 
+We type-cast age values to doubles.
 If the values can not be type-cast to doubles (e.g., "9yrs 2mos"), these are not added to the harmonized field.
 We do not attempt to normalize differences in units (e.g., months, years, days) for the harmonized age key.
 Users should consult the submitter-supplied information to determine what unit is used.
@@ -309,8 +309,8 @@ Users who seek to analyze RNA-seq and microarray data together should be aware t
 #### Skipping quantile normalization for RNA-seq experiments
 
 When selecting RNA-seq samples for download and to aggregate by experiment, users have the option to skip quantile normalization by first selecting Advanced Options and checking the "Skip quantile normalization for RNA-seq samples" box.
-In this case, the output of tximport will be delivered in TSV files (see [our section on RNA-seq data processing with tximport](#tximport)). 
-These data can be used for differential expression analysis as "bias corrected counts without an offset" as described in the <a href = "https://bioconductor.org/packages/release/bioc/vignettes/tximport/inst/doc/tximport.html#use-with-downstream-bioconductor-dge-packages" target = "blank">_Use with downstream Bioconductor DGE packages_ section of tximport vignette</a>. 
+In this case, the output of tximport will be delivered in TSV files (see [our section on RNA-seq data processing with tximport](#tximport)).
+These data can be used for differential expression analysis as "bias corrected counts without an offset" as described in the <a href = "https://bioconductor.org/packages/release/bioc/vignettes/tximport/inst/doc/tximport.html#use-with-downstream-bioconductor-dge-packages" target = "blank">_Use with downstream Bioconductor DGE packages_ section of tximport vignette</a>.
 Note that these data will be less comparable to other datasets from refine.bio because this step has been skipped.
 
 ### Gene transformations
@@ -402,7 +402,7 @@ Experiment metadata (e.g., experiment description and title) is delivered in the
 The `aggregated_metadata.json` file contains additional information regarding the processing of your dataset.
 Specifically, the `aggregate_by` and `scale_by` fields note how the samples are grouped into gene expression matrices and how the gene expression data values were transformed, respectively.
 The `quantile_normalized` fields notes whether or not quantile normalization was performed.
-Currently, we only support skipping quantile normalization for RNA-seq experiments when aggregating by experiment on the web interface. 
+Currently, we only support skipping quantile normalization for RNA-seq experiments when aggregating by experiment on the web interface.
 
 # Species Compendia
 
@@ -432,6 +432,13 @@ We then quantile normalize all samples as described above.
 
 We've made our analyses underlying processing choices and exploring test compendia available at our <a href = "https://github.com/AlexsLemonade/compendium-processing" target = "blank">`compendium-processing`</a> repository.
 
+## Download Folder
+Users will receive a zipped folder with a gene expression matrix aggregated by species, along with associated metadata.
+Below is the detailed folder structure:
+
+![docs-downloads-species-compendia](https://user-images.githubusercontent.com/15315514/65180873-ddbb4f80-da2b-11e9-97e9-127c68106182.png)
+
+
 # API
 
 You can use the refine.bio API to build your own applications utilizing the refine.bio processed data.
@@ -447,4 +454,4 @@ Our <a href = "https://github.com/AlexsLemonade/refinebio-examples" target = "bl
 * Differential expression analysis [<a href = "https://github.com/AlexsLemonade/refinebio-examples/tree/master/differential-expression" target = "blank">README</a>, <a href = "https://alexslemonade.github.io/refinebio-examples/differential-expression/microarray_DGE.nb.html" target = "blank">microarray notebook</a>, <a href = "https://alexslemonade.github.io/refinebio-examples/differential-expression/rnaseq_DGE.nb.html" target = "blank">RNA-seq notebook</a>]
 * Converting between different gene identifiers [<a href = "https://github.com/AlexsLemonade/refinebio-examples/tree/master/ensembl-id-convert" target = "blank">README</a>, <a href = "https://alexslemonade.github.io/refinebio-examples/ensembl-id-convert/ensembl_id_convert.nb.html" target = "blank">notebook</a>]
 * Ortholog mapping [<a href = "https://github.com/AlexsLemonade/refinebio-examples/tree/master/ortholog-mapping" target = "blank">README</a>, <a href = "https://alexslemonade.github.io/refinebio-examples/ortholog-mapping/ortholog_mapping_example.nb.html" target = "blank">notebook</a>]
-* Clustering/heatmap generation [<a href = "https://github.com/AlexsLemonade/refinebio-examples/tree/master/clustering" target = "blank">README</a>, <a href = "https://alexslemonade.github.io/refinebio-examples/clustering/clustering_example.nb.html" target = "blank">notebook</a>] 
+* Clustering/heatmap generation [<a href = "https://github.com/AlexsLemonade/refinebio-examples/tree/master/clustering" target = "blank">README</a>, <a href = "https://alexslemonade.github.io/refinebio-examples/clustering/clustering_example.nb.html" target = "blank">notebook</a>]
