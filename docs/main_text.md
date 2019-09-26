@@ -404,12 +404,17 @@ Specifically, the `aggregate_by` and `scale_by` fields note how the samples are 
 The `quantile_normalized` fields notes whether or not quantile normalization was performed.
 Currently, we only support skipping quantile normalization for RNA-seq experiments when aggregating by experiment on the web interface.
 
-# Species Compendia
+# refine.bio Compendia
 
 We periodically release compendia comprised of all the samples from a species that we were able to process.
-We refer to these as **species compendia**.
+We refer to these as **refine.bio compendia**.
+We offer two kinds of refine.bio compendia: [normalized compendia](#normalized-compendia) and [RNA-seq sample compendia](#rna-seq-sample-compendia).
+
+## Normalized compendia
+
+refine.bio normalized compendia are comprised of all the samples from a species that we were able to process, aggregate, and normalize. 
+Normalized compendia provide a snapshot of the most complete collection of gene expression that refine.bio can produce for each supported organism.
 We process these compendia in a manner that is different from the options that are available via the web user interface.
-These species compendia provide a snapshot of the most complete collection of gene expression that refine.bio can produce for each supported organism.
 
 The refine.bio web interface does an inner join when datasets are combined, so only genes present in all datasets are included in the final matrix.
 For compendia, we take the union of all genes, filling in any missing values with `NA`.
@@ -418,9 +423,9 @@ We use a full outer join because it allows us to retain more genes in a compendi
 
 ![outer join](https://user-images.githubusercontent.com/15315514/44534241-4dde9100-a6c5-11e8-8a9c-aa147e294e81.png)
 
-We perform an outer join each time samples are combined in the process of building species compendia.
+We perform an outer join each time samples are combined in the process of building normalized compendia.
 
-![docs-species-compendia](https://user-images.githubusercontent.com/15315514/48498088-72995f00-e803-11e8-8832-3a9024748431.png)
+![docs-normalized-compendia](https://user-images.githubusercontent.com/15315514/65698014-ddcdd780-e049-11e9-8ed6-f1d2f8ac2ee7.png)
 
 Samples from each technology—microarray and RNA-seq—are combined separately.
 In RNA-seq samples, we filter out genes with low total counts and then `log2(x + 1)` the data.
@@ -432,12 +437,28 @@ We then quantile normalize all samples as described above.
 
 We've made our analyses underlying processing choices and exploring test compendia available at our <a href = "https://github.com/AlexsLemonade/compendium-processing" target = "blank">`compendium-processing`</a> repository.
 
-## Download Folder
+### Download Folder
+
 Users will receive a zipped folder with a gene expression matrix aggregated by species, along with associated metadata.
 Below is the detailed folder structure:
 
 ![docs-downloads-species-compendia](https://user-images.githubusercontent.com/15315514/65180873-ddbb4f80-da2b-11e9-97e9-127c68106182.png)
 
+## RNA-Seq Sample Compendia
+
+refine.bio RNA-seq sample compendia are comprised of the Salmon output for the collection of RNA-seq samples from an organism that we have processed with refine.bio.
+Each individual sample has its own `quant.sf` file; the samples have not been aggregated and normalized.
+RNA-seq sample compendia are designed to allow users that are comfortable handling these files to generate output that is most useful for their downstream applications. 
+Please see the [Salmon documentation on the `quant.sf` output format](https://salmon.readthedocs.io/en/latest/file_formats.html#quantification-file) for more information.
+
+### Download Folder
+
+Users will receive a zipped folder with individual `quant.sf` files for each sample that we were able to process with Salmon, grouped into folders based on the experiment those samples come from, along with any associated metadata in refine.bio.
+Please note that our RNA-seq sample metadata is limited at this time and in some cases, we could not successfully run Salmon on every sample within an experiment (e.g., our processing infrastructure encountered an error with the sample, the sequencing files were malformed).
+In addition, we use the terms "sample" and "experiment" to be consistent with the rest of refine.bio, but files will use run identifiers (e.g., SRR, ERR, DRR) and project identifiers (e.g., SRP, ERP, DRP), respectively.
+Below is the detailed folder structure:
+
+![docs-downloads-quantpendia](https://user-images.githubusercontent.com/15315514/65271488-4289af00-daeb-11e9-9006-2d7536c4a103.png)
 
 # API
 

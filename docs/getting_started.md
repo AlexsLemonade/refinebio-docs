@@ -78,26 +78,26 @@ For example R workflows, such as clustering of gene expression data, please see 
 
 If you identify issues with your download, please [file an issue on GitHub](https://github.com/AlexsLemonade/refinebio/issues). If you would prefer to report issues via e-mail, you can also email [ccdl@alexslemonade.org](mailto:ccdl@alexslemonade.org).
 
-## Getting Started with Species Compendia
+## Getting Started with Normalized Compendia
 
-A species compendium includes a gene expression matrix and experiment and sample metadata for all samples from a given organism that are fit for inclusion in the species compendium.
-Species compendia provide a snapshot of the most complete collection of gene expression that refine.bio can produce for each supported organism.
+A normalized compendium includes a gene expression matrix and experiment and sample metadata for all samples from a given organism that are fit for to be aggregated and normalized as part of the compendium.
+Normalized compendia provide a snapshot of the most complete collection of gene expression that refine.bio can produce for each supported organism.
 
-You can read more about how we process species compendia in [our documentation](http://docs.refine.bio/en/latest/main_text.html#species-compendia).
+You can read more about how we process normalized compendia in [our documentation](http://docs.refine.bio/en/latest/main_text.html#species-compendia).
 
 ### Structure
 
-**The download folder structure for a species compendium**
+**The download folder structure for a normalized compendium**
 
-![docs-downloads-species-compendia](https://user-images.githubusercontent.com/15315514/56142320-74ab4980-5f6c-11e9-8847-9f7d178cd080.png)
+![docs-downloads-normalized-compendia](https://user-images.githubusercontent.com/15315514/56142320-74ab4980-5f6c-11e9-8847-9f7d178cd080.png)
 
 ### Contents
 
 * The `aggregated_metadata.json` file contains experiment metadata and information about the transformation applied to the data.
-Specifically, the `scale_by` field notes any row-wise transformation that was performed on the gene expression data. For species compendia, this value should always be `NONE`.
+Specifically, the `scale_by` field notes any row-wise transformation that was performed on the gene expression data. For normalized compendia, this value should always be `NONE`.
 
 * The gene expression matrix is the tab-separated value (TSV) file that bears the species name.
-For example, if you have downloaded the zebrafish species compendium, you would find the gene expression matrix in the file `DANIO_RERIO/DANIO_RERIO.tsv`.
+For example, if you have downloaded the zebrafish normalized compendium, you would find the gene expression matrix in the file `DANIO_RERIO/DANIO_RERIO.tsv`.
 Note that samples are _columns_ and rows are _genes_ or _features_.
 This pattern is consistent with the input for many programs specifically designed for working with high-throughput gene expression data but may be transposed from what other machine learning libraries are expecting.
 
@@ -117,7 +117,7 @@ We strongly encourage you to consider using methods or models that can account f
 
 #### Methods evaluation and exploratory data analysis
 
-To identify appropriate methods for processing the initial releases of species compendia (described [here](http://docs.refine.bio/en/latest/main_text.html#species-compendia)), we performed a series of evaluations in a small zebrafish test compendium.
+To identify appropriate methods for processing the initial releases of normalized compendia (described [here](http://docs.refine.bio/en/latest/main_text.html#species-compendia)), we performed a series of evaluations in a small zebrafish test compendium.
 We've made these evaluations available and have documented our rationale on GitHub [here](https://github.com/AlexsLemonade/compendium-processing/tree/94089d2de170f0ca7b87e9e5c32239a8591faaa7/select_imputation_method).
 
 We have also performed exploratory analyses in a larger zebrafish test compendium ([GitHub](https://github.com/AlexsLemonade/compendium-processing/tree/94089d2de170f0ca7b87e9e5c32239a8591faaa7/quality_check)).
