@@ -446,7 +446,7 @@ Below is the detailed folder structure:
 
 ## RNA-Seq Sample Compendia
 
-refine.bio RNA-seq sample compendia are comprised of the Salmon output for the collection of RNA-seq samples from an organism that can be processed with refine.bio.
+refine.bio RNA-seq sample compendia are comprised of the Salmon output for the collection of RNA-seq samples from an organism that we have processed with refine.bio.
 Each individual sample has its own `quant.sf` file; the samples have not been aggregated and normalized.
 RNA-seq sample compendia are designed to allow users that are comfortable handling these files to generate output that is most useful for their downstream applications. 
 Please see the [Salmon documentation on the `quant.sf` output format](https://salmon.readthedocs.io/en/latest/file_formats.html#quantification-file) for more information.
@@ -454,7 +454,7 @@ Please see the [Salmon documentation on the `quant.sf` output format](https://sa
 ### Download Folder
 
 Users will receive a zipped folder with individual `quant.sf` files for each sample that we were able to process with Salmon, grouped into folders based on the experiment those samples come from, along with any associated metadata in refine.bio.
-Please note that our RNA-seq sample metadata is limited at this time and in some cases, we could not successfully run Salmon on every sample within an experiment (e.g., the sequence files were malformed).
+Please note that our RNA-seq sample metadata is limited at this time and in some cases, we could not successfully run Salmon on every sample within an experiment (e.g., our processing infrastructure encountered an error with the sample, the sequencing files were malformed).
 In addition, we use the terms "sample" and "experiment" to be consistent with the rest of refine.bio, but files will use run identifiers (e.g., SRR, ERR, DRR) and project identifiers (e.g., SRP, ERP, DRP), respectively.
 Below is the detailed folder structure:
 
