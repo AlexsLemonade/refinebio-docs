@@ -404,11 +404,11 @@ Specifically, the `aggregate_by` and `scale_by` fields note how the samples are 
 The `quantile_normalized` fields notes whether or not quantile normalization was performed.
 Currently, we only support skipping quantile normalization for RNA-seq experiments when aggregating by experiment on the web interface.
 
-# Species Compendia
+# refine.bio Compendia
 
 We periodically release compendia comprised of all the samples from a species that we were able to process.
-We refer to these as **species compendia**.
-We offer two kinds of species compendia: [normalized compendia](#normalized-compendia) and [RNA-seq sample compendia](#rna-seq-sample-compendia).
+We refer to these as **refine.bio compendia**.
+We offer two kinds of refine.bio compendia: [normalized compendia](#normalized-compendia) and [RNA-seq sample compendia](#rna-seq-sample-compendia).
 
 ## Normalized compendia
 
@@ -423,9 +423,9 @@ We use a full outer join because it allows us to retain more genes in a compendi
 
 ![outer join](https://user-images.githubusercontent.com/15315514/44534241-4dde9100-a6c5-11e8-8a9c-aa147e294e81.png)
 
-We perform an outer join each time samples are combined in the process of building species compendia.
+We perform an outer join each time samples are combined in the process of building normalized compendia.
 
-![docs-species-compendia](https://user-images.githubusercontent.com/15315514/48498088-72995f00-e803-11e8-8832-3a9024748431.png)
+![docs-normalized-compendia](https://user-images.githubusercontent.com/15315514/65698014-ddcdd780-e049-11e9-8ed6-f1d2f8ac2ee7.png)
 
 Samples from each technology—microarray and RNA-seq—are combined separately.
 In RNA-seq samples, we filter out genes with low total counts and then `log2(x + 1)` the data.
