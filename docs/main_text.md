@@ -442,7 +442,7 @@ We've made our analyses underlying processing choices and exploring test compend
 Microarray platforms are generally designed to assay samples from a specific species.
 In some cases, publicly available data surveyed by refine.bio may include samples where the microarray platform used was not specifically designed for the species as described (e.g., samples labeled _Bos indicus_ will be run on _Bos taurus_ microarrays or mouse crosses that are not labeled _Mus musculus_ will be run on _Mus musculus_ microarrays). 
 When we encounter this in refine.bio, we will include samples in a compendium from species that differ from the primary platform species when the two species share a genus (e.g., _Bos indicus_ samples run on _Bos taurus_ microarrays are included in the _Bos taurus_ normalized compendium, and _Mus_ crosses are included in the _Mus musculus_ normalized compendium).
-Such non-primary species samples generally account for a low number of the total samples included in a normalized compendium.
+Such non-primary species samples generally account for a small fraction of the total samples included in a normalized compendium.
 If you would like to filter a normalized compendium based on a sample's species label, you can use the `refinebio_organism` column in the metadata TSV file or the `.samples[].refinebio_organism` field in the metadata JSON file included as part of the download.
 
 Note that non-primary species samples from species that are outside the genus of the primary platform species are not currently available in any normalized compendium (e.g., _Pan troglodytes_ samples assayed on _Homo sapiens_ microarrays are not included in the _Pan troglodytes_ or _Homo sapiens_ compendia), but can be included in datasets from refine.bio.
