@@ -445,7 +445,7 @@ When we encounter this in refine.bio, we will include samples in a compendium fr
 Such non-primary species samples generally account for a low number of the total samples included in a normalized compendium.
 If you would like to filter a normalized compendium based on a sample's species label, you can use the `refinebio_organism` column in the metadata TSV file or the `.samples[].refinebio_organism` field in the metadata JSON file included as part of the download.
 
-Note that non-primary species samples from species that are outside the genus of the primary platform species are not currently available in any normalized compendium (e.g., _Pan troglodytes_ samples assayed on _Homo sapiens_ microarrays are not included in the _Pan troglodytes_ or _Homo sapiens_ compendia), but can be downloaded from refine.bio.
+Note that non-primary species samples from species that are outside the genus of the primary platform species are not currently available in any normalized compendium (e.g., _Pan troglodytes_ samples assayed on _Homo sapiens_ microarrays are not included in the _Pan troglodytes_ or _Homo sapiens_ compendia), but can be included in datasets from refine.bio.
 
 ### Normalized Compendium Download Folder
 
