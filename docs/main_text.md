@@ -437,7 +437,17 @@ We then quantile normalize all samples as described above.
 
 We've made our analyses underlying processing choices and exploring test compendia available at our <a href = "https://github.com/AlexsLemonade/compendium-processing" target = "blank">`compendium-processing`</a> repository.
 
-### Download Folder
+### Collapsing by genus
+
+Microarray platforms are generally designed to assay samples from a specific species.
+In some cases, publicly available data surveyed by refine.bio may include samples where the microarray platform used was not specifically designed for the species as described (e.g., samples labeled _Bos indicus_ were run on _Bos taurus_ microarrays or mouse crosses that are not labeled _Mus musculus_ were run on _Mus musculus_ microarrays). 
+When we encounter this in refine.bio, we will include samples in a compendium from species that differ from the primary platform species when the two species share a genus (e.g., _Bos indicus_ samples run on _Bos taurus_ microarrays are included in the _Bos taurus_ normalized compendium, and _Mus_ crosses are included in the _Mus musculus_ normalized compendium).
+Such non-primary species samples generally account for a small fraction of the total samples included in a normalized compendium.
+If you would like to filter a normalized compendium based on a sample's species label, you can use the `refinebio_organism` column in the metadata TSV file or the `.samples[].refinebio_organism` field in the metadata JSON file included as part of the download.
+
+Note that non-primary species samples from species that are outside the genus of the primary platform species are not currently available in any normalized compendium (e.g., _Pan troglodytes_ samples assayed on _Homo sapiens_ microarrays are not included in the _Pan troglodytes_ or _Homo sapiens_ compendia), but can be included in datasets from refine.bio.
+
+### Normalized Compendium Download Folder
 
 Users will receive a zipped folder with a gene expression matrix aggregated by species, along with associated metadata.
 Below is the detailed folder structure:
@@ -451,7 +461,7 @@ Each individual sample has its own `quant.sf` file; the samples have not been ag
 RNA-seq sample compendia are designed to allow users that are comfortable handling these files to generate output that is most useful for their downstream applications. 
 Please see the [Salmon documentation on the `quant.sf` output format](https://salmon.readthedocs.io/en/latest/file_formats.html#quantification-file) for more information.
 
-### Download Folder
+### RNA-Seq Sample Compendium Download Folder
 
 Users will receive a zipped folder with individual `quant.sf` files for each sample that we were able to process with Salmon, grouped into folders based on the experiment those samples come from, along with any associated metadata in refine.bio.
 Please note that our RNA-seq sample metadata is limited at this time and in some cases, we could not successfully run Salmon on every sample within an experiment (e.g., our processing infrastructure encountered an error with the sample, the sequencing files were malformed).
