@@ -273,19 +273,18 @@ You may wish to use these to normalize your own data to make it more comparable 
 Quantile normalization targets can be obtained by first querying the API like so:
 
 ```
-https://api.refine.bio/qn_targets/?organism=<ORGANISM>
+https://api.refine.bio/v1/qn_targets/<ORGANISM>
 ```
 
-Where `<ORGANISM>` is the scientific name of the species in all caps separated by underscores.
+Where `<ORGANISM>` is the scientific name of the species separated by underscores.
 
 To obtain the zebrafish (_Danio rerio_) reference distribution, use:
 
 ```
-https://api.refine.bio/qn_targets/?organism=DANIO_RERIO
+https://api.refine.bio/v1/qn_targets/danio_rerio
 ```
 
 The `s3_url` field will allow you to download the index.
-We provide a full example for obtaining and using a refine.bio reference distribution in R <a href="https://github.com/AlexsLemonade/refinebio-examples/tree/master/normalize-own-data" target = "blank">here</a>.
 
 #### Quantile normalizing samples for delivery
 
