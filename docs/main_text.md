@@ -448,7 +448,7 @@ Note that non-primary species samples from species that are outside the genus of
 
 Below is the list of organisms and their primary organisms:
 
-| Primary Organism | Organisms |
+| Primary Organism | Organisms included in compendium |
 |:---------:|-------------------|
 |`Anopheles gambiae`|`Anopheles gambiae`|
 |`Arabidopsis thaliana`|`Arabidopsis thaliana`, `Arabidopsis halleri`, `Arabidopsis thaliana x arabidopsis halleri subsp. gemmifera`, `Arabidopsis lyrata subsp. petraea`, `Arabidopsis lyrata subsp. lyrata`, `Arabidopsis thaliana x arabidopsis lyrata`, `Arabidopsis halleri subsp. gemmifera`, `Arabidopsis lyrata`|
