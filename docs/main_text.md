@@ -411,7 +411,7 @@ We offer two kinds of refine.bio compendia: [normalized compendia](#normalized-c
 
 ## Normalized compendia
 
-refine.bio normalized compendia are comprised of all the samples from a species that we were able to process, aggregate, and normalize. 
+refine.bio normalized compendia are comprised of all the samples from a species that we were able to process, aggregate, and normalize.
 Normalized compendia provide a snapshot of the most complete collection of gene expression that refine.bio can produce for each supported organism.
 We process these compendia in a manner that is different from the options that are available via the web user interface.
 
@@ -439,12 +439,58 @@ We've made our analyses underlying processing choices and exploring test compend
 ### Collapsing by genus
 
 Microarray platforms are generally designed to assay samples from a specific species.
-In some cases, publicly available data surveyed by refine.bio may include samples where the microarray platform used was not specifically designed for the species as described (e.g., samples labeled _Bos indicus_ were run on _Bos taurus_ microarrays or mouse crosses that are not labeled _Mus musculus_ were run on _Mus musculus_ microarrays). 
+In some cases, publicly available data surveyed by refine.bio may include samples where the microarray platform used was not specifically designed for the species as described (e.g., samples labeled _Bos indicus_ were run on _Bos taurus_ microarrays or mouse crosses that are not labeled _Mus musculus_ were run on _Mus musculus_ microarrays).
 When we encounter this in refine.bio, we will include samples in a compendium from species that differ from the primary platform species when the two species share a genus (e.g., _Bos indicus_ samples run on _Bos taurus_ microarrays are included in the _Bos taurus_ normalized compendium, and _Mus_ crosses are included in the _Mus musculus_ normalized compendium).
 Such non-primary species samples generally account for a small fraction of the total samples included in a normalized compendium.
 If you would like to filter a normalized compendium based on a sample's species label, you can use the `refinebio_organism` column in the metadata TSV file or the `.samples[].refinebio_organism` field in the metadata JSON file included as part of the download.
 
 Note that non-primary species samples from species that are outside the genus of the primary platform species are not currently available in any normalized compendium (e.g., _Pan troglodytes_ samples assayed on _Homo sapiens_ microarrays are not included in the _Pan troglodytes_ or _Homo sapiens_ compendia), but can be included in datasets from refine.bio.
+
+Below is the list of organisms and their primary organisms:
+
+| Primary Organism | Organisms |
+|:---------:|-------------------|
+|`Anopheles gambiae`|`Anopheles gambiae`|
+|`Arabidopsis thaliana`|`Arabidopsis thaliana`, `Arabidopsis halleri`, `Arabidopsis thaliana x arabidopsis halleri subsp. gemmifera`, `Arabidopsis lyrata subsp. petraea`, `Arabidopsis lyrata subsp. lyrata`, `Arabidopsis thaliana x arabidopsis lyrata`, `Arabidopsis halleri subsp. gemmifera`, `Arabidopsis lyrata`|
+|`Bos indicus`|`Bos indicus`|
+|`Bos taurus`|`Bos taurus`, `Bos indicus`, `Bos grunniens`|
+|`Caenorhabditis elegans`|`Caenorhabditis elegans`|
+|`Citrus sinensis`|`Citrus x paradisi`, `Citrus reticulata`, `Citrus sinensis`, `Citrus limon`, `Citrus reticulata x citrus trifoliata`, `Citrus clementina`, `Citrus unshiu`, `Citrus x tangelo`, `Citrus maxima`|
+|`Danio rerio`|`Danio rerio`|
+|`Drosophila melanogaster`|`Drosophila melanogaster`, `Drosophila simulans`, `Drosophila mauritiana`, `Drosophila sechellia`, `Drosophila teissieri`, `Drosophila santomea`, `Drosophila yakuba`|
+|`Escherichia coli`|`Escherichia coli`, `Escherichia coli str. k-12 substr. mg1655`, `Escherichia coli k-12`, `Escherichia coli cft073`, `Escherichia coli str. k-12 substr. w3110`, `Escherichia coli uti89`, `Escherichia coli b str. rel606`, `Escherichia coli o157`, `Escherichia coli 8624`, `Escherichia coli sci-07`, `Escherichia coli bw25113`, `Escherichia coli apec o2`, `Escherichia coli str. k-12 substr. mc4100`, `Escherichia coli o08`, `Escherichia coli str. k-12 substr. dh10b`|
+|`Escherichia coli k-12`|`Escherichia coli k-12`|
+|`Escherichia coli str. k-12 substr. mg1655`|`Escherichia coli str. k-12 substr. mg1655`|
+|`Gallus gallus`|`Gallus gallus`|
+|`Glycine max`|`Glycine max`, `Glycine soja`|
+|`Gossypium hirsutum`|`Gossypium herbaceum`, `Gossypium hirsutum`, `Gossypium barbadense`, `Gossypium arboreum`|
+|`Homo sapiens`|`Homo sapiens`|
+|`Hordeum vulgare`|`Hordeum vulgare`, `Hordeum vulgare subsp. spontaneum`|
+|`Lepidium sativum`|`Lepidium sativum`|
+|`Macaca fascicularis`|`Macaca fascicularis`|
+|`Macaca mulatta`|`Macaca mulatta`|
+|`Musculus`|`Musculus`|
+|`Mus musculus`|`Mus musculus`, `Mus spretus`, `Mus caroli`, `Mus musculus musculus x m. m. domesticus`, `Mus musculus domesticus`, `Mus musculus x mus spretus`, `Mus musculus musculus x m. m. castaneus`, `Mus musculus musculus`, `Mus musculus castaneus`, `Mus sp.`|
+|`Mustela putorius furo`|`Mustela putorius furo`|
+|`Oryza sativa`|`Oryza sativa japonica`, `Oryza sativa`, `Oryza sativa indica group`, `Oryza longistaminata`|
+|`Oryza sativa indica group`|`Oryza sativa indica group`|
+|`Plasmodium falciparum`|`Plasmodium falciparum 3d7`, `Plasmodium falciparum`|
+|`Populus tremula x populus alba`|`Populus tremula x populus alba`|
+|`Populus trichocarpa`|`Populus trichocarpa`|
+|`Populus x canadensis`|`Populus x canadensis`|
+|`Pseudomonas aeruginosa`|`Pseudomonas aeruginosa`, `Pseudomonas aeruginosa pao1`, `Pseudomonas putida`, `Pseudomonas aeruginosa ucbpp-pa14`, `Pseudomonas aeruginosa pa14`, `Pseudomonas aeruginosa tbcf10839`, `Pseudomonas aeruginosa pahm4`|
+|`Pseudomonas aeruginosa pao1`|`Pseudomonas aeruginosa pao1`|
+|`Rattus norvegicus`|`Rattus norvegicus`, `Rattus rattus`, `Rattus norvegicus albus`|
+|`Saccharomyces cerevisiae`|`Saccharomyces cerevisiae`, `Saccharomyces cerevisiae s288c`, `Saccharomyces pastorianus`, `Saccharomyces pastorianus weihenstephan 34/70`, `Saccharomyces cerevisiae vin13`, `Saccharomyces uvarum`, `Saccharomyces cerevisiae ec1118`, `Saccharomyces cerevisiae cen.pk113-7d`, `Saccharomyces cerevisiae by4741`, `Saccharomyces cerevisiae sk1`, `Saccharomyces bayanus`, `Saccharomyces cerevisiae x saccharomyces kudriavzevii`, `Saccharomyces boulardii`|
+|`Schizosaccharomyces pombe`|`Schizosaccharomyces pombe`, `Schizosaccharomyces pombe 972h-`|
+|`Staphylococcus aureus`|`Staphylococcus aureus`, `Staphylococcus aureus subsp. aureus rn4220`, `Staphylococcus aureus subsp. aureus n315`, `Staphylococcus aureus subsp. aureus usa300`, `Staphylococcus aureus subsp. aureus mu50`, `Staphylococcus aureus subsp. aureus str. newman`|
+|`Sus scrofa`|`Sus scrofa domesticus`, `Sus scrofa`|
+|`Triticum aestivum`|`Triticum aestivum`, `Triticum turgidum subsp. dicoccoides`, `Triticum turgidum subsp. durum`, `Triticum turgidum`, `Triticum carthlicum`, `Triticum monococcum`|
+|`Vitis hybrid cultivar`|`Vitis hybrid cultivar`|
+|`Vitis riparia`|`Vitis riparia`|
+|`Vitis vinifera`|`Vitis vinifera`, `Vitis rotundifolia`, `Vitis hybrid cultivar`, `Vitis aestivalis`, `Vitis riparia`, `Vitis cinerea var. helleri x vitis vinifera`, `Vitis cinerea var. helleri x vitis rupestris`, `Vitis cinerea var. helleri x vitis riparia`|
+|`Xenopus laevis`|`Xenopus muelleri`, `Xenopus laevis x xenopus muelleri`, `Xenopus laevis`, `Xenopus laevis x xenopus borealis`, `Xenopus borealis`|
+|`Zea mays`|`Zea mays`|
 
 ### Normalized Compendium Download Folder
 
@@ -457,7 +503,7 @@ Below is the detailed folder structure:
 
 refine.bio RNA-seq sample compendia are comprised of the Salmon output for the collection of RNA-seq samples from an organism that we have processed with refine.bio.
 Each individual sample has its own `quant.sf` file; the samples have not been aggregated and normalized.
-RNA-seq sample compendia are designed to allow users that are comfortable handling these files to generate output that is most useful for their downstream applications. 
+RNA-seq sample compendia are designed to allow users that are comfortable handling these files to generate output that is most useful for their downstream applications.
 Please see the [Salmon documentation on the `quant.sf` output format](https://salmon.readthedocs.io/en/latest/file_formats.html#quantification-file) for more information.
 
 ### RNA-Seq Sample Compendium Download Folder
