@@ -175,6 +175,18 @@ https://api.refine.bio/v1/transcriptome_indices/?organism_name=DANIO_RERIO&lengt
 
 The `download_url` field will allow you to download the index.
 
+###### Microbial transcriptome indices
+
+For an individual microbial species, there are often multiple genome assemblies available.
+Multiple assemblies from a species often reflect that multiple strains from that species have been characterized or established as laboratory strains.
+To process microbial RNA-seq data in refine.bio, domain experts select a _single_ "blessed" genome assembly to be used to generate transcriptome index.
+The single genome assembly is typically from a common laboratory strain.
+The "blessed" strain transcriptome index is used to quantify _all_ RNA-seq data from that species, regardless of a sample's reported strain of origin.
+Quantifying using a single strain background allows us to generate compendia using a single transcriptome index, but most likely results in some loss of information for samples that do not originate from that strain.
+
+For a list of supported microbial species and the assemblies used, please see the [`config/organism_strain_mapping.csv`](https://github.com/AlexsLemonade/refinebio/blob/master/config/organism_strain_mapping.csv) file.
+For more context, please also visit the original GitHub issue at [`AlexsLemonade/refinebio#1722`](https://github.com/AlexsLemonade/refinebio/issues/1722).
+
 ##### Quantification with Salmon
 
 When quantifying transcripts with `salmon quant`, we take advantage of options that allow Salmon to learn and attempt to correct for certain biases in sequencing data.
