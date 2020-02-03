@@ -35,5 +35,16 @@
       }, true)
     })();
   </script>
+
+  <script>
+    fetch('https://api.refine.bio/v1/transcriptome_indices/?limit=1')
+      .then(function(response) {
+        const version = response.headers.get('x-source-revision');
+        const versionElements = document.getElementsByClassName('version');
+        if (versionElements && version) {
+          versionElements[0].textContent = version;
+        }
+      })
+  </script>
 {% endblock %}
 
