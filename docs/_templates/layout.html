@@ -1,7 +1,7 @@
 {%- extends "sphinx_rtd_theme/layout.html" %} {% block extrahead %}
 
 <!-- Hotjar Tracking Code for refine.bio -->
-<script>
+<script type="text/javascript">
   (function(h, o, t, j, a, r) {
     h.hj =
       h.hj ||
@@ -34,6 +34,17 @@
         stickySidebar.updateSticky();
       }, true)
     })();
+  </script>
+
+  <script type="text/javascript">
+    fetch('https://api.refine.bio/v1/transcriptome_indices/?limit=1')
+      .then(function(response) {
+        const version = response.headers.get('x-source-revision');
+        const versionElements = document.getElementsByClassName('version');
+        if (versionElements && version) {
+          versionElements[0].textContent = version;
+        }
+      })
   </script>
 {% endblock %}
 
