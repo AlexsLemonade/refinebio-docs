@@ -218,7 +218,7 @@ We describe the processes for Affymetrix and Illumina data below.
 Note in the case of one-to-many mappings when going from the ID used by the submitter to the Ensembl gene ID, expression values are duplicated:
 if a probe maps to two Ensembl gene ids, those two Ensembl gene ids will both have the probe's expression value following conversion.
 
-### Affymetrix
+### Affymetrix identifier mapping
 
 We have created custom gene mapping files for most of the Affymetrix platforms we support.
 Briefly, for Brainarray supported platforms, we use the Brainarray (e.g., `hgu133plus2hsensgprobe`) and the platform-specific annotation package from Bioconductor (e.g., `hgu133plus2.db`) to generate a platform-specific mapping file that includes probe IDs, Ensembl gene IDs, gene symbols, Entrez IDs, RefSeq and Unigene identifiers.
@@ -229,7 +229,7 @@ The code for deriving these mappings and more details are available at https://g
 If you find an issue with these mappings, please <a href ="https://github.com/AlexsLemonade/refinebio/issues" target = "blank">file an issue on GitHub </a> so that we can resolve it.
 If you would prefer to report issues via e-mail, you can also email [ccdl@alexslemonade.org](mailto:ccdl@alexslemonade.org).
 
-### Illumina
+### Illumina identifier mapping
 
 We support conversion from Illumina BeadArray probe IDs to Ensembl gene IDs using
 <a href = "https://www.bioconductor.org/packages/release/BiocViews.html#___IlluminaChip" target ="blank">Bioconductor Illumina BeadArray expression packages</a>,
