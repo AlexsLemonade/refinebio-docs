@@ -74,7 +74,7 @@ with open('aggregated_metadata.json', 'r') as jsonfile:
 print(data)
 ```
 
-For example R workflows, such as clustering of gene expression data, please see https://github.com/AlexsLemonade/refinebio-examples.
+For example R workflows, such as clustering of gene expression data, please see https://github.com/AlexsLemonade/refinebio-examples/tree/v1.0.
 
 If you identify issues with your download, please [file an issue on GitHub](https://github.com/AlexsLemonade/refinebio/issues). If you would prefer to report issues via e-mail, you can also email [ccdl@alexslemonade.org](mailto:ccdl@alexslemonade.org).
 
@@ -168,6 +168,6 @@ with open('aggregated_metadata.json', 'r') as jsonfile:
 print(data)
 ```
 
-For example R workflows, such as clustering of gene expression data, please see https://github.com/AlexsLemonade/refinebio-examples.
+For example R workflows, such as clustering of gene expression data, please see https://github.com/AlexsLemonade/refinebio-examples/tree/v1.0.
 
 If you identify issues with your download, please [file an issue on GitHub](https://github.com/AlexsLemonade/refinebio/issues). If you would prefer to report issues via e-mail, you can also email [ccdl@alexslemonade.org](mailto:ccdl@alexslemonade.org).
