@@ -48,14 +48,6 @@ You may find that there are a small proportion of genes that differ between diff
 The difference in gene sets can be detected when downloading mulitple experiments as part of separate dataset downloads or when aggregating by experiment.
 When this occurs, it is because the experiments were quantified with Salmon transcriptome indices using different Ensembl releases of the same genome build.
 
-<!--
-
-#### How can I find out what genome build and release were used to process the data?
-
-Genome build and Ensembl release information is available on the pop-up displayed when you click an RNA-seq samples's processing information link. 
-
--->
-
 #### How can I find out what versions of software/packages were used to process the data?
 
 Version information for the packages we think are _most important_ for data processing is available on the pop-up displayed when you click a sample's processing information link.
