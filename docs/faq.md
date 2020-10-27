@@ -42,6 +42,20 @@ If the dataset delivered to you has fewer genes than you were expecting for that
 refine.bio will sometimes obtain the metadata (e.g., sample title or experimental protocol) associated with a sample but the raw or submitter processed expression data files are in a format that we can not process.
 We do not allow you to add these samples to your dataset because we can not deliver expression values.
 
+#### Why do the genes differ between different RNA-seq experiments from the same organism?
+
+You may find that there are a small proportion of genes that differ between different RNA-seq from the same organism when you download data from refine.bio.
+The difference in gene sets can be detected when downloading mulitple experiments as part of separate dataset downloads or when aggregating by experiment.
+When this occurs, it is because the experiments were quantified with Salmon transcriptome indices using different Ensembl releases of the same genome build.
+
+<!--
+
+#### How can I find out what genome build and release were used to process the data?
+
+Genome build and Ensembl release information is available on the pop-up displayed when you click an RNA-seq samples's processing information link. 
+
+-->
+
 #### How can I find out what versions of software/packages were used to process the data?
 
 Version information for the packages we think are _most important_ for data processing is available on the pop-up displayed when you click a sample's processing information link.
@@ -55,6 +69,7 @@ https://api.refine.bio/processors/
 ```
 
 In addition, you may wish to obtain <a href ="https://hub.docker.com/u/ccdl/" target = "blank">our Docker images</a> (prefixed with `dr_`) which will allow you to access version information for every dependency.
+
 
 #### Are refine.bio datasets I download batch corrected?
 
