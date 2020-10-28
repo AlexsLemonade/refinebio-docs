@@ -45,7 +45,7 @@ We do not allow you to add these samples to your dataset because we can not deli
 #### Why do the genes differ between different RNA-seq experiments from the same organism?
 
 You may find that there are a small proportion of genes that differ between different RNA-seq from the same organism when you download data from refine.bio.
-The difference in gene sets can be detected when downloading mulitple experiments as part of separate dataset downloads or when aggregating by experiment.
+The difference in gene sets can be detected when downloading multiple experiments as part of separate dataset downloads or when aggregating by experiment, when genes not present in all experiments [may be dropped](#why-do-i-get-a-limited-number-of-genes-back-when-i-aggregate-samples-from-different-platforms).
 When this occurs, it is because the experiments were quantified with Salmon transcriptome indices using different Ensembl releases of the same genome build.
 
 #### How can I find out what versions of software/packages were used to process the data?
