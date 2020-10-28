@@ -47,7 +47,8 @@ We do not allow you to add these samples to your dataset because we can not deli
 #### Why do the genes included in RNA-seq experiments change between experiments from the same organism?
 
 You may find that a small proportion of genes are not consistently included in RNA-seq expression matrices from the same organism when you download data from refine.bio.
-The difference in gene sets can be detected when downloading multiple experiments as part of separate dataset downloads or when aggregating by experiment, when genes not present in all experiments [may be dropped](#why-do-i-get-a-limited-number-of-genes-back-when-i-aggregate-samples-from-different-experiments).
+The difference in gene sets can be detected when downloading multiple experiments as part of separate dataset downloads or when aggregating by experiment and comparing the genes included in expression matrices.
+(When aggregating by species to create a matrix comprised of samples from different experiments, genes that are not present in all samples [are dropped](#why-do-i-get-a-limited-number-of-genes-back-when-i-aggregate-samples-from-different-experiments).)
 When this occurs, it is because the experiments were quantified with Salmon transcriptome indices using different Ensembl releases of the same genome build.
 
 #### How can I find out what versions of software/packages were used to process the data?
