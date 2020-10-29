@@ -30,17 +30,26 @@ Specifically, we remove any genes that are not measured in every sample in a dat
 When using quantile normalization, the expression value a gene is assigned in a particular sample depends on the _rank_ of that gene.
 If a user download different datasets, which may have different numbers of genes, it's possible then that the same gene in the same sample would have a different expression value between them.
 
-#### Why do I get a limited number of genes back when I aggregate samples from different platforms?
+#### Why do I get a limited number of genes back when I aggregate samples from different experiments?
 
-Different platforms will often measure different sets of genes.
-These differences can be particularly pronounced when comparing older microarray platforms to more recent platforms.
 When aggregating samples, we retain _only_ the genes present in _every sample_.
-If the dataset delivered to you has fewer genes than you were expecting for that organism, it could be the result of combining multiple platforms or it may be from an older microarray platform.
+Different microarray platforms will often measure different sets of genes. 
+RNA-seq samples in refine.bio can be quantified using different transcriptome indices, which may be built using different Ensembl releases and therefore include different sets of genes.
+Thus, when aggregating samples from multiple platforms, it is not uncommon for some genes measured in individual experiments to be dropped.
+The differences between gene sets included or measured for individual samples can be particularly pronounced when comparing older microarray platforms to more recent platforms.
+If the dataset delivered to you has fewer genes than you were expecting for that organism, it could be the result of combining multiple platforms (or the experiment may be from an older microarray platform).
 
 #### Why can't I add certain samples to my dataset?
 
 refine.bio will sometimes obtain the metadata (e.g., sample title or experimental protocol) associated with a sample but the raw or submitter processed expression data files are in a format that we can not process.
 We do not allow you to add these samples to your dataset because we can not deliver expression values.
+
+#### Why do the genes included in RNA-seq experiments change between experiments from the same organism?
+
+You may find that a small proportion of genes are not consistently included in RNA-seq expression matrices from the same organism when you download data from refine.bio.
+The difference in gene sets can be detected when downloading multiple experiments as part of separate dataset downloads or when aggregating by experiment and comparing the genes included in expression matrices.
+(When aggregating by species to create a matrix comprised of samples from different experiments, genes that are not present in all samples [are dropped](#why-do-i-get-a-limited-number-of-genes-back-when-i-aggregate-samples-from-different-experiments).)
+When this occurs, it is because the experiments were quantified with Salmon transcriptome indices using different Ensembl releases of the same genome build.
 
 #### How can I find out what versions of software/packages were used to process the data?
 
@@ -55,6 +64,7 @@ https://api.refine.bio/processors/
 ```
 
 In addition, you may wish to obtain <a href ="https://hub.docker.com/u/ccdl/" target = "blank">our Docker images</a> (prefixed with `dr_`) which will allow you to access version information for every dependency.
+
 
 #### Are refine.bio datasets I download batch corrected?
 
