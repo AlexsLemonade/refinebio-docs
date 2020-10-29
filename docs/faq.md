@@ -35,7 +35,7 @@ If a user download different datasets, which may have different numbers of genes
 When aggregating samples, we retain _only_ the genes present in _every sample_.
 Different microarray platforms will often measure different sets of genes. 
 RNA-seq samples in refine.bio can be quantified using different transcriptome indices, which may be built using different Ensembl releases and therefore include different sets of genes.
-Thus, when aggregating samples from multiple experiments, it is not uncommon for some genes measured on a platform to be dropped.
+Thus, when aggregating samples from multiple platforms, it is not uncommon for some genes measured in individual experiments to be dropped.
 The differences between gene sets included or measured for individual samples can be particularly pronounced when comparing older microarray platforms to more recent platforms.
 If the dataset delivered to you has fewer genes than you were expecting for that organism, it could be the result of combining multiple platforms (or the experiment may be from an older microarray platform).
 
