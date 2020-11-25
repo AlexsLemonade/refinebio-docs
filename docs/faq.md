@@ -51,6 +51,19 @@ The difference in gene sets can be detected when downloading multiple experiment
 (When aggregating by species to create a matrix comprised of samples from different experiments, genes that are not present in all samples [are dropped](#why-do-i-get-a-limited-number-of-genes-back-when-i-aggregate-samples-from-different-experiments).)
 When this occurs, it is because the experiments were quantified with Salmon transcriptome indices using different Ensembl releases of the same genome build.
 
+#### How can I find out what genome build and release were used to process RNA-seq data?
+
+Genome build and Ensembl release version information is available on the pop-up displayed when you click a sample's processing information link in the sample table on the page for an experiment.
+
+<img src="images/genome-build-sample-modal.gif" width="560">
+
+The same information is available via our API.
+For the sample shown above, we could access the information with:
+
+```
+https://api.refine.bio/v1/samples/?accession_codes=ERR2534073
+```
+
 #### How can I find out what versions of software/packages were used to process the data?
 
 Version information for the packages we think are _most important_ for data processing is available on the pop-up displayed when you click a sample's processing information link.
@@ -60,7 +73,7 @@ Version information for the packages we think are _most important_ for data proc
 The same package information is in the processor list available via our API:
 
 ```
-https://api.refine.bio/processors/
+https://api.refine.bio/v1/processors/
 ```
 
 In addition, you may wish to obtain <a href ="https://hub.docker.com/u/ccdl/" target = "blank">our Docker images</a> (prefixed with `dr_`) which will allow you to access version information for every dependency.
