@@ -55,7 +55,7 @@ When this occurs, it is because the experiments were quantified with Salmon tran
 
 Genome build and Ensembl release version information is available on the pop-up displayed when you click a sample's processing information link in the sample table on the page for an experiment.
 
-<img src="images/genome-build-sample-modal.gif" width="560">
+![](images/genome-build-sample-modal.gif)
 
 The same information is available via our API.
 For the sample shown above, we could access the information with:
