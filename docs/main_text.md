@@ -426,6 +426,7 @@ We offer two kinds of refine.bio compendia: [normalized compendia](#normalized-c
 refine.bio normalized compendia are comprised of all the samples from a species that we were able to process, aggregate, and normalize.
 Normalized compendia provide a snapshot of the most complete collection of gene expression that refine.bio can produce for each supported organism.
 We process these compendia in a manner that is different from the options that are available via the web user interface.
+Note that [submitter processed](#submitter-processed--) samples that are available through the web user interface are omitted from normalized compendia because [these samples can introduce unwanted technical variation](https://github.com/AlexsLemonade/refinebio/issues/2114).
 
 The refine.bio web interface does an inner join when datasets are combined, so only genes present in all datasets are included in the final matrix.
 For compendia, we take the union of all genes, filling in any missing values with `NA`.
