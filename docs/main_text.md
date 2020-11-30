@@ -313,7 +313,7 @@ Note that only gene expression matrices that we are able to successfully quantil
 #### Limitations of quantile normalization across platforms with many zeroes
 
 Quantile normalization is a strategy that can address many technical effects, generally at the cost of retaining certain sources of biological variability.
-We use a single reference distribution per organism, generated from the Affymetrix microarray platform with the largest number of samples we were able to process from raw (see [_Reference distribution_](#reference=distribution)).
+We use a single reference distribution per organism, generated from the Affymetrix microarray platform with the largest number of samples we were able to process from raw data (see [_Reference distribution_](#reference=distribution)).
 In cases where there are many ties that are different between samples, such as when RNA-seq data and microarray data are combined into a single dataset or matrix, the transformation can produce outputs with different distributions.
 To confirm that we have quantile normalized data correctly before returning results to the user, we evaluate the top half of expression values and confirm that a KS test produces a non-significant p-value.
 Users who seek to analyze RNA-seq and microarray data together should be aware that the low-expressing genes may not be comparable across the sets.
