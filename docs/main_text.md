@@ -265,6 +265,7 @@ refine.bio is designed to allow for the aggregation of multiple platforms and ev
 With that in mind, we would like the distributions of samples from different platforms/technologies to be as similar as possible.
 We use <a href ="https://en.wikipedia.org/wiki/Quantile_normalization" target = "blank"> quantile normalization</a> to accomplish this.
 Specifically, we generate a reference distribution for each organism from a large body of data with the `normalize.quantiles.determine.target` function from the <a href = "http://www.bioconductor.org/packages/release/bioc/html/preprocessCore.html" target ="blank">preprocessCore</a> R package and quantile normalize samples that a user selects for download with this target (using the `normalize.quantiles.use.target` function of `preprocessCore`).
+There is a single reference distribution per species, used to normalize all samples from that species regardless of platform or technology.
 We go into more detail below.
 
 #### Reference distribution
@@ -312,8 +313,9 @@ Note that only gene expression matrices that we are able to successfully quantil
 #### Limitations of quantile normalization across platforms with many zeroes
 
 Quantile normalization is a strategy that can address many technical effects, generally at the cost of retaining certain sources of biological variability.
-However, in cases where there are many ties that are different between samples, the transformation can produce outputs with different distributions.
-This arises in data processed by refine.bio when RNA-seq and microarray data are combined.
+We use a single reference distribution per organism, generated from the Affymetrix microarray platform with the largest number of samples we were able to process from raw data (see [_Reference distribution_](#reference=distribution)).
+In cases where the unnormalized data contains many ties within samples (and the ties are different between samples) the transformation can produce outputs with somewhat different distributions.
+This situation arises most often when RNA-seq data and microarray data are combined into a single dataset or matrix.
 To confirm that we have quantile normalized data correctly before returning results to the user, we evaluate the top half of expression values and confirm that a KS test produces a non-significant p-value.
 Users who seek to analyze RNA-seq and microarray data together should be aware that the low-expressing genes may not be comparable across the sets.
 
