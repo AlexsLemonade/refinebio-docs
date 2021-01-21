@@ -376,7 +376,7 @@ Gene expression matrices are delived in <a href = "https://en.wikipedia.org/wiki
 In these matrices, rows are _genes_ or _features_ and columns are _samples_.
 Note that this format is consistent with the input expected by many programs specifically designed for working with gene expression matrices, but some machine learning libraries will expect this to be transposed.
 The column names or header will contain values corresponding to sample accessions (denoted `refinebio_accession_code` in metadata files).
-You can use these values in the header to map between a sample's gene expression data and its metadata (e.g., disease label or age). See also [Use Cases for Downstream Analysis](#use-cases-for-downstream-analysis).
+You can use these values in the header to map between a sample's gene expression data and its metadata (e.g., disease label or age). See also [Downstream Analysis with refine.bio Examples](#downstream-analysis-with-refinebio-examples).
 
 ## Sample Metadata
 
@@ -534,15 +534,24 @@ Below is the detailed folder structure:
 
 You can use the refine.bio API to build your own applications utilizing the refine.bio processed data.
 You can also select samples for aggregation and download via the API with additional options for download (e.g., without quantile normalization, selecting sample-specific `quant.sf` files).
-Our quantile normalization targets and transcriptome indices are available only via the API (see [_Quantile normalizing your own data with refine.bio reference distribution_](#quantile-normalizing-your-own-data-with-refine.bio-reference-distribution) and [_Transcriptome index_](#transcriptome-index), respectively).
+Our quantile normalization targets and transcriptome indices are available only via the API (see [_Quantile normalizing your own data with refine.bio reference distribution_](#quantile-normalizing-your-own-data-with-refinebio-reference-distribution) and [_Transcriptome index_](#transcriptome-index), respectively).
 
 **For more information see our API documentation at <a href = "https://api.refine.bio/" target = "blank">api.refine.bio</a>.**
 
-# Use Cases for Downstream Analysis
+# Downstream Analysis with refine.bio Examples
 
-Our <a href = "https://github.com/AlexsLemonade/refinebio-examples/tree/v1.0" target = "blank">`refinebio-examples`</a> repo includes a number of different analyses you can perform with data from refine.bio. We include examples in the R programming language, and where applicable, <a href = "http://genepattern-notebook.org/example-notebooks/" target = "blank">GenePattern Notebooks</a> and scripts to prepare refine.bio data for use with GenePattern. The following examples are included:
+Our <a href = "https://alexslemonade.github.io/refinebio-examples/01-getting-started/getting-started.html" target = "blank">refine.bio examples site</a> includes a number of different analyses you can perform with data from refine.bio in the R programming language. 
+You can view our examples in your browser or download the <a href = "https://rmarkdown.rstudio.com/" target = "blank">R Markdown (`.Rmd`)</a> files to run the code locally (find more information on required software <a href = "https://alexslemonade.github.io/refinebio-examples/01-getting-started/getting-started.html#03_What_you_need_to_install_to_run_the_examples" target = "blank">here</a> and how to use `.Rmd` <a href = "https://alexslemonade.github.io/refinebio-examples/01-getting-started/getting-started.html#05_How_to_use_R_Markdown_Documents" target = "blank">here</a>).
+Example analyses are designed to guide you through obtaining data from the refine.bio web interface and provide instruction for adapting the analysis for a dataset of your choice.
+View our <a href = "https://alexslemonade.github.io/refinebio-examples/01-getting-started/getting-started.html" target = "blank">Getting Started page</a>, <a href = "https://alexslemonade.github.io/refinebio-examples/02-microarray/00-intro-to-microarray.html" target = "blank">Introduction to Microarray</a>, or <a href = "https://alexslemonade.github.io/refinebio-examples/03-rnaseq/00-intro-to-rnaseq.html" target = "blank">Introduction to RNA-seq</a> to start using refine.bio examples.
 
-* Differential expression analysis [<a href = "https://github.com/AlexsLemonade/refinebio-examples/tree/v1.0/differential-expression" target = "blank">README</a>, <a href = "https://htmlpreview.github.io/?https://github.com/AlexsLemonade/refinebio-examples/blob/v1.0/differential-expression/microarray_DGE.nb.html" target = "blank">microarray notebook</a>, <a href = "https://htmlpreview.github.io/?https://github.com/AlexsLemonade/refinebio-examples/blob/v1.0/differential-expression/rnaseq_DGE.nb.html" target = "blank">RNA-seq notebook</a>]
-* Converting between different gene identifiers [<a href = "https://github.com/AlexsLemonade/refinebio-examples/tree/v1.0/ensembl-id-convert" target = "blank">README</a>, <a href = "https://htmlpreview.github.io/?https://github.com/AlexsLemonade/refinebio-examples/blob/v1.0/ensembl-id-convert/ensembl_id_convert.nb.html" target = "blank">notebook</a>]
-* Ortholog mapping [<a href = "https://github.com/AlexsLemonade/refinebio-examples/tree/v1.0/ortholog-mapping" target = "blank">README</a>, <a href = "https://htmlpreview.github.io/?https://github.com/AlexsLemonade/refinebio-examples/blob/v1.0/ortholog-mapping/ortholog_mapping_example.nb.html" target = "blank">notebook</a>]
-* Clustering/heatmap generation [<a href = "https://github.com/AlexsLemonade/refinebio-examples/tree/v1.0/clustering" target = "blank">README</a>, <a href = "https://htmlpreview.github.io/?https://github.com/AlexsLemonade/refinebio-examples/blob/v1.0/clustering/clustering_example.nb.html" target = "blank">notebook</a>]
+Here's a sneak peek of examples that are available:
+
+* <a href = "https://alexslemonade.github.io/refinebio-examples/02-microarray/differential-expression_microarray_02_several-groups.html" target = "blank">Differential gene expression analysis for several groups (microarray)</a>
+* <a href = "https://alexslemonade.github.io/refinebio-examples/03-rnaseq/clustering_rnaseq_01_heatmap.html" target = "blank">Hierarchical clustering and heatmap creation (RNA-seq)</a>
+* <a href = "https://alexslemonade.github.io/refinebio-examples/02-microarray/pathway-analysis_microarray_02_gsea.html" target = "blank">Gene Set Enrichment Analysis (Microarray)</a>
+* <a href = "https://alexslemonade.github.io/refinebio-examples/03-rnaseq/dimension-reduction_rnaseq_02_umap.html" target = "blank">Visualization with Uniform Manifold Approximation and Projection (RNA-seq)</a>
+
+<a href = "https://share.hsforms.com/1pQ8pPB70TuG37sVjr-KtXA336z0" target = "blank">Give us feedback on our refine.bio examples!</a>
+If you have a question about or find a problem with one of our examples and need to get in touch with one of our staff, please <a href = "https://github.com/AlexsLemonade/refinebio-examples/issues/new?assignees=&labels=user+report+or+question&template=report-a-problem-or-ask-a-question.md&title=User+issue%3A++" target = "blank">file a GitHub issue</a>.
+If you would prefer to report issues via e-mail, you can also email [requests@ccdatalab.org](mailto:requests@ccdatalab.org).
