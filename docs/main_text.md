@@ -13,7 +13,7 @@ We process a subset of platforms using the <a href = "http://brainarray.mbni.med
 We also support RNA-seq experiments performed on <a href ="https://github.com/AlexsLemonade/refinebio/blob/dev/config/supported_rnaseq_platforms.txt" target = "blank">these</a>  short-read platforms.
 For more information on how data are processed, see the [Processing Information](#processing-information) section of this document.
 If there is a platform that you would like to see processed, please <a href ="https://github.com/AlexsLemonade/refinebio/issues" target = "blank">file an issue on GitHub</a>.
-If you would prefer to report issues via e-mail, you can also email [ccdl@alexslemonade.org](mailto:ccdl@alexslemonade.org).
+If you would prefer to report issues via e-mail, you can also email [requests@ccdatalab.org](mailto:requests@ccdatalab.org).
 
 ## Sources
 
@@ -75,7 +75,7 @@ Only harmonized values are displayed in the sample table on the web interface.
 When downloading refine.bio data, these harmonized metadata are denoted with the `refinebio_` prefix.
 
 We recommend that users confirm metadata fields that are particularly important via the submitter-supplied metadata. If you find that the harmonized metadata does not accurately reflect the metadata supplied by the submitter, please <a href ="https://github.com/AlexsLemonade/refinebio/issues" target = "blank">file an issue on GitHub</a> so that we can resolve it.
-If you would prefer to report issues via e-mail, you can also email [ccdl@alexslemonade.org](mailto:ccdl@alexslemonade.org).
+If you would prefer to report issues via e-mail, you can also email [requests@ccdatalab.org](mailto:requests@ccdatalab.org).
 
 ### Submitter Supplied Metadata
 
@@ -142,7 +142,7 @@ It's possible that experiments that are inappropriate for use with Salmon will s
 We also encounter trouble distinguishing single-cell and bulk RNA-seq data from these fields.
 We strongly recommend exercising caution when using single-cell data from refine.bio as the pipeline we use may be inappropriate (e.g., correcting for gene length in 3' tagged RNA-seq data induces bias [<a href = "https://bioconductor.org/packages/release/bioc/vignettes/tximport/inst/doc/tximport.html#tagged-rna-seq" target = "blank">ref</a>], Salmon TPM may overcorrect expression of long genes [<a href = "http://hemberg-lab.github.io/scRNA.seq.course/construction-of-expression-matrix.html#reads-alignment" target = "blank">ref</a>]).
 If you find an experiment that you believe is inappropriate for use with our pipeline, please <a href ="https://github.com/AlexsLemonade/refinebio/issues" target = "blank">file an issue on GitHub</a> so that we can resolve it.
-If you would prefer to report issues via e-mail, you can also email [ccdl@alexslemonade.org](mailto:ccdl@alexslemonade.org).
+If you would prefer to report issues via e-mail, you can also email [requests@ccdatalab.org](mailto:requests@ccdatalab.org).
 
 #### Salmon
 
@@ -227,7 +227,7 @@ We support identifier conversion for a limited number of platforms that either d
 
 The code for deriving these mappings and more details are available at https://github.com/AlexsLemonade/identifier-refinery.
 If you find an issue with these mappings, please <a href ="https://github.com/AlexsLemonade/refinebio/issues" target = "blank">file an issue on GitHub </a> so that we can resolve it.
-If you would prefer to report issues via e-mail, you can also email [ccdl@alexslemonade.org](mailto:ccdl@alexslemonade.org).
+If you would prefer to report issues via e-mail, you can also email [requests@ccdatalab.org](mailto:requests@ccdatalab.org).
 
 ### Illumina identifier conversion
 
@@ -389,7 +389,7 @@ If there are no keys from the source data associated with a harmonized key, the 
 We also deliver submitter-supplied data; see below for more details.
 **We recommend that users confirm metadata fields that are particularly important via the submitter-supplied metadata.**
 If you find that refine.bio metadata does not accurately reflect the metadata supplied by the submitter, please <a href ="https://github.com/AlexsLemonade/refinebio/issues" target = "blank">file an issue on GitHub</a> so that we can resolve it.
-If you would prefer to report issues via e-mail, you can also email [ccdl@alexslemonade.org](mailto:ccdl@alexslemonade.org).
+If you would prefer to report issues via e-mail, you can also email [requests@ccdatalab.org](mailto:requests@ccdatalab.org).
 
 ### TSV files
 
