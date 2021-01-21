@@ -36,4 +36,4 @@ _Note that the contributor list is in alphabetical order as we prepare a manuscr
 
 ## Questions/Feedback?
 
-If you have a question or comment, please <a href ="https://github.com/AlexsLemonade/refinebio/issues" target = "blank">file an issue on GitHub </a> or send us an email at [ccdl@alexslemonade.org](mailto:ccdl@alexslemonade.org).
+If you have a question or comment, please <a href ="https://github.com/AlexsLemonade/refinebio/issues" target = "blank">file an issue on GitHub </a> or send us an email at [requests@ccdatalab.org](mailto:requests@ccdatalab.org).
