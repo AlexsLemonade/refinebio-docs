@@ -547,7 +547,7 @@ View our <a href = "https://alexslemonade.github.io/refinebio-examples/01-gettin
 
 Here's a sneak peek of examples that are available:
 
-* <a href = "https://alexslemonade.github.io/refinebio-examples/02-microarray/differential-expression_microarray_02_several-groups.html" target = "blank">Differential gene expression analysis for several groups (microarray)</a>
+* <a href = "https://alexslemonade.github.io/refinebio-examples/02-microarray/differential-expression_microarray_02_several-groups.html" target = "blank">Differential gene expression analysis for several groups (Microarray)</a>
 * <a href = "https://alexslemonade.github.io/refinebio-examples/03-rnaseq/clustering_rnaseq_01_heatmap.html" target = "blank">Hierarchical clustering and heatmap creation (RNA-seq)</a>
 * <a href = "https://alexslemonade.github.io/refinebio-examples/02-microarray/pathway-analysis_microarray_02_gsea.html" target = "blank">Gene Set Enrichment Analysis (Microarray)</a>
 * <a href = "https://alexslemonade.github.io/refinebio-examples/03-rnaseq/dimension-reduction_rnaseq_02_umap.html" target = "blank">Visualization with Uniform Manifold Approximation and Projection (RNA-seq)</a>
