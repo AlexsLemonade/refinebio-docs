@@ -6,8 +6,10 @@ refine.bio is a multi-organism collection of genome-wide transcriptome or gene e
 refine.bio allows biologists, clinicians, and machine learning researchers to search for experiments from different source repositories all in one place and build custom data sets for their questions of interest.
 
 refine.bio is well-suited for quickly assessing if signals are present in particular datasets, for identifying and obtaining data sets for accelerated validation of findings, and for building large compendia for training machine learning models that can adequately handle the technical noise associated with integrating multiple experiments and platforms.
-For examples of how to use refine.bio data, please see our [use cases for downstream analysis](https://refinebio-docs.readthedocs.io/en/latest/main_text.html#use-cases-for-downstream-analysis).
+
 refine.bio is _not_ a substitute for experiments and processing pipelines tailored to answer _specific_ biological questions of interest or for input from relevant experts (e.g., those with statistics expertise), but rather a repository of samples processed with standardized pipelines that have been selected based on their wide-ranging utility.
+
+**For examples of how to use refine.bio data, please see [_Downstream Analysis with refine.bio Examples_](https://refinebio-docs.readthedocs.io/en/latest/main_text.html#downstream-analysis-with-refinebio-examples).**
 
 ### Frequently asked questions
 
