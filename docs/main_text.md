@@ -9,7 +9,7 @@ We normalize data to Ensembl gene identifiers and provide abundance estimates.
 More precisely, we support microarray platforms based on their GEO or ArrayExpress accessions.
 We currently support Affymetrix microarrays and Illumina BeadArrays, and we are continuing to evaluate and add support for more platforms.
 This <a href ="https://github.com/AlexsLemonade/refinebio/blob/dev/config/supported_microarray_platforms.csv" target = "blank">table </a> contains the microarray platforms that we support.
-We process a subset of platforms using the <a href = "http://brainarray.mbni.med.umich.edu/Brainarray/Database/CustomCDF/CDF_download.asp" target = "blank">BrainArray Custom CDFs</a>, which are denoted by a `y` in the `is_brainarray` column.
+We process a subset of Affymetrix platforms using the <a href = "http://brainarray.mbni.med.umich.edu/Brainarray/Database/CustomCDF/CDF_download.asp" target = "blank">BrainArray Custom CDFs</a>, which are denoted by a `y` in the `is_brainarray` column.
 We also support RNA-seq experiments performed on <a href ="https://github.com/AlexsLemonade/refinebio/blob/dev/config/supported_rnaseq_platforms.txt" target = "blank">these</a>  short-read platforms.
 For more information on how data are processed, see the [Processing Information](#processing-information) section of this document.
 If there is a platform that you would like to see processed, please <a href ="https://github.com/AlexsLemonade/refinebio/issues" target = "blank">file an issue on GitHub</a>.
@@ -103,8 +103,9 @@ SCAN (Single Channel Array Normalization) is a normalization method for develop 
 SCAN models and corrects for the effect of technical bias, such as GC content, using a mixture-modeling approach.
 For more information about this approach, see the primary publication (<a href = "http://dx.doi.org/10.1016/j.ygeno.2012.08.003" target = "blank">Piccolo, et al. _Genomics._ 2012.</a>) and the <a href = "https://www.bioconductor.org/packages/release/bioc/html/SCAN.UPC.html" target = "blank">SCAN.UPC Bioconductor package</a> documentation.
 We specifically use the `SCANfast` implementation of SCAN and the Brainarray packages as probe-summary packages when available.
+When available, we use <a href = "http://brainarray.mbni.med.umich.edu/Brainarray/Database/CustomCDF/CDF_download.asp" target = "blank">BrainArray Custom CDFs</a> during processing with SCAN.
 
-##### Platform detection
+##### Affymetrix platform detection
 
 We have encountered instances where the platform label from the source repository and the metadata included in the sample's raw data file (`.CEL` file) itself do not match.
 In these cases, we take the platform information included in the raw data (`.CEL`) file header to be the true platform label.
@@ -120,13 +121,28 @@ Following background correction -- either upstream presumably in the Illumina Be
 SCAN requires probe sequence information obtained from the <a href = "https://www.bioconductor.org/packages/release/BiocViews.html#___IlluminaChip" target = "blank">Illumina BeadArray Bioconductor annotation packages</a> (e.g., <a href = "https://www.bioconductor.org/packages/release/data/annotation/html/illuminaHumanv1.db.html" target = "blank">`illuminaHumanv1.db`</a>).
 We only retain probes that have a "Good" or "Perfect" rating in these packages; this quality rating is in reference to how well a probe is likely to measure its target transcript.
 
-##### Platform detection
+##### Illumina platform detection
 
 We infer the Illumina BeadArray platform that a sample is likely to be run on by comparing the probe identifiers in the unprocessed file to probes for each of the Illumina expression arrays for a given organism.
 We again use the Illumina Bioconductor annotation packages for this step.
 For instance, the overlap between the probe identifiers in a human sample and the probe identifiers in each human platform (<a href = "https://www.bioconductor.org/packages/release/data/annotation/html/illuminaHumanv1.db.html" target = "blank">`v1`</a>, <a href = "https://www.bioconductor.org/packages/release/data/annotation/html/illuminaHumanv2.db.html" target = "blank">`v2`</a>, <a href = "https://www.bioconductor.org/packages/release/data/annotation/html/illuminaHumanv3.db.html" target = "blank">`v3`</a>, and <a href = "https://www.bioconductor.org/packages/release/data/annotation/html/illuminaHumanv4.db.html" target = "blank">`v4`</a>) is calculated.
 The platform with the highest overlap (provided it is >75%) is inferred to be the true platform.
 Some analyses around this platform detection procedure can be found in <a href = "https://github.com/jaclyn-taroni/beadarray-platform-detection" target = "blank">this repository</a>.
+
+##### Handling Illumina probes that map to multiple Ensembl gene identifiers
+
+Illumina probes sometimes map to multiple Ensembl gene identifiers when using the annotation in <a href = "https://www.bioconductor.org/packages/release/BiocViews.html#___IlluminaChip" target = "blank">Illumina BeadArray Bioconductor annotation packages</a> (e.g., <a href = "https://www.bioconductor.org/packages/release/data/annotation/html/illuminaHumanv1.db.html" target = "blank">`illuminaHumanv1.db`</a>).
+For human platforms in particular, these genes tend to be from highly polymorphic loci, e.g., Killer-cell immunoglobulin-like receptors.
+Because refine.bio allows users to combine samples from multiple platforms, we prioritize Ensembl gene identifiers that maximize compatibility with other platforms.
+Specifically, we select genes in order of priority as follows:
+
+- Pick the gene ID with the most appearances in BrainArray packages for Affymetrix platforms of the same species as the input Illumina platform
+- If two or more of the associated gene IDs appear an equal number of times in BrainArray packages, or if none of the associated gene IDs appear in any BrainArray package, we break ties as follows:
+  - First, we check Ensembl and filter out any gene IDs that are no longer valid
+  - Next, if there are any Ensembl genes on the primary assembly, we take only the genes on the primary assembly and discard genes in <a href"https://www.ensembl.org/info/genome/genebuild/haplotypes_patches.html" target = "blank">haplotypes (alternative versions of the genome) or patches</a>.
+  - If there are still two or more genes left, we pick the gene with the lowest Ensembl gene identifier to break the tie. This is an arbitrary but consistent way to break ties.
+
+This is implemented in <a href="https://github.com/AlexsLemonade/illumina-refinery" target = "blank">`AlexsLemonade/illumina-refinery`</a>.
 
 ### RNA-seq pipelines
 
