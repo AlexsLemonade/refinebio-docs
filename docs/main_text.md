@@ -267,7 +267,7 @@ This is also known as an inner join and is illustrated below.
 ![inner join](https://user-images.githubusercontent.com/15315514/44534751-7a46dd00-a6c6-11e8-9760-e8daa91a500f.png)
 Note that some early generation microarrays measure fewer genes than their more recent counterparts, so their inclusion when aggregating `by species` may result in a small number of genes being returned.
 
-####  Limitations of gene identifiers when combining across platforms
+###  Limitations of gene identifiers when combining across platforms
 
 We use Ensembl gene identifiers across refine.bio and, within platform, we use the same annotation to maintain consistency (e.g., all samples from the same Affymetrix platform use the same Brainarray package or identifier mapping derived from said package).
 However, Brainarray packages or Bioconductor annotation packages may be assembled from different genome builds compared each other or compared to the genome build used to generate transcriptome indices.
@@ -369,14 +369,14 @@ Users can download gene expression data and associated sample and experiment met
 These files are delivered as a zip file.
 The folder structure within the zip file is determined by whether a user selected to aggregate by **experiment** or by **species**.
 
-### The download folder structure for data aggregated by experiment:
+## The download folder structure for data aggregated by experiment:
 
 ![docs-downloads-experiment-agg](https://user-images.githubusercontent.com/15315514/45906716-2f9eaa80-bdc3-11e8-9855-2aaeb74e588d.png)
 
 In this example, two experiments were selected.
 There will be as many folders as there are selected experiments.
 
-### The download folder structure for data aggregated by species:
+## The download folder structure for data aggregated by species:
 
 ![docs-downloads-species-agg](https://user-images.githubusercontent.com/15315514/45906715-2f9eaa80-bdc3-11e8-8ab3-90ccc40cfa11.png)
 
@@ -556,7 +556,7 @@ Our quantile normalization targets and transcriptome indices are available only 
 
 # Downstream Analysis with refine.bio Examples
 
-Our <a href = "https://alexslemonade.github.io/refinebio-examples/01-getting-started/getting-started.html" target = "blank">refine.bio examples site</a> includes a number of different analyses you can perform with data from refine.bio in the R programming language. 
+Our <a href = "https://alexslemonade.github.io/refinebio-examples/01-getting-started/getting-started.html" target = "blank">refine.bio examples site</a> includes a number of different analyses you can perform with data from refine.bio in the R programming language.
 You can view our examples in your browser or download the <a href = "https://rmarkdown.rstudio.com/" target = "blank">R Markdown (`.Rmd`)</a> files to run the code locally (find more information on required software <a href = "https://alexslemonade.github.io/refinebio-examples/01-getting-started/getting-started.html#03_What_you_need_to_install_to_run_the_examples" target = "blank">here</a> and how to use `.Rmd` <a href = "https://alexslemonade.github.io/refinebio-examples/01-getting-started/getting-started.html#05_How_to_use_R_Markdown_Documents" target = "blank">here</a>).
 Example analyses are designed to guide you through obtaining data from the refine.bio web interface and provide instruction for adapting the analysis for a dataset of your choice.
 View our <a href = "https://alexslemonade.github.io/refinebio-examples/01-getting-started/getting-started.html" target = "blank">Getting Started page</a>, <a href = "https://alexslemonade.github.io/refinebio-examples/02-microarray/00-intro-to-microarray.html" target = "blank">Introduction to Microarray</a>, or <a href = "https://alexslemonade.github.io/refinebio-examples/03-rnaseq/00-intro-to-rnaseq.html" target = "blank">Introduction to RNA-seq</a> to start using refine.bio examples.

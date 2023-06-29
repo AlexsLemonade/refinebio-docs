@@ -1,5 +1,5 @@
 refine.bio Documentation
-======================================
+========================
 
 
 refine.bio is a multi-organism collection of genome-wide transcriptome or gene expression data that has been obtained from publicly available repositories and uniformly processed and normalized.
@@ -11,7 +11,7 @@ refine.bio is _not_ a substitute for experiments and processing pipelines tailor
 
 **For examples of how to use refine.bio data, please see [_Downstream Analysis with refine.bio Examples_](https://refinebio-docs.readthedocs.io/en/latest/main_text.html#downstream-analysis-with-refinebio-examples).**
 
-### Frequently asked questions
+## Frequently asked questions
 
 [**What type of data does refine.bio support?**](https://refinebio-docs.readthedocs.io/en/latest/faq.html#what-type-of-data-does-refine-bio-support)
 
@@ -19,18 +19,20 @@ refine.bio is _not_ a substitute for experiments and processing pipelines tailor
 
 [**How can I find out what versions of software/packages were used to process the data?**](https://refinebio-docs.readthedocs.io/en/latest/faq.html#how-can-i-find-out-what-versions-of-software-packages-were-used-to-process-the-data)
 
-## Contents
+```{toctree}
+:maxdepth: 4
 
-* [refine.bio Data Processing](main_text.md)
-* [Getting Started](getting_started.md)
-* [FAQ](faq.md)
-* [License](license.md)
+refine.bio Data Processing <main_text>
+Getting Started <getting_started>
+FAQ <faq>
+License <license>
+```
 
 ## Citing refine.bio
 
 Please use the following:
 
-Casey S. Greene, Dongbo Hu, Richard W. W. Jones, Stephanie Liu, David S. Mejia, Rob Patro, Stephen R. Piccolo, Ariel Rodriguez Romero, Hirak Sarkar, Candace L. Savonen, Jaclyn N. Taroni, William E. Vauclain, Deepashree Venkatesh Prasad, Kurt G. Wheeler. **refine.bio: a resource of uniformly processed publicly available gene expression datasets.** URL: https://www.refine.bio 
+Casey S. Greene, Dongbo Hu, Richard W. W. Jones, Stephanie Liu, David S. Mejia, Rob Patro, Stephen R. Piccolo, Ariel Rodriguez Romero, Hirak Sarkar, Candace L. Savonen, Jaclyn N. Taroni, William E. Vauclain, Deepashree Venkatesh Prasad, Kurt G. Wheeler. **refine.bio: a resource of uniformly processed publicly available gene expression datasets.** URL: https://www.refine.bio
 
 _Note that the contributor list is in alphabetical order as we prepare a manuscript for submission._
 

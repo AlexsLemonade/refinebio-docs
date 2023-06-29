@@ -1,10 +1,10 @@
-## Getting Started with a refine.bio dataset
+# Getting Started with a refine.bio dataset
 
 A refine.bio dataset includes gene expression matrices and experiment and sample metadata for the samples that you selected for download.
 
-### Structure
+## Structure
 
-The structure of your download folder varies slightly depending on whether you chose to aggregate by experiment or by species.  
+The structure of your download folder varies slightly depending on whether you chose to aggregate by experiment or by species.
 
 **The download folder structure for data aggregated by experiment**
 
@@ -17,7 +17,7 @@ There will be as many folders as there are selected experiments.
 
 ![docs-downloads-species-agg](https://user-images.githubusercontent.com/15315514/45906715-2f9eaa80-bdc3-11e8-8ab3-90ccc40cfa11.png)
 
-### Contents
+## Contents
 
 * The `aggregated_metadata.json` file contains information about the options you selected for download.
 Specifically, the `aggregate_by` and `scale_by` fields note how the samples are grouped into gene expression matrices and how the gene expression data values were transformed, respectively.
@@ -38,27 +38,27 @@ The contents of a sample's `refinebio_annotations` field include the submitter-s
 
 Please see the [Downloadable Files](http://docs.refine.bio/en/latest/main_text.html#downloadable-files) of our documentation section for more details.
 
-### Usage
+## Usage
 
 The gene expression matrix TSV and JSON files can be read in, manipulated, or parsed with standard functions or libraries in the language of your choice.
 Below are some code snippets to help you import the data into R or Python and examine it.
 
-#### Reading TSV Files
+### Reading TSV Files
 
 Here's an example reading a gene expression TSV (`GSE11111.tsv`) into R as a data.frame with base R:
 
-```
+```r
 expression_df <- read.delim("GSE11111.tsv", header = TRUE,
-							row.names = 1, stringsAsFactors = FALSE)
+                            row.names = 1, stringsAsFactors = FALSE)
 ```
 
-#### Reading JSON Files
+### Reading JSON Files
 
 **R**
 
 The `rjson` R package allows us to read a metadata JSON file (`aggregated_metadata.json`) into R as a list:
 
-```
+```r
 library(rjson)
 metadata_list <- fromJSON(file = "aggregated_metadata.json")
 ```
@@ -67,7 +67,7 @@ metadata_list <- fromJSON(file = "aggregated_metadata.json")
 
 In Python, we can read in the metadata JSON like so:
 
-```
+```python
 import json
 with open('aggregated_metadata.json', 'r') as jsonfile:
     data = json.load(jsonfile)
@@ -141,9 +141,9 @@ Below are some code snippets to help you import the data into R or Python and ex
 
 Here's an example reading a gene expression TSV (`GSE11111.tsv`) into R as a data.frame with base R:
 
-```
+```r
 expression_df <- read.delim("GSE11111.tsv", header = TRUE,
-							row.names = 1, stringsAsFactors = FALSE)
+                            row.names = 1, stringsAsFactors = FALSE)
 ```
 
 #### Reading JSON Files
@@ -152,7 +152,7 @@ expression_df <- read.delim("GSE11111.tsv", header = TRUE,
 
 The `rjson` R package allows us to read a metadata JSON file (`aggregated_metadata.json`) into R as a list:
 
-```
+```r
 library(rjson)
 metadata_list <- fromJSON(file = "aggregated_metadata.json")
 ```
@@ -161,7 +161,7 @@ metadata_list <- fromJSON(file = "aggregated_metadata.json")
 
 In Python, we can read in the metadata JSON like so:
 
-```
+```python
 import json
 with open('aggregated_metadata.json', 'r') as jsonfile:
     data = json.load(jsonfile)
