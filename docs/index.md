@@ -23,7 +23,7 @@ refine.bio is _not_ a substitute for experiments and processing pipelines tailor
 :maxdepth: 4
 
 refine.bio Data Processing <main_text>
-Getting Started <getting_started>
+getting_started
 FAQ <faq>
 License <license>
 ```
