@@ -25,7 +25,7 @@
 
 {% block footer %}
   {{ super() }}
-  <script type="text/javascript" src="/en/latest/_static/js/sticky-sidebar.min.js"></script>
+  <script type="text/javascript" src="_static/js/sticky-sidebar.min.js"></script>
   <script type="text/javascript">
     (function() {
       var stickySidebar = new StickySidebar('.wy-side-scroll');
@@ -37,14 +37,18 @@
   </script>
 
   <script type="text/javascript">
-    fetch('https://api.refine.bio/v1/transcriptome_indices/?limit=1')
-      .then(function(response) {
-        const version = response.headers.get('x-source-revision');
-        const versionElements = document.getElementsByClassName('version');
-        if (versionElements && version) {
-          versionElements[0].textContent = version;
-        }
-      })
+    (function(){
+      const versionElements = document.getElementsByClassName('version');
+      if (versionElements.length === 0) return false;
+      fetch('https://api.refine.bio/v1/transcriptome_indices/?limit=1')
+        .then(function(response) {
+          const version = response.headers.get('x-source-revision');
+          console.log(versionElements)
+          if (versionElements && version) {
+            versionElements[0].textContent = version;
+          }
+        })
+    })()
   </script>
 {% endblock %}
 
