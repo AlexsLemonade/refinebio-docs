@@ -56,7 +56,7 @@ Values are stripped of white space and forced to lowercase.
 | `compound` | `compound`, `compound1`, `compound2`, `compound name`, `drug`, `drugs`, `immunosuppressive drugs` |
 | `time` | `initial time point`, `start time`, `stop time`, `time point`, `sampling time point`, `sampling time`, `time post infection` |
 | `age` | `age`, `patient age`, `age of patient`, `age (years)`, `age at diagnosis`, `age at diagnosis years`, `characteristic [age]`, `characteristics [age]` |
-| `cell_line` | `cell line`, `sample strain` |
+| `cell_line` | `cell line` |
 
 We type-cast age values to doubles.
 If the values can not be type-cast to doubles (e.g., "9yrs 2mos"), these are not added to the harmonized field.
