@@ -1,17 +1,24 @@
 # refinebio-docs
 
 ## To install:
+## Local development
 
-    git clone https://github.com/AlexsLemonade/refinebio-docs
-    virtualenv env
-    source env/bin/activate
-    pip install -r requirements.txt
+### Environment
 
-## To run:
+To set up the environment (assuming `virtualenv` is installed), use the following commands:
 
-    cd docs/
-    ./autobuild.sh
+```sh
+virtualenv env
+source env/bin/activate
+pip install -r requirements.txt
+```
 
-## To edit:
+### Building locally
 
-    cd docs
+Build locally with the following:
+
+```sh
+cd docs/
+./autobuild.sh
+```
+
