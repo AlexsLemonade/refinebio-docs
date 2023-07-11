@@ -58,8 +58,11 @@ Values are stripped of white space and forced to lowercase.
 | `age` | `age`, `patient age`, `age of patient`, `age (years)`, `age at diagnosis`, `age at diagnosis years`, `characteristic [age]`, `characteristics [age]` |
 | `cell_line` | `cell line` |
 
-We type-cast age values to doubles.
+When multiple source keys that map to the same harmonized key are present in metadata from sources, we concatenate the values, separated by `;`.
+For example, a sample with `cell type: B cell` and `tissue: kidney` would become `specimen_part: B cell;kidney` when harmonized.
+
 We type-cast age values to doubles (e.g., `12` and `12 weeks` both become `12.000`).
+Because of this type-casting behavior, we do not support multiple source keys; the value harmonized to `age` will be the first value that is encountered. 
 If the values can not be type-cast to doubles (e.g., "9yrs 2mos"), these are not added to the harmonized field.
 We do not attempt to normalize differences in units (e.g., months, years, days) for the harmonized age key.
 Users should consult the submitter-supplied information to determine what unit is used.
