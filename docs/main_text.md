@@ -30,6 +30,12 @@ Note that we do not yet obtain sample metadata from the <a href = "https://www.n
 
 ### refine.bio-harmonized Metadata
 
+
+_The documentation in this section reflects data that has been processed via refine.bio as of version TODO: add version._
+_See the documentation sidebar for the current version of refine.bio._
+_The `refinebio_processor_version` field in the metadata captures the refine.bio version when a sample was processed._
+
+
 Scientists who upload results don't always use the same names for related values.
 This makes it challenging to search across datasets.
 We have put some processes in place to smooth out some of these issues.
