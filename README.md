@@ -1,6 +1,17 @@
 # refinebio-docs
 
-## To install:
+## Development workflow
+
+All branches adding or updating documentation should branch from `development`, the default branch for this repository.
+Pull requests adding or updating documentation should target `development`.
+The development version of the docs can be viewed at <https://docs.refine.bio/en/development/>.
+
+To deploy to latest (<https://docs.refine.bio/en/latest/>), file a pull request to merge `development` into `main`.
+
+### Building on pull requests
+
+Read the Docs builds on pull request events for this repository, which reports the build status and lets you preview changes.
+
 ## Local development
 
 ### Environment
