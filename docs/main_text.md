@@ -59,6 +59,7 @@ Values are stripped of white space and forced to lowercase.
 | `cell_line` | `cell line` |
 
 We type-cast age values to doubles.
+We type-cast age values to doubles (e.g., `12` and `12 weeks` both become `12.000`).
 If the values can not be type-cast to doubles (e.g., "9yrs 2mos"), these are not added to the harmonized field.
 We do not attempt to normalize differences in units (e.g., months, years, days) for the harmonized age key.
 Users should consult the submitter-supplied information to determine what unit is used.
