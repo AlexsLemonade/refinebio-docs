@@ -31,7 +31,7 @@ Note that we do not yet obtain sample metadata from the <a href = "https://www.n
 ### refine.bio-harmonized Metadata
 
 
-_The documentation in this section reflects data that has been processed via refine.bio as of version TODO: add version._
+_The documentation in this section reflects data that has been processed via refine.bio as of version `v1.45.0`._
 _See the documentation sidebar for the current version of refine.bio._
 _The `refinebio_processor_version` field in the downloaded metadata file captures the refine.bio version when a sample was processed._
 
