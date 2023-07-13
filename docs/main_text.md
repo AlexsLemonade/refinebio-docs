@@ -47,7 +47,7 @@ For example, `treatment`, `treatment group`, `treatment protocol`, `drug treatme
 The fields that we currently collapse to includes `specimen part`, `genetic information`, `disease`, `disease stage`, `treatment`, `race`, `subject`, `compound`, `cell_line`, and `time`.
 
 See the table below for the mappings between the keys from source data and the harmonized keys.
-We check a variety of fields from source repositories for the source key values, e.g., the source keys `age`, `characteristic [age]`, and `characteristic_age` would all map to the harmonized key `age`.
+In addition to the source data keys explicitly listed in the table, we check for variants in the metadata from the source repositories, e.g., the source keys `age`, `characteristic [age]`, and `characteristic_age` would all map to the harmonized key `age`.
 
 
 | Harmonized key | Keys from data sources |
