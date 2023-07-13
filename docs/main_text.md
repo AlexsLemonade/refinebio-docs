@@ -46,12 +46,13 @@ To aid in searches and for general convenience, we combine certain fields based 
 For example, `treatment`, `treatment group`, `treatment protocol`, `drug treatment`, and `clinical treatment` fields get collapsed down to `treatment`.
 The fields that we currently collapse to includes `specimen part`, `genetic information`, `disease`, `disease stage`, `treatment`, `race`, `subject`, `compound`, `cell_line`, and `time`.
 
-See the table below for a complete set of mappings between the keys from source data and the harmonized keys.
-Values are stripped of white space and forced to lowercase.
+See the table below for the mappings between the keys from source data and the harmonized keys.
+We check a variety of fields from source repositories for the source key values, e.g., the source keys `age`, `characteristic [age]`, and `characteristic_age` would all map to the harmonized key `age`.
+
 
 | Harmonized key | Keys from data sources |
 |:----------------:|-------------------------|
-| `specimen part` | `organism part`, `cell type`, `tissue`, `tissue type`, `tissue source`, `tissue origin`, `source tissue`, `tissue subtype`, `tissue/cell type`, `tissue region`,  `tissue compartment`,  `tissues`, `tissue of origin`, `tissue-type`,  `tissue harvested`, `cell/tissue type`, `tissue subregion`, `organ`, `characteristic [organism part]`, `characteristics [organism part]`, `cell_type`, `organismpart`, `isolation source`, `tissue sampled`, `cell description`
+| `specimen part` | `organism part`, `cell type`, `tissue`, `tissue type`, `tissue source`, `tissue origin`, `source tissue`, `tissue subtype`, `tissue/cell type`, `tissue region`,  `tissue compartment`,  `tissues`, `tissue of origin`, `tissue-type`,  `tissue harvested`, `cell/tissue type`, `tissue subregion`, `organ`, `cell_type`, `organismpart`, `isolation source`, `tissue sampled`, `cell description`
 | `genetic information` | `strain/background`, `strain`,  `strain or line`, `background strain`, `genotype`, `genetic background`, `genotype/variation`, `ecotype`, `cultivar`, `strain/genotype`, `strain background`|
 | `disease` |  `disease `, `disease state `, `disease status `, `diagnosis `, `disease `, `infection with `, `sample type ` |
 | `disease stage` | `disease state `, `disease staging `, `disease stage `, `grade `, `tumor grade `,  `who grade `, `histological grade `, `tumor grading `, `disease outcome `, `subject status ` |
@@ -60,8 +61,10 @@ Values are stripped of white space and forced to lowercase.
 | `subject` |  `subject `, `subject id `, `subject/sample source id `, `subject identifier `, `human subject anonymized id `, `individual `, `individual identifier `,  `individual id `, `patient `, `patient id `, `patient identifier `,  `patient number `, `patient no `,  `donor id `, `donor `, `sample_source_name `|
 | `compound` | `compound`, `compound1`, `compound2`, `compound name`, `drug`, `drugs`, `immunosuppressive drugs` |
 | `time` | `time`, `initial time point`, `start time`, `stop time`, `time point`, `sampling time point`, `sampling time`, `time post infection` |
-| `age` | `age`, `patient age`, `age of patient`, `age (years)`, `age at diagnosis`, `age at diagnosis years`, `characteristic [age]`, `characteristics [age]` |
+| `age` | `age`, `patient age`, `age of patient`, `age (years)`, `age at diagnosis`, `age at diagnosis years` |
 | `cell_line` | `cell line` |
+
+Values are stripped of white space and forced to lowercase.
 
 When multiple source keys that map to the same harmonized key are present in metadata from sources, we concatenate the values, separated by `;`.
 For example, a sample with `cell type: B cell` and `tissue: kidney` would become `specimen_part: B cell;kidney` when harmonized.
