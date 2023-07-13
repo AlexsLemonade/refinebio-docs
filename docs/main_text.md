@@ -42,8 +42,7 @@ We have put some processes in place to smooth out some of these issues.
 
 ![harmonized-metadata](https://user-images.githubusercontent.com/15315514/44549202-5eefc800-a6ee-11e8-8a7b-57826f0153f2.png)
 
-We combine certain fields based on similar keys to produce lightly harmonized metadata.
-We do this for convenience and to aid in searches.
+To aid in searches and for general convenience, we combine certain fields based on similar keys to produce lightly harmonized metadata.
 For example, `treatment`, `treatment group`, `treatment protocol`, `drug treatment`, and `clinical treatment` fields get collapsed down to `treatment`.
 The fields that we currently collapse to includes `specimen part`, `genetic information`, `disease`, `disease stage`, `treatment`, `race`, `subject`, `compound`, `cell_line`, and `time`.
 
