@@ -66,8 +66,8 @@ We check a variety of fields from source repositories for the source key values,
 
 Values are stripped of white space and forced to lowercase.
 
-When multiple source keys that map to the same harmonized key are present in metadata from sources, we concatenate the values, separated by `;`.
-For example, a sample with `cell type: B cell` and `tissue: kidney` would become `specimen_part: B cell;kidney` when harmonized.
+When multiple source keys that map to the same harmonized key are present in metadata from sources, we sort values in alphanumeric ascending order and concatenate them, separated by `;`.
+For example, a sample with `tissue: kidney` and `cell type: B cell` would become `specimen_part: B cell;kidney` when harmonized.
 
 We type-cast age values to doubles (e.g., `12` and `12 weeks` both become `12.000`).
 Because of this type-casting behavior, we do not support multiple source keys; the value harmonized to `age` will be the first value that is encountered. 
