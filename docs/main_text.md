@@ -38,7 +38,7 @@ _The `refinebio_processor_version` field in the downloaded metadata file capture
 
 Scientists who upload results don't always use the same names for related values.
 This makes it challenging to search across datasets.
-We have put some processes in place to smooth out some of these issues.
+We have implemented some processes to smooth out some of these issues.
 
 ![harmonized-metadata](https://user-images.githubusercontent.com/15315514/44549202-5eefc800-a6ee-11e8-8a7b-57826f0153f2.png)
 
