@@ -63,6 +63,7 @@ In addition to the source data keys explicitly listed in the table, we check for
 | `time` | `time`, `initial time point`, `start time`, `stop time`, `time point`, `sampling time point`, `sampling time`, `time post infection` |
 | `age` | `age`, `patient age`, `age of patient`, `age (years)`, `age at diagnosis`, `age at diagnosis years` |
 | `cell_line` | `cell line` |
+| `sex` | `sex`, `gender`, `subject gender`, `subject sex` |
 
 Values are stripped of white space and forced to lowercase.
 
@@ -74,13 +75,6 @@ Because of this type-casting behavior, we do not support multiple source keys; t
 If the values can not be type-cast to doubles (e.g., "9yrs 2mos"), these are not added to the harmonized field.
 We do not attempt to normalize differences in units (e.g., months, years, days) for the harmonized age key.
 Users should consult the submitter-supplied information to determine what unit is used.
-
-Sex is a special case; we map to `female` and `male` values if the values are one of the following:
-
-| Harmonized `sex` value | Values |
-|:-----------------------:|-------|
-| `female` | `f`, `female`, `woman`|
-| `male` | `m`, `male`, `man` |
 
 Only harmonized values are displayed in the sample table on the web interface.
 When downloading refine.bio data, these harmonized metadata are denoted with the `refinebio_` prefix.
