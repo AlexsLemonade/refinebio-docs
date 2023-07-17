@@ -30,36 +30,48 @@ Note that we do not yet obtain sample metadata from the <a href = "https://www.n
 
 ### refine.bio-harmonized Metadata
 
+
+_The documentation in this section reflects data that has been processed via refine.bio as of version `v1.45.0`._
+_See the documentation sidebar for the current version of refine.bio._
+_The `refinebio_processor_version` field in the downloaded metadata file captures the refine.bio version when a sample was processed._
+
+
 Scientists who upload results don't always use the same names for related values.
 This makes it challenging to search across datasets.
-We have put some processes in place to smooth out some of these issues.
+We have implemented some processes to smooth out some of these issues.
 
 ![harmonized-metadata](https://user-images.githubusercontent.com/15315514/44549202-5eefc800-a6ee-11e8-8a7b-57826f0153f2.png)
 
-To produce lightly harmonized metadata, we combine certain fields based on similar keys.
-We do this for convenience and to aid in searches.
+To aid in searches and for general convenience, we combine certain fields based on similar keys to produce lightly harmonized metadata.
 For example, `treatment`, `treatment group`, `treatment protocol`, `drug treatment`, and `clinical treatment` fields get collapsed down to `treatment`.
-The fields that we currently collapse to includes `specimen part`, `genetic information`, `disease`, `disease stage`, `treatment`, `race`, `subject`, `development stage`, `compound`, `cell_line`, and `time`.
+The fields that we currently collapse to includes `specimen part`, `genetic information`, `disease`, `disease stage`, `treatment`, `race`, `subject`, `compound`, `cell_line`, and `time`.
 
-See the table below for a complete set of mappings between the keys from source data and the harmonized keys.
-Values are stripped of white space and forced to lowercase.
+See the table below for the mappings between the keys from source data and the harmonized keys.
+In addition to the source data keys explicitly listed in the table, we check for variants in the metadata from the source repositories, e.g., the source keys `age`, `characteristic [age]`, and `characteristic_age` would all map to the harmonized key `age`.
+
 
 | Harmonized key | Keys from data sources |
 |:----------------:|-------------------------|
-| `specimen part` | `organism part`, `cell type`, `tissue`, `tissue type`, `tissue source`, `tissue origin`, `source tissue`, `tissue subtype`, `tissue/cell type`, `tissue region`,  `tissue compartment`,  `tissues`, `tissue of origin`, `tissue-type`,  `tissue harvested`, `cell/tissue type`, `tissue subregion`, `organ`, `characteristic [organism part]`, `characteristics [organism part]`, `cell_type`, `organismpart`, `isolation source`, `tissue sampled`, `cell description`
-| `genetic information` | `strain/background`, `strain`,  `strain or line`, `background strain`, `genotype`, `genetic background`, `genotype/variation`, `ecotype`, `cultivar`, `strain/genotype`|
+| `specimen part` | `organism part`, `cell type`, `tissue`, `tissue type`, `tissue source`, `tissue origin`, `source tissue`, `tissue subtype`, `tissue/cell type`, `tissue region`,  `tissue compartment`,  `tissues`, `tissue of origin`, `tissue-type`,  `tissue harvested`, `cell/tissue type`, `tissue subregion`, `organ`, `cell_type`, `organismpart`, `isolation source`, `tissue sampled`, `cell description`
+| `genetic information` | `strain/background`, `strain`,  `strain or line`, `background strain`, `genotype`, `genetic background`, `genotype/variation`, `ecotype`, `cultivar`, `strain/genotype`, `strain background`|
 | `disease` |  `disease `, `disease state `, `disease status `, `diagnosis `, `disease `, `infection with `, `sample type ` |
 | `disease stage` | `disease state `, `disease staging `, `disease stage `, `grade `, `tumor grade `,  `who grade `, `histological grade `, `tumor grading `, `disease outcome `, `subject status ` |
 | `treatment` | `treatment`, `treatment group`, `treatment protocol`,  `drug treatment`, `clinical treatment` |
 | `race` | `race`, `ethnicity`, `race/ethnicity`|
 | `subject` |  `subject `, `subject id `, `subject/sample source id `, `subject identifier `, `human subject anonymized id `, `individual `, `individual identifier `,  `individual id `, `patient `, `patient id `, `patient identifier `,  `patient number `, `patient no `,  `donor id `, `donor `, `sample_source_name `|
-| `development stage` | `developmental stage`,  `development stage`, `development stages` |
 | `compound` | `compound`, `compound1`, `compound2`, `compound name`, `drug`, `drugs`, `immunosuppressive drugs` |
-| `time` | `initial time point`, `start time`, `stop time`, `time point`, `sampling time point`, `sampling time`, `time post infection` |
-| `age` | `age`, `patient age`, `age of patient`, `age (years)`, `age at diagnosis`, `age at diagnosis years`, `characteristic [age]`, `characteristics [age]` |
-| `cell_line` | `cell line`, `sample strain` |
+| `time` | `time`, `initial time point`, `start time`, `stop time`, `time point`, `sampling time point`, `sampling time`, `time post infection` |
+| `age` | `age`, `patient age`, `age of patient`, `age (years)`, `age at diagnosis`, `age at diagnosis years` |
+| `cell_line` | `cell line` |
+| `sex` | `sex`, `gender`, `subject gender`, `subject sex` |
 
-We type-cast age values to doubles.
+Values are stripped of white space and forced to lowercase.
+
+When multiple source keys that map to the same harmonized key are present in metadata from sources, we sort values in alphanumeric ascending order and concatenate them, separated by `;`.
+For example, a sample with `tissue: kidney` and `cell type: B cell` would become `specimen_part: B cell;kidney` when harmonized.
+
+We type-cast age values to doubles (e.g., `12` and `12 weeks` both become `12.000`).
+Because of this type-casting behavior, we do not support multiple source keys; the value harmonized to `age` will be the first value that is encountered. 
 If the values can not be type-cast to doubles (e.g., "9yrs 2mos"), these are not added to the harmonized field.
 We do not attempt to normalize differences in units (e.g., months, years, days) for the harmonized age key.
 Users should consult the submitter-supplied information to determine what unit is used.
