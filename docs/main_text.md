@@ -63,6 +63,7 @@ In addition to the source data keys explicitly listed in the table, we check for
 | `time` | `time`, `initial time point`, `start time`, `stop time`, `time point`, `sampling time point`, `sampling time`, `time post infection` |
 | `age` | `age`, `patient age`, `age of patient`, `age (years)`, `age at diagnosis`, `age at diagnosis years` |
 | `cell_line` | `cell line` |
+| `sex` | `sex`, `gender`, `subject gender`, `subject sex` |
 
 Values are stripped of white space and forced to lowercase.
 
