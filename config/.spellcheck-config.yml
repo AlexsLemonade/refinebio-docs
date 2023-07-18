@@ -2,7 +2,7 @@ matrix:
 - name: Markdown
   aspell:
     lang: en
-    ignore-case: true
+    ignore-case: false
   dictionary:
     wordlists:
     - config/.custom-dictionary.txt
