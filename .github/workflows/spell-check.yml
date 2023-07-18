@@ -17,5 +17,4 @@ jobs:
       name: Spellcheck
       with:
         config_path: config/.spellcheck-config.yml
-        source_files: '**/*.md'
         task_name: Markdown
