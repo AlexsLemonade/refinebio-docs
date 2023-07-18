@@ -36,6 +36,7 @@ fancyimpute
 GC
 genomic
 haplotype
+haplotypes
 heatmap
 hexamer
 Hirak
@@ -47,6 +48,7 @@ IterativeSVD
 JSON
 lengthScaledTPM
 Liu
+maxdepth
 mer
 mers
 microarray
@@ -60,6 +62,7 @@ Patro
 Prasad
 preprocessCore
 pseudogene
+pseudogenes
 quant
 quantile
 quantiles
@@ -77,6 +80,7 @@ SRP
 SRR
 summarization
 Taroni
+toctree
 TPM
 transcriptome
 transcriptomic
