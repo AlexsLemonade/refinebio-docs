@@ -400,7 +400,7 @@ Below we describe the files included in the delivered zip file.
 
 ## Gene Expression Matrix
 
-Gene expression matrices are delived in <a href = "https://en.wikipedia.org/wiki/Tab-separated_values" target = "blank">tab-separated value</a> (TSV) format.
+Gene expression matrices are delivered in <a href = "https://en.wikipedia.org/wiki/Tab-separated_values" target = "blank">tab-separated value</a> (TSV) format.
 In these matrices, rows are _genes_ or _features_ and columns are _samples_.
 Note that this format is consistent with the input expected by many programs specifically designed for working with gene expression matrices, but some machine learning libraries will expect this to be transposed.
 The column names or header will contain values corresponding to sample accessions (denoted `refinebio_accession_code` in metadata files).
