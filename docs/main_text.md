@@ -1,7 +1,5 @@
 # Source Data
 
-ena
-
 ## Types of Data
 
 The current version of <a href ="https://www.refine.bio" target = "blank">refine.bio </a>is designed to process gene expression data.
