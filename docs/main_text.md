@@ -251,7 +251,7 @@ if a probe maps to two Ensembl gene ids, those two Ensembl gene ids will both ha
 We have created custom gene mapping files for most of the Affymetrix platforms we support.
 Briefly, for Brainarray supported platforms, we use the Brainarray (e.g., `hgu133plus2hsensgprobe`) and the platform-specific annotation package from Bioconductor (e.g., `hgu133plus2.db`) to generate a platform-specific mapping file that includes probe IDs, Ensembl gene IDs, gene symbols, Entrez IDs, RefSeq and Unigene identifiers.
 The rationale for only using probes or IDs that are accounted for in the Brainarray package is two-fold: 1) Brainarray packages are updated as we learn more about the genome and 2) it allows for these submitter processed data to be more consistent with refine.bio processed data.
-We support identifier conversion for a limited number of platforms that either do not have a Brainarray or Bioconductory annotation packages.
+We support identifier conversion for a limited number of platforms that either do not have a Brainarray or Bioconductor annotation packages.
 
 The code for deriving these mappings and more details are available at https://github.com/AlexsLemonade/identifier-refinery.
 If you find an issue with these mappings, please <a href ="https://github.com/AlexsLemonade/refinebio/issues" target = "blank">file an issue on GitHub </a> so that we can resolve it.
@@ -400,7 +400,7 @@ Below we describe the files included in the delivered zip file.
 
 ## Gene Expression Matrix
 
-Gene expression matrices are delived in <a href = "https://en.wikipedia.org/wiki/Tab-separated_values" target = "blank">tab-separated value</a> (TSV) format.
+Gene expression matrices are delivered in <a href = "https://en.wikipedia.org/wiki/Tab-separated_values" target = "blank">tab-separated value</a> (TSV) format.
 In these matrices, rows are _genes_ or _features_ and columns are _samples_.
 Note that this format is consistent with the input expected by many programs specifically designed for working with gene expression matrices, but some machine learning libraries will expect this to be transposed.
 The column names or header will contain values corresponding to sample accessions (denoted `refinebio_accession_code` in metadata files).

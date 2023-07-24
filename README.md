@@ -12,6 +12,11 @@ To deploy to latest (<https://docs.refine.bio/en/latest/>), file a pull request 
 
 Read the Docs builds on pull request events for this repository, which reports the build status and lets you preview changes.
 
+### Spell check
+
+The spell check GitHub Action will fail upon pull requests to `development` if any spelling errors are detected in Markdown files in `docs/`.
+The custom dictionary for this repository is located at `config/.custom-dictionary.txt`.
+
 ## Local development
 
 ### Environment
