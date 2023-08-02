@@ -562,7 +562,7 @@ Below is the detailed folder structure:
 
 Childhood Cancer Collections (CCC) are curated collections of pediatric cancer research relevant datasets available from refine.bio.
 Childhood Cancer Data Data Lab staff members select the dataset in CCC based on criteria such as the information contained in a submitter-supplied abstract, age ranges associated with samples in an experiment, and tagged ontology terms.
-We are pleased to offer improved searching and filtering functionality in the CCC to make it easier for pediatric cancer researchers to discover and use data from refine.bio, as detailed below.
+The CCC offers improved searching and filtering functionality to make it easier for pediatric cancer researchers to discover and use data from refine.bio, as detailed below.
 
 <!--
 ## Finding Samples and Experiments
