@@ -4,8 +4,10 @@ ArrayExpress
 BeadArray
 BeadArrays
 BeadStudio
+Biocomput
 Bioconductor
 BioSample
+Bodenreider
 Bos
 BrainArray
 CCC
@@ -16,6 +18,7 @@ compendia
 compendium
 covariate
 covariates
+cytotoxic
 Danio
 dataset
 datasets
@@ -28,6 +31,7 @@ DRR
 discoverability
 EBI
 EBI's
+effector
 ENA
 Ensembl
 Entrez
@@ -57,6 +61,7 @@ microarrays
 musculus
 NCBI
 NCBI's
+ontologies
 Oshlack
 overcorrect
 Patro
@@ -80,6 +85,7 @@ SRA
 SRP
 SRR
 summarization
+Symp
 Taroni
 toctree
 TPM
