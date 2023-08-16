@@ -1,10 +1,17 @@
-```{toctree}
-:maxdepth: 8
+```{include} main/source_data.md
+```
 
-main/source_data
-main/processing_information
-main/downloadable_files
-main/compendia
-main/api
-main/downstream_analysis
+```{include} main/processing_information.md
+```
+
+```{include} main/downloadable_files.md
+```
+
+```{include} main/compendia.md
+```
+
+```{include} main/api.md
+```
+s
+```{include} main/downstream_analysis.md
 ```
