@@ -10,6 +10,9 @@
 ```{include} _main/5_compendia.md
 ```
 
+```{include} _main/6_childhood_cancer_collection.md
+```
+
 ```{include} _main/7_api.md
 ```
 
