@@ -4,6 +4,9 @@
 ```{include} _main/2_processing_information.md
 ```
 
+```{include} _main/3_tagged_terms.md
+```
+
 ```{include} _main/4_downloadable_files.md
 ```
 
