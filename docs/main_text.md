@@ -13,5 +13,5 @@
 ```{include} _main/5_api.md
 ```
 
-```{include} _main/downstream_analysis.md
+```{include} _main/6_downstream_analysis.md
 ```
